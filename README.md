@@ -8,21 +8,20 @@ sudo apt-get install -y git
 
 
 sudo apt-get install -y npm
+
 sudo apt-get install -y nodejs
 
-npm install -g @angular/cli
+sudo npm install -g @angular/cli
 
 
+//update latest Node version:-
 
-Linux/Mac:
-The module n makes version-management easy:
-
-sudo npm install n -g
-For the latest stable version:
-
-sudo n stable
-For the latest version:
-
+//Linux/Mac:
+//The module n makes version-management easy:
+sudo npm install n -g   
+//For the latest stable version:
+sudo n stable   
+//For the latest version:
 sudo n latest
 
 
@@ -50,7 +49,7 @@ cd /etc/nginx/sites-enabled
 
 server {
 	listen 80;    listen [::]:80;
-	root /home/ubuntu/build;
+	root /home/ubuntu/cricket46/dist/cricket46;
 	index index.html index.htm index.nginx-debian.html;
 	server_name 34.208.217.3; //instance ip
 	location / {
