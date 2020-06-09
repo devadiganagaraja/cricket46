@@ -51,7 +51,7 @@ cd /etc/nginx/sites-enabled
 
 server {
 	listen 80;    listen [::]:80;
-	root /home/ubuntu/build;
+	root /home/ubuntu/cricket46/dist/cricket46;
 	index index.html index.htm index.nginx-debian.html;
 	server_name 34.208.217.3; //instance ip
 	location / {
