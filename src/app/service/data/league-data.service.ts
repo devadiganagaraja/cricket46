@@ -48,28 +48,28 @@ export class LeagueDataService {
   constructor(private http: HttpClient) { }
 
   retrieveAllLeagues(){
-    return this.http.get<League[]>("http://localhost:8080/leagues")
+    return this.http.get<League[]>("http://cricket46.com:8080/leagues")
   }
 
   retrieveLeague(id){
-    return this.http.get<League>("http://localhost:8080/leagues/"+id)
+    return this.http.get<League>("http://cricket46.com:8080/leagues/"+id)
   }
 
 
   retrieveLeagueSeasons(leagueId){
     console.log("retrieveLeagueSeasons:"+leagueId)
-    return this.http.get<Season[]>("http://localhost:8080/leagues/"+leagueId+"/seasons")
+    return this.http.get<Season[]>("http://cricket46.com:8080/leagues/"+leagueId+"/seasons")
   }
 
   retrieveLeagueSeason(leagueId, season){
-    return this.http.get<Season[]>("http://localhost:8080/leagues/"+leagueId+"/seasons/"+season)
+    return this.http.get<Season[]>("http://cricket46.com:8080/leagues/"+leagueId+"/seasons/"+season)
   }
 
   retrieveLeagueSeasonTeams(leagueId, season){
-    return this.http.get<Team[]>("http://localhost:8080/leagues/"+leagueId+"/seasons/"+season+"/teams")
+    return this.http.get<Team[]>("http://cricket46.com:8080/leagues/"+leagueId+"/seasons/"+season+"/teams")
   }
 
   retrieveLeagueSeasonMatches(leagueId, season){
-    return this.http.get<Match[]>("http://localhost:8080/leagues/"+leagueId+"/seasons/"+season+"/matches")
+    return this.http.get<Match[]>("http://cricket46.com:8080/leagues/"+leagueId+"/seasons/"+season+"/matches")
   }
 }

@@ -19,28 +19,24 @@ export class UserDataService {
   constructor(private http: HttpClient) { }
 
   retrieveAllUsers(){
-    return this.http.get<User[]>("http://localhost:8080/users")
+    return this.http.get<User[]>("http://cricket46.com:8080/users")
   }
 
   retrieveUser(userName){
-    return this.http.get<User>(`http://localhost:8080/users/${userName}`)
+    return this.http.get<User>(`http://cricket46.com:8080/users/${userName}`)
   }
 
-
-  
-
-
   deleteUser(userName){
-    return this.http.delete(`http://localhost:8080/users/${userName}`)
+    return this.http.delete(`http://cricket46.com:8080/users/${userName}`)
   }
 
 
   putUser(userName, user){
-    return this.http.put(`http://localhost:8080/users/${userName}`, user)
+    return this.http.put(`http://cricket46.com:8080/users/${userName}`, user)
   }
 
 
   postUser(user){
-    return this.http.post(`http://localhost:8080/users`, user)
+    return this.http.post(`http://cricket46.com:8080/users`, user)
   }
 }
