@@ -1,0 +1,53 @@
+
+
+
+ <div class="container">
+
+
+    <dl class="row">
+        <dt class="col-sm-3">Id</dt>
+        <dd class="col-sm-9">{{league.id}}</dd>
+      
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">
+            {{league.name}}
+        </dd>
+        <dt class="col-sm-3">Abbreviation</dt>
+        <dd class="col-sm-9">
+            {{league.abbreviation}}
+        </dd>
+        <dt class="col-sm-3">Tournament</dt>
+        <dd class="col-sm-9">
+            {{league.tournament}}
+        </dd>
+      </dl>
+
+      <h2>List of seasons</h2>
+
+     <table class="table">
+     
+ 
+         <thead>
+             <tr>
+
+                 <th>Name</th>
+                 <th>Short Name</th>
+                 <th>Year</th>
+                 <th>Start Date</th>
+                 <th>End Date</th> 
+                 <th></th>    
+             </tr>
+ 
+         </thead>
+         <tbody>
+             <tr *ngFor='let season of seasons'>
+                 <td>{{season.name}}</td>
+                 <td>{{season.shortName}}</td>
+                 <td>{{season.year}}</td>
+                 <td>{{season.startDate | date: 'longDate'}}</td>
+                 <td>{{season.endDate | date: 'longDate'}}</td>
+                 <td><button (click) = 'viewSeason(season.id, season.year)' class="btn btn-info">View</button></td>
+             </tr>
+         </tbody>
+     </table>
+ </div>

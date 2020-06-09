@@ -1,0 +1,31 @@
+
+ <h1>List of leagues</h1>
+
+
+ <div class="container">
+     <table class="table">
+     
+ 
+         <thead>
+             <tr>
+                 <th>Id</th>
+                 <th>Abbreviation</th>
+                 <th>Name</th>
+                 <th>Tournament</th> 
+                 <th></th>    
+             </tr>
+ 
+         </thead>
+         <tbody>
+             <tr *ngFor='let league of leagues'>
+                 <td>{{league.id}}</td>
+                 <td>{{league.abbreviation}}</td>
+                 <td>{{league.name}}</td>
+                 <td>{{league.tournament}}</td>
+                 <td><button (click) = viewLeague(league.id) class="btn btn-info">View</button></td>
+
+             </tr>
+ 
+         </tbody>
+     </table>
+ </div>

@@ -1,0 +1,55 @@
+
+
+
+ <div class="container">
+
+
+    <dl class="row">
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">{{season.name}}</dd>
+      
+        <dt class="col-sm-3">Short Name</dt>
+        <dd class="col-sm-9">
+            {{season.shortName}}
+        </dd>
+        <dt class="col-sm-3">Year</dt>
+        <dd class="col-sm-9">
+            {{season.year}}
+        </dd>
+        <dt class="col-sm-3">Start Date</dt>
+        <dd class="col-sm-9">
+            {{season.startDate | date: 'longDate'}}
+        </dd>
+
+        <dt class="col-sm-3">End Date</dt>
+        <dd class="col-sm-9">
+            {{season.endDate | date: 'longDate'}}
+        </dd>
+      </dl>
+
+      <h2>List of matches</h2>
+
+     <table class="table">
+     
+ 
+         <thead>
+             <tr>
+
+                 <th>Name</th>
+                 <th>Start Date</th>
+                 
+                 
+                 <th></th>
+             </tr>
+ 
+         </thead>
+         <tbody>
+             <tr *ngFor='let match of matches'>
+                 <td>{{match.name}}</td>
+                 <td>{{match.date | date: 'longDate'}}</td>
+                
+                 <td><button (click) = 'viewMatch(match.id)' class="btn btn-info">View</button></td>
+             </tr>
+         </tbody>
+     </table>
+ </div>

@@ -1,0 +1,24 @@
+
+ <h1>List of players</h1>
+<div class="container">
+    <table class="table">
+    
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Country</th>    
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor='let player of players'>
+                <td>{{player.id}}</td>
+                <td>{{player.name}}</td>
+                <td>{{player.country}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
