@@ -8,6 +8,7 @@ sudo apt-get install -y git
 
 
 sudo apt-get install -y npm
+
 sudo apt-get install -y nodejs
 
 npm install -g @angular/cli
