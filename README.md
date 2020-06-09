@@ -11,19 +11,17 @@ sudo apt-get install -y npm
 
 sudo apt-get install -y nodejs
 
-npm install -g @angular/cli
+sudo npm install -g @angular/cli
 
 
+//update latest Node version:-
 
-Linux/Mac:
-The module n makes version-management easy:
-
-sudo npm install n -g
-For the latest stable version:
-
-sudo n stable
-For the latest version:
-
+//Linux/Mac:
+//The module n makes version-management easy:
+sudo npm install n -g   
+//For the latest stable version:
+sudo n stable   
+//For the latest version:
 sudo n latest
 
 
