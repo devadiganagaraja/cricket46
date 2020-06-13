@@ -29,8 +29,8 @@ export class WelcomeComponent implements OnInit {
               private welcomeDataService: WelcomeDataService) { }
 
   ngOnInit(): void {
-    this.userName = this.route.snapshot.params["name"]
-    console.log("this.userName"+this.userName)
+    this.userName = this.route.snapshot.params["userName"]
+    console.log("welcome this.userName"+this.userName)
   }
 
   getWelcomeMessage(){

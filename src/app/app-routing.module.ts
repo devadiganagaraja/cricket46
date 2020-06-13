@@ -12,14 +12,16 @@ import { ListLeaguesComponent } from './list-leagues/list-leagues.component';
 import { LeagueComponent } from './league/league.component';
 import { SeasonComponent } from './season/season.component';
 import { MatchComponent } from './match/match.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 
 const routes: Routes = [
   { path : 'login', component : LoginComponent},
-  { path : 'welcome/:name', component : WelcomeComponent, canActivate: [RouteGaurdService]},
+  { path : 'welcome/:userName', component : WelcomeComponent, canActivate: [RouteGaurdService]},
   { path : 'players', component : ListPlayersComponent, canActivate: [RouteGaurdService]},
   { path : 'logout', component : LogoutComponent, canActivate: [RouteGaurdService]},
   { path : 'users', component : UsersComponent, canActivate: [RouteGaurdService]},
+  { path : 'register', component : UserRegisterComponent},
   { path : 'users/:userName', component : UserComponent, canActivate: [RouteGaurdService]},
   { path : 'leagues', component : ListLeaguesComponent, canActivate: [RouteGaurdService]},
   { path : 'leagues/:league', component : LeagueComponent, canActivate: [RouteGaurdService]},

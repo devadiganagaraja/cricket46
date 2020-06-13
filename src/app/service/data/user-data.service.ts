@@ -39,4 +39,9 @@ export class UserDataService {
   postUser(user){
     return this.http.post(`http://cricket46.com:8080/users`, user)
   }
+
+  authenticateUser(user){
+     console.log("authenticateUser::"+user)
+     return this.http.post<Boolean>(`http://cricket46.com:8080/authenticate`, user)
+  }
 }

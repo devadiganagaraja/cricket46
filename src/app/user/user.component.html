@@ -7,17 +7,17 @@
         <div class="alert alert-warning" *ngIf="userForm.dirty && userForm.invalid">Enter valid values.</div>
         <fieldset class="form-group">
             <label>User Name</label>
-            <input type="text" [(ngModel)]="user.userName" name="userName" required="required" minlength="5" class="form-control"/>
+            <input type="text" [(ngModel)]="user.userName" name="username" required="required" minlength="5" class="form-control"/>
         </fieldset>
 
         <fieldset class="form-group">
             <label>First Name</label>
-            <input type="text" [(ngModel)]="user.firstName" name="firstName" required="required" class="form-control"/>
+            <input type="text" [(ngModel)]="user.firstName" name="firstname" required="required" class="form-control"/>
         </fieldset>
 
         <fieldset class="form-group">
             <label>Last Name</label>
-            <input type="text"  [(ngModel)]="user.lastName" name="lastName" required="required" class="form-control"/>
+            <input type="text"  [(ngModel)]="user.lastName" name="lastname" required="required" class="form-control"/>
         </fieldset>
 
 
@@ -27,8 +27,8 @@
         </fieldset>
 
         <fieldset class="form-group">
-            <label>Phone</label>
-            <input type="tel" [(ngModel)]="user.phone" name="phone" required="required" class="form-control"/>
+            <label>Password</label>
+            <input type="password"  [(ngModel)]="user.password" name="password" required="required" class="form-control"/>
         </fieldset>
 
         <button  type="submit" class="btn btn-success">Save</button>

@@ -19,8 +19,6 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.userName = this.route.snapshot.params["userName"] 
 
-
-    if(this.userName != "new"){
       this.userDataService.retrieveUser(this.userName).subscribe(response => 
         {
           this.user=response
@@ -28,16 +26,13 @@ export class UserComponent implements OnInit {
         error => {
           console.log("error==>"+error)
         })
-    }
   }
 
 
   saveUser(){
-    if(this.userName === "new"){
-      this.userDataService.postUser(this.user).subscribe(response => {console.log("post tes"+response)}, error => {console.log("post error"+error)})
-    }else{
-      this.userDataService.putUser(this.userName, this.user).subscribe(response => {console.log("put tes"+response)})
-    }
+  
+    this.userDataService.putUser(this.userName, this.user).subscribe(response => {console.log("put tes"+response)})
+
     this.router.navigate(["users"])
   }
 
