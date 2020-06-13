@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {API_PUBLIC_IP} from 'src/app/constants';
+
 
 export class League{
   constructor( 
@@ -47,29 +49,31 @@ export class LeagueDataService {
 
   constructor(private http: HttpClient) { }
 
+  hostName : string = API_PUBLIC_IP
+
   retrieveAllLeagues(){
-    return this.http.get<League[]>("http://cricket46.com:8080/leagues")
+    return this.http.get<League[]>(`${this.hostName}/leagues`)
   }
 
   retrieveLeague(id){
-    return this.http.get<League>("http://cricket46.com:8080/leagues/"+id)
+    return this.http.get<League>(`${this.hostName}/leagues/${id}`)
   }
 
 
   retrieveLeagueSeasons(leagueId){
     console.log("retrieveLeagueSeasons:"+leagueId)
-    return this.http.get<Season[]>("http://cricket46.com:8080/leagues/"+leagueId+"/seasons")
+    return this.http.get<Season[]>(`${this.hostName}/leagues/${leagueId}/seasons`)
   }
 
   retrieveLeagueSeason(leagueId, season){
-    return this.http.get<Season[]>("http://cricket46.com:8080/leagues/"+leagueId+"/seasons/"+season)
+    return this.http.get<Season[]>(`${this.hostName}/leagues/${leagueId}/seasons/${season}`)
   }
 
   retrieveLeagueSeasonTeams(leagueId, season){
-    return this.http.get<Team[]>("http://cricket46.com:8080/leagues/"+leagueId+"/seasons/"+season+"/teams")
+    return this.http.get<Team[]>(`${this.hostName}/leagues/${leagueId}/seasons/${season}/teams`)
   }
 
   retrieveLeagueSeasonMatches(leagueId, season){
-    return this.http.get<Match[]>("http://cricket46.com:8080/leagues/"+leagueId+"/seasons/"+season+"/matches")
+    return this.http.get<Match[]>(`${this.hostName}/leagues/${leagueId}/seasons/${season}/matches`)
   }
 }
