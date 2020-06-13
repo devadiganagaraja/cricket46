@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
     this.router.navigate(["welcome", this.username])
 
-    this.userDataService.authenticateUser(new User(this.username, '', '', '', this.password)).subscribe(
+    this.userDataService.authenticateUser(new User(this.username, '', '', '', '', this.password)).subscribe(
       response => {
         console.log("responseresponseresponseresponse"+response)
         if(response==true){

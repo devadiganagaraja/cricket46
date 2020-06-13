@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
               private router : Router) { }
 
   userName: string
-  user: User = new User('', '', '', '', '')
+  user: User = new User('', '', '', '', '', '')
   
   ngOnInit(): void {
     this.userName = this.route.snapshot.params["userName"] 
