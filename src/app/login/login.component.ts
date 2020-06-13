@@ -10,7 +10,7 @@ import { UserDataService, User } from '../service/data/user-data.service';
 })
 export class LoginComponent implements OnInit {
 
-  username : string = 'UserName'
+  userName : string = 'UserName'
   password : string = ''
   errorMessage : String = 'Invalid credentials.'
   invalidLogin = false
@@ -22,18 +22,12 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin() {
-
-    this.router.navigate(["welcome", this.username])
-
-    this.userDataService.authenticateUser(new User(this.username, '', '', '', '', this.password)).subscribe(
+    this.userDataService.authenticateUser(new User('', this.userName, '', '', '', this.password)).subscribe(
       response => {
-        console.log("responseresponseresponseresponse"+response)
         if(response==true){
-          
           this.invalidLogin = false
-          sessionStorage.setItem("loggedInUser", this.username)
-
-          this.router.navigate(["welcome", this.username])
+          sessionStorage.setItem("loggedInUser", this.userName)
+          this.router.navigate(["welcome", this.userName])
         }else{
           this.invalidLogin = true
         }
