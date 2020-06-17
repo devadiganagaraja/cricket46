@@ -13,12 +13,14 @@ import { LeagueComponent } from './league/league.component';
 import { SeasonComponent } from './season/season.component';
 import { MatchComponent } from './match/match.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { PlayerComponent } from './player/player.component';
 
 
 const routes: Routes = [
   { path : 'login', component : LoginComponent},
   { path : 'welcome/:userName', component : WelcomeComponent, canActivate: [RouteGaurdService]},
   { path : 'players', component : ListPlayersComponent, canActivate: [RouteGaurdService]},
+  { path : 'players/:playerId', component : PlayerComponent, canActivate: [RouteGaurdService]},
   { path : 'logout', component : LogoutComponent, canActivate: [RouteGaurdService]},
   { path : 'users', component : UsersComponent, canActivate: [RouteGaurdService]},
   { path : 'register', component : UserRegisterComponent},

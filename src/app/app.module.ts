@@ -21,6 +21,8 @@ import { ListLeaguesComponent } from './list-leagues/list-leagues.component';
 import { LeagueComponent } from './league/league.component';
 import { SeasonComponent } from './season/season.component';
 import { MatchComponent } from './match/match.component';
+import { ArticleComponent } from './article/article.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MatchComponent } from './match/match.component';
     ListLeaguesComponent,
     LeagueComponent,
     SeasonComponent,
-    MatchComponent
+    MatchComponent,
+    ArticleComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,

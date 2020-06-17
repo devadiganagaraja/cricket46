@@ -8,7 +8,8 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Country</th>    
+                <th>Country</th>
+                <th></th>  
             </tr>
 
         </thead>
@@ -17,6 +18,8 @@
                 <td>{{player.id}}</td>
                 <td>{{player.name}}</td>
                 <td>{{player.country}}</td>
+                <td><button (click) = 'viewPlayer(player.id)' class="btn btn-info">View</button></td>
+
             </tr>
 
         </tbody>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 export class Player {
@@ -25,16 +26,21 @@ export class Player {
 
 export class ListPlayersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   players = [
-    new Player(1, 'Sachin Tendulkar', 'India'),
-    new Player(2, 'Sourav Ganguly', 'India'),
-    new Player(3, 'Ricky Ponting', 'Australia'),
-    new Player(4, 'Brain Lara', 'West Indies')
+    new Player(459160, 'Sachin Tendulkar', 'India'),
+    new Player(374127, 'Sourav Ganguly', 'India'),
+    new Player(92729, 'Ricky Ponting', 'Australia'),
+    new Player(680381, 'Brain Lara', 'West Indies')
   ]
 
   ngOnInit(): void {
+  }
+
+  viewPlayer(playerId){
+    console.log("playerId id::"+playerId)
+    this.router.navigate(["players", playerId])
   }
 
 }
