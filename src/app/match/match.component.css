@@ -1,5 +1,32 @@
-.list-group-item{
+.list-group-item {
     width: 25%;
     border-color: darkcyan;
     border-top-width: 1px;
+}
+
+.cric-overflow-hide {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cric-pad-bottom1rem {
+    padding-bottom: 1rem;
+}
+
+.cric-pad-top2rem {
+    padding-top: 2rem;
+}
+
+.event-div {
+    margin: 0 1.5rem;
+}
+
+.team2-div {
+    margin: 0rem 15px;
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
 }

@@ -1,0 +1,94 @@
+.score-sumaary-div {
+    width: 100%;
+    float: left;
+}
+
+.mom-div {
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    overflow: hidden;
+    margin: 8px 8px 8px;
+    border-radius: 8px;
+}
+
+.mom-text-div {
+    font-size: 14px;
+    padding-bottom: 2px;
+}
+
+.mom-img {
+    border-radius: 50%;
+    display: block;
+}
+
+.summary-header {
+    padding: 0 0 18px 0;
+    color: #80868b;
+    text-align: center;
+    display: flex;
+}
+
+.summary-hr {
+    height: 2px;
+    width: 50%;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, .05);
+}
+
+.summary-team-span {
+    white-space: nowrap;
+}
+
+.team-logo-span {
+    height: 20px;
+    display: inline-block;
+    vertical-align: bottom;
+    padding-right: 5px;
+}
+
+.score-summary-table-pad {
+    padding: 2px 16px 16px 16px
+}
+
+.img-border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e9e3e3;
+}
+
+.sum-desc-div {
+    padding: 2px 16px 16px 16px;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 2px;
+    border-color: grey;
+    width: 100%;
+}
+
+.bat-sum-div {
+    float: left;
+    padding-right: 10px;
+}
+
+.bowl-sum-div {
+    float: right;
+    padding-left: 10px;
+}
+
+.player-name-div {
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+.player-sum-td {
+    padding-top: 12px;
+    width: 50%;
+}

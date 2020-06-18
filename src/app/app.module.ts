@@ -21,6 +21,12 @@ import { ListLeaguesComponent } from './list-leagues/list-leagues.component';
 import { LeagueComponent } from './league/league.component';
 import { SeasonComponent } from './season/season.component';
 import { MatchComponent } from './match/match.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import { SummaryComponent } from './match/summary/summary.component';
+import { ScorecardComponent } from './match/scorecard/scorecard.component';
+import { CommentaryComponent } from './match/commentary/commentary.component';
+import { FeedsComponent } from './match/feeds/feeds.component';
 
 @NgModule({
   declarations: [
@@ -38,14 +44,21 @@ import { MatchComponent } from './match/match.component';
     ListLeaguesComponent,
     LeagueComponent,
     SeasonComponent,
-    MatchComponent
+    MatchComponent,
+    SummaryComponent,
+    ScorecardComponent,
+    CommentaryComponent,
+    FeedsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatTabsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
