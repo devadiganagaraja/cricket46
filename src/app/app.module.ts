@@ -27,6 +27,8 @@ import { SummaryComponent } from './match/summary/summary.component';
 import { ScorecardComponent } from './match/scorecard/scorecard.component';
 import { CommentaryComponent } from './match/commentary/commentary.component';
 import { FeedsComponent } from './match/feeds/feeds.component';
+import { ArticleComponent } from './article/article.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { FeedsComponent } from './match/feeds/feeds.component';
     ScorecardComponent,
     CommentaryComponent,
     FeedsComponent,
+    ArticleComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,

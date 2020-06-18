@@ -10,6 +10,13 @@
             <input type="text" [(ngModel)]="user.userName" name="username" required="required" minlength="5" class="form-control"/>
         </fieldset>
 
+
+        <fieldset class="form-group">
+            <label>Photo</label>
+            <input type="file" accept="image/*">
+        </fieldset>
+       
+
         <fieldset class="form-group">
             <label>First Name</label>
             <input type="text" [(ngModel)]="user.firstName" name="firstname" required="required" class="form-control"/>
