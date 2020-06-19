@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerModel } from './player-model';
+
 
 @Component({
   selector: 'app-summary',
@@ -15,8 +15,6 @@ export class SummaryComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let n = 5;
-    let j = 2;
     
   }
 

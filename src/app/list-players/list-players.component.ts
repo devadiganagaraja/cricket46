@@ -7,7 +7,8 @@ export class Player {
   constructor(
     public id: number,
     public name: string,
-    public country: string
+    public country: string,
+   
   ){
 
   }

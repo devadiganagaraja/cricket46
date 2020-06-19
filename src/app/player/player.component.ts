@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserDataService } from '../service/data/user-data.service';
-import { PlayerDataService, Player } from '../service/data/player-data.service';
+import { PlayerDataService} from '../service/data/player-data.service';
+import { PlayerModel } from '../player/playerModel';
 
 @Component({
   selector: 'app-player',
@@ -10,21 +11,28 @@ import { PlayerDataService, Player } from '../service/data/player-data.service';
 })
 export class PlayerComponent implements OnInit {
 
+
+  playerModel: PlayerModel ;
+  displayedColumns: string[] = ['formatName', 'matches', 'runs', 'highScore', 'battingStrikeRate', 'battingAverage', 'wickets',
+    'bestBowling', 'bowlingStrikeRate', 'bowlingAverage', 'economyRate'];
+  imgURL = '';
   constructor(private playerDataService: PlayerDataService,
     private route: ActivatedRoute,
     private router : Router) { }
 
     playerId: number
-    player: Player = new Player(0,'', 0, '', '','')
+    //player: Player = new Player()
 
 
   ngOnInit(): void {
+
+ 
 
     this.playerId = this.route.snapshot.params["playerId"] 
 
     this.playerDataService.retrievePlayer(this.playerId).subscribe(response => 
       {
-        this.player=response
+        this.playerModel=response
       }, 
       error => {
         console.log("error==>"+error)

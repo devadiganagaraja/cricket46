@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;">
+<!-- <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="assets/images/player/{{player.id}}.png" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{player.name.split(':')[0]}}</h5>
@@ -10,4 +10,166 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">AGE : {{player.age}}</li>
     </ul>
-  </div>
+  </div> -->
+
+
+
+<!-- <div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Cricscore</h3>
+    </div> -->
+
+<div class="panel-body" *ngIf="playerModel">
+
+    <div class="panel-primary">
+        <div class="panel-heading-11">
+            <h3 class="panel-title title">Player Info</h3>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="col-sm-1 col-md-12">
+                <div class="player-desc-div">
+                    <mat-card class="bgc-smoke">
+                        <mat-card-header>
+                            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                            <mat-card-title>{{playerModel.name.split(':')[0]}}</mat-card-title>
+                            <mat-card-subtitle>{{playerModel.name.split(':')[2]}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <br />
+                        <div class="image-div">
+                            <img src="assets/images/player/459160.png" class="mom-img" alt="Card image cap" alt="" width="50%" height="50%" onError="this.src='../../assets/Image/empty_profile.png'">
+
+                        </div>
+                        <br />
+                        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-sm-1 col-md-12">
+
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6">
+                                            <label>Country</label>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <label>{{playerModel.country.split(':')[0]}}</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6">
+                                            <label>Age </label>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <label>{{playerModel.age}} years old</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6">
+                                            <label>Batting Style</label>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <label>{{playerModel.battingStyle}}</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6">
+                                            <label>Bowling Style</label>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <label>{{playerModel.bowlingStyle}}</label>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </mat-card-content>
+
+                    </mat-card>
+                </div>
+
+
+
+                <div class='col-sm-12 col-md-12 padding-bottom2rem'>
+
+                    <h4>Player Stats</h4>
+
+                    <table mat-table class="bgc-smoke" [dataSource]="playerModel.playerStats" class="mat-elevation-z8">
+
+                        <!--- Note that these columns can be defined in any order.
+                                    The actual rendered columns are set as a property on the row definition" -->
+
+                        <ng-container matColumnDef="formatName">
+                            <th mat-header-cell *matHeaderCellDef class="tblheader">Format</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.formatName}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="matches">
+                            <th mat-header-cell *matHeaderCellDef>Matches</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.matches}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="runs">
+                            <th mat-header-cell *matHeaderCellDef>Runs</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.runs}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="highScore">
+                            <th mat-header-cell *matHeaderCellDef>HS</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.highScore}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="battingStrikeRate">
+                            <th mat-header-cell *matHeaderCellDef>SR</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.battingStrikeRate}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="battingAverage">
+                            <th mat-header-cell *matHeaderCellDef>Avg</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.battingAverage}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="wickets">
+                            <th mat-header-cell *matHeaderCellDef>Wkts</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.wickets}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="bestBowling">
+                            <th mat-header-cell *matHeaderCellDef>Best Bowl</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.bestBowling}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="bowlingStrikeRate">
+                            <th mat-header-cell *matHeaderCellDef>SR</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.bowlingStrikeRate}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="bowlingAverage">
+                            <th mat-header-cell *matHeaderCellDef>Avg</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.bowlingAverage}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="economyRate">
+                            <th mat-header-cell *matHeaderCellDef>Eco</th>
+                            <td mat-cell *matCellDef="let stat"> {{stat.economyRate}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div> -->

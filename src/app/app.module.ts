@@ -22,14 +22,15 @@ import { LeagueComponent } from './league/league.component';
 import { SeasonComponent } from './season/season.component';
 import { MatchComponent } from './match/match.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs';
+import {MatTabsModule,} from '@angular/material/tabs';
 import { SummaryComponent } from './match/summary/summary.component';
 import { ScorecardComponent } from './match/scorecard/scorecard.component';
 import { CommentaryComponent } from './match/commentary/commentary.component';
 import { FeedsComponent } from './match/feeds/feeds.component';
 import { ArticleComponent } from './article/article.component';
 import { PlayerComponent } from './player/player.component';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,9 @@ import { PlayerComponent } from './player/player.component';
     HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTableModule,
+    MatCardModule
 
   ],
   providers: [],

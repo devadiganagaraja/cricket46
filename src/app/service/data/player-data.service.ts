@@ -1,18 +1,10 @@
 import { Injectable } from '@angular/core';
 import {API_PUBLIC_IP} from 'src/app/constants';
 import { HttpClient } from '@angular/common/http';
+import { PlayerModel } from 'src/app/player/playerModel';
 
 
-export class Player{
-  constructor( 
-            public id: number,
-            public name: string,
-            public age: number,
-            public battingStyle: string,
-            public bowlingStyle: string,
-            public playerType: string){
-  }
-}
+
 
 
 @Injectable({
@@ -27,6 +19,6 @@ export class PlayerDataService {
 
 
   retrievePlayer(playerId){
-    return this.http.get<Player>(`${this.hostName}/players/${playerId}`)
+    return this.http.get<PlayerModel>(`${this.hostName}/players/${playerId}`)
   }
 }

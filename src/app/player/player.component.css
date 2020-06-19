@@ -1,0 +1,17 @@
+.image-div {
+    padding-left: 3rem;
+}
+
+table {
+    width: 100%;
+    background-color: whitesmoke !important;
+}
+
+th {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.player-desc-div {
+    padding: 0rem 10rem;
+}

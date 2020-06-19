@@ -20,11 +20,6 @@
     padding-bottom: 2px;
 }
 
-.mom-img {
-    border-radius: 50%;
-    display: block;
-}
-
 .summary-header {
     padding: 0 0 18px 0;
     color: #80868b;
@@ -52,12 +47,6 @@
 
 .score-summary-table-pad {
     padding: 2px 16px 16px 16px
-}
-
-.img-border {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #e9e3e3;
 }
 
 .sum-desc-div {
