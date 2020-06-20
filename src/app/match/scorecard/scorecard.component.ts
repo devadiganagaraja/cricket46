@@ -10,6 +10,7 @@ export class ScorecardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let n = 2;
   }
 
 }

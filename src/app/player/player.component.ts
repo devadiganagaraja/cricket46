@@ -13,9 +13,12 @@ export class PlayerComponent implements OnInit {
 
 
   playerModel: PlayerModel ;
-  displayedColumns: string[] = ['formatName', 'matches', 'runs', 'highScore', 'battingStrikeRate', 'battingAverage', 'wickets',
+  battingColumns: string[] = ['formatName', 'matches', 'runs', 'highScore', 'battingStrikeRate', 'battingAverage'];
+
+    bowlingColumns: string[] = ['formatName', 'matches', 'runs', 'wickets',
     'bestBowling', 'bowlingStrikeRate', 'bowlingAverage', 'economyRate'];
   imgURL = '';
+
   constructor(private playerDataService: PlayerDataService,
     private route: ActivatedRoute,
     private router : Router) { }

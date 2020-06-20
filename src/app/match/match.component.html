@@ -1,89 +1,90 @@
-<div>
-    <div class="cric-main-div border-bottom">
-        <div class="cric-pad-top2rem">
-            <div class="event-div">
-                <div>
-                    <div class="cric-overflow-hide">
-                        <span style="color:#232ebf">Cricket World Cup</span>
-                        <span> · </span>
-                        <span>14/7/19</span>
+<div class="cric-container">
+    <div>
+        <div class="cric-main-div border-bottom">
+            <div class="cric-pad-top2rem">
+                <div class="event-div">
+                    <div>
+                        <div class="cric-overflow-hide">
+                            <span style="color:#232ebf">Cricket World Cup</span>
+                            <span> · </span>
+                            <span>14/7/19</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="padding-bottom2rem">
-                <div class="score-padding">
+                <div class="padding-bottom2rem">
+                    <div class="score-padding">
 
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-6 row center-align-item">
-                            <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                <div><img alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/-6moqr0dxYpIhERhbiVLSA_96x96.png" style="width:64px;height:48px"></div>
-                                <div class="cric-overflow-hide"><span>Sri Lanka</span></div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                <div>203</div>
-                                <div>(49.3)</div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6 row center-align-item">
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                                    <div><img alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/-6moqr0dxYpIhERhbiVLSA_96x96.png" style="width:64px;height:48px"></div>
+                                    <div class="cric-overflow-hide"><span>Sri Lanka</span></div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                                    <div>203</div>
+                                    <div>(49.3)</div>
+                                </div>
+
+
                             </div>
 
+
+                            <div class="col-md-6 col-sm-6 col-xs-6 row center-align-item team2-div">
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                                    <div>206/1</div>
+                                    <div>(37.2)</div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                                    <div>
+                                        <img src="//ssl.gstatic.com/onebox/media/sports/logos/EGwD4_SUlmwZWbnHhcmTPA_96x96.png" style="width:64px;height:48px">
+                                    </div>
+                                    <div class="cric-overflow-hide">
+                                        <span>South Africa</span>
+                                    </div>
+                                </div>
+
+                            </div>
 
                         </div>
 
 
-                        <div class="col-md-6 col-sm-6 col-xs-6 row center-align-item team2-div">
-                            <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                <div>206/1</div>
-                                <div>(37.2)</div>
-                            </div>
+                    </div>
 
-                            <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                <div>
-                                    <img src="//ssl.gstatic.com/onebox/media/sports/logos/EGwD4_SUlmwZWbnHhcmTPA_96x96.png" style="width:64px;height:48px">
-                                </div>
-                                <div class="cric-overflow-hide">
-                                    <span>South Africa</span>
-                                </div>
-                            </div>
+                    <div class="margin-top1rem">
+                        <div class="text-center">
+                            <div class="text-center mt-2">ENG won the Super Over</div>
 
                         </div>
 
-                    </div>
+                        <div class="text-center">
+                            <div class="text-center mt-2">ODI</div>
 
-
-                </div>
-
-                <div class="margin-top1rem">
-                    <div class="text-center">
-                        <div class="text-center mt-2">ENG won the Super Over</div>
-
-                    </div>
-
-                    <div class="text-center">
-                        <div class="text-center mt-2">ODI</div>
-
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Summary">
+            <app-summary></app-summary>
+        </mat-tab>
+        <mat-tab label="Scorecard">
+            <app-scorecard></app-scorecard>
+        </mat-tab>
+        <mat-tab label="Commentary">
+            <app-commentary></app-commentary>
+        </mat-tab>
+        <mat-tab label="Feeds">
+            <app-feeds></app-feeds>
+        </mat-tab>
+
+    </mat-tab-group>
+
 </div>
-
-
-<mat-tab-group animationDuration="0ms">
-    <mat-tab label="Summary">
-        <app-summary></app-summary>
-    </mat-tab>
-    <mat-tab label="Scorecard">
-        <app-scorecard></app-scorecard>
-    </mat-tab>
-    <mat-tab label="Commentary">
-        <app-commentary></app-commentary>
-    </mat-tab>
-    <mat-tab label="Feeds">
-        <app-feeds></app-feeds>
-    </mat-tab>
-
-</mat-tab-group>
-
-
 <!-- <div class="padd1rem">
     <div>
 

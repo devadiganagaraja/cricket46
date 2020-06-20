@@ -18,5 +18,6 @@ export class PlayerModel {
     battingStyle: string;
     bowlingStyle: string;
     country: string;
+    playerType: string;
     playerStats: PlayerStat[];
     }
