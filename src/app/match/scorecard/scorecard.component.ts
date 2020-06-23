@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatchModel } from '../MatchModel';
 
 @Component({
   selector: 'app-scorecard',
@@ -9,8 +10,9 @@ export class ScorecardComponent implements OnInit {
 
   constructor() { }
 
+  @Input('matchModel') matchModel: MatchModel;
+
   ngOnInit(): void {
-    let n = 2;
   }
 
 }

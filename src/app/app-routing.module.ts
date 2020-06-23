@@ -28,7 +28,7 @@ const routes: Routes = [
   { path : 'leagues', component : ListLeaguesComponent, canActivate: [RouteGaurdService]},
   { path : 'leagues/:league', component : LeagueComponent, canActivate: [RouteGaurdService]},
   { path : 'leagues/:league/seasons/:season', component : SeasonComponent, canActivate: [RouteGaurdService]},
-  { path : 'matches/:match', component : MatchComponent, canActivate: [RouteGaurdService]},
+  { path : 'matches/:matchId', component : MatchComponent, canActivate: [RouteGaurdService]},
   { path : '', component : LoginComponent},
   { path : '**', component : ErrorComponent}
 ];

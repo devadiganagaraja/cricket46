@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatchModel } from '../MatchModel';
 
 
 @Component({
@@ -10,6 +11,8 @@ export class SummaryComponent implements OnInit {
 
  
   constructor() { }
+
+  @Input('matchModel') matchModel: MatchModel;
  
   
 

@@ -74,6 +74,6 @@ export class LeagueDataService {
   }
 
   retrieveLeagueSeasonMatches(leagueId, season){
-    return this.http.get<Match[]>(`${this.hostName}/leagues/${leagueId}/seasons/${season}/matches`)
+    return this.http.get<Match[]>(`${this.hostName}/leagues/${leagueId}/seasons/${season}/games`)
   }
 }

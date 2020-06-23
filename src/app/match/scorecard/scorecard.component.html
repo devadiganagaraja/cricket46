@@ -1,6 +1,5 @@
 <mat-tab-group animationDuration="0ms">
-    <mat-tab style="width: 50% !important;" label="Newzeland">
-
+    <mat-tab *ngFor="let scorecard of matchModel.scoreCards" label="{{scorecard.inningsInfo.battingTeamName.split(':')[0]}}">
         <div>
             <div>
                 <div class="innings-container">
@@ -22,102 +21,33 @@
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <tbody *ngFor="let battingScoreLeaf of scorecard.battingScoreCard.battingScoreLeaves">
                                         <tr></tr>
                                         <tr class="scr-hd-br">
                                             <td class="plyr-img-td">
                                                 <div>
-                                                    <img class="mom-img img-border" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQH8qPDUOTEz6ZbAt7kn1jAt6N-jQTCc24G0x_fdHi1_zwrlNhMqVQQKXx75CKOQdjB352Egr7f74vJvaoFBoUVbc-w5zw8ZQnCzw" style="width:42px;height:42px" alt="">
+                                                    <img class="mom-img img-border" src="/assets/images/player/{{battingScoreLeaf.playerName.split(':')[1]}}.png"
+                                                                                      style="width:42px;height:42px" alt="">
                                                 </div>
                                             </td>
                                             <td class="stat-td">
-                                                <div>Prithvi Shaw</div>
-                                                <div class="wkt-det"> <span>b Tim Southee</span></div>
+                                                <div>{{battingScoreLeaf.playerName.split(':')[0]}}</div>
+                                                <div class="wkt-det"> <span>{{battingScoreLeaf.dismissalText}}</span></div>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>24</span>
+                                                <span>{{battingScoreLeaf.runs}}</span>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>16</span>
+                                                <span>{{battingScoreLeaf.balls}}</span>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>6</span>
+                                                <span>{{battingScoreLeaf.fours}}</span>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>0</span>
+                                                <span>{{battingScoreLeaf.sixes}}</span>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>126.32</span>
-                                            </td>
-                                            <td style="width:18px"></td>
-
-                                        </tr>
-
-                                        <tr></tr>
-
-                                    </tbody>
-
-                                    <tbody>
-                                        <tr></tr>
-                                        <tr class="scr-hd-br">
-                                            <td class="plyr-img-td">
-                                                <div>
-                                                    <img class="mom-img img-border" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA3ruKIScKoFDxEkimhFm9oU2JlOlk9Cd15_Fo8UawF67fMDfVTg_PjfrrZzlUbsoBAej0Xp5Ng-ZbGz6ILKycD3O_hPt5LLceDA" style="width:42px;height:42px" alt="">
-                                                </div>
-                                            </td>
-                                            <td class="stat-td">
-                                                <div>Mayank Agarval</div>
-                                                <div class="wkt-det"> <span>c Ross Taylor b Hamish Bennett</span></div>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>3</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>5</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>0</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>0</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>60</span>
-                                            </td>
-                                            <td style="width:18px"></td>
-
-                                        </tr>
-
-                                        <tr></tr>
-
-                                    </tbody>
-
-                                    <tbody>
-                                        <tr></tr>
-                                        <tr class="scr-hd-br">
-                                            <td class="plyr-img-td">
-                                                <div>
-                                                    <img class="mom-img img-border" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRk3eHNNLvcUCWXMmxnoHsqvKmBidDhzQaGKRtYhb4vFMVWnzLCxET5zPzCn-XPJYJZrrISxDFDFBH_N67g579phT5rZdNvoL0YBw" style="width:42px;height:42px" alt="">
-                                                </div>
-                                            </td>
-                                            <td class="stat-td">
-                                                <div>Virat Kohli (C)</div>
-                                                <div class="wkt-det"> <span>b Tim Southee</span></div>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>52</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>57</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>7</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>1</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>91.23</span>
+                                                <span>{{battingScoreLeaf.strikeRate}}</span>
                                             </td>
                                             <td style="width:18px"></td>
 
@@ -129,14 +59,14 @@
                                     <tbody>
                                         <tr class="scr-hd-br ex-tr">
                                             <td colspan="2">Extras</td>
-                                            <td>16</td>
-                                            <td colspan="4">(W 12, LB 4)</td>
+                                            <td>{{scorecard.inningsInfo.extras}}</td>
+                                            <td colspan="4">(W {{scorecard.inningsInfo.wides}}, LB {{scorecard.inningsInfo.legByes}}, B {{scorecard.inningsInfo.byes}}, NB {{scorecard.inningsInfo.noBalls}})</td>
 
                                         </tr>
                                         <tr class="scr-hd-br ex-tr">
                                             <td colspan="2">Total Runs</td>
-                                            <td>251</td>
-                                            <td colspan="4">(10 wkts, 48.3 ov)</td>
+                                            <td>{{scorecard.inningsInfo.runs}}</td>
+                                            <td colspan="4">({{scorecard.inningsInfo.wickets}} wkts, {{scorecard.inningsInfo.overs}} ov)</td>
 
                                         </tr>
 
@@ -169,31 +99,31 @@
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <tbody *ngFor="let bowlingScoreLeaf of scorecard.bowlingScoreCard.bowlingScoreLeaves">
                                         <tr></tr>
                                         <tr class="scr-hd-br">
                                             <td class="plyr-img-td">
                                                 <div>
-                                                    <img class="mom-img img-border" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSDvmXIKP1bReD_B1dnXHnd33JkhknBq0mTEqW6gdKCvIMkmkSs-7iZUnyVNwniH5MBp-J7nKcQL9Xs-vVcGCBxyX7QYFrSHomR7A" style="width:42px;height:42px" alt="">
+                                                    <img class="mom-img img-border" src="/assets/images/player/{{bowlingScoreLeaf.playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="">
                                                 </div>
                                             </td>
                                             <td class="stat-td">
-                                                <div> Tim Southee</div>
+                                                <div> {{bowlingScoreLeaf.playerName.split(':')[0]}}</div>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>10.0</span>
+                                                <span>{{bowlingScoreLeaf.overs}}</span>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>1</span>
+                                                <span>{{bowlingScoreLeaf.maidens}}</span>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>41</span>
+                                                <span>{{bowlingScoreLeaf.runs}}</span>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>2</span>
+                                                <span>{{bowlingScoreLeaf.wickets}}</span>
                                             </td>
                                             <td class="stat-td det-de">
-                                                <span>4.10</span>
+                                                <span>{{bowlingScoreLeaf.economyRate}}</span>
                                             </td>
                                             <td style="width:18px"></td>
 
@@ -202,76 +132,6 @@
                                         <tr></tr>
 
                                     </tbody>
-
-                                    <tbody>
-                                        <tr></tr>
-                                        <tr class="scr-hd-br">
-                                            <td class="plyr-img-td">
-                                                <div>
-                                                    <img class="mom-img img-border" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSDvmXIKP1bReD_B1dnXHnd33JkhknBq0mTEqW6gdKCvIMkmkSs-7iZUnyVNwniH5MBp-J7nKcQL9Xs-vVcGCBxyX7QYFrSHomR7A" style="width:42px;height:42px" alt="">
-                                                </div>
-                                            </td>
-                                            <td class="stat-td">
-                                                <div> Tim Southee</div>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>10.0</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>1</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>41</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>2</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>4.10</span>
-                                            </td>
-                                            <td style="width:18px"></td>
-
-                                        </tr>
-
-                                        <tr></tr>
-
-                                    </tbody>
-
-                                    <tbody>
-                                        <tr></tr>
-                                        <tr class="scr-hd-br">
-                                            <td class="plyr-img-td">
-                                                <div>
-                                                    <img class="mom-img img-border" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSDvmXIKP1bReD_B1dnXHnd33JkhknBq0mTEqW6gdKCvIMkmkSs-7iZUnyVNwniH5MBp-J7nKcQL9Xs-vVcGCBxyX7QYFrSHomR7A" style="width:42px;height:42px" alt="">
-                                                </div>
-                                            </td>
-                                            <td class="stat-td">
-                                                <div> Tim Southee</div>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>10.0</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>1</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>41</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>2</span>
-                                            </td>
-                                            <td class="stat-td det-de">
-                                                <span>4.10</span>
-                                            </td>
-                                            <td style="width:18px"></td>
-
-                                        </tr>
-
-                                        <tr></tr>
-
-                                    </tbody>
-
-
 
                                 </table>
                             </div>
@@ -284,11 +144,11 @@
                         <div class="det-div">
                             <div class="toss-div">
                                 <span style="padding-right: 5px;">Toss:</span>
-                                <Span>IND won the toss and decided to bowl</Span>
+                                <Span>{{matchModel.toss}}</Span>
                             </div>
                             <div class="toss-div" style="padding-right: 5px;">
                                 <span>Stadium:</span>
-                                <Span>Eden Park</Span>
+                                <Span>{{matchModel.venue}}</Span>
                             </div>
                         </div>
                     </div>
@@ -296,12 +156,6 @@
 
             </div>
         </div>
-
-
-
-    </mat-tab>
-    <mat-tab label="India">
-        <app-summary></app-summary>
     </mat-tab>
 
 

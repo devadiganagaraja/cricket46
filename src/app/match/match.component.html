@@ -5,9 +5,9 @@
                 <div class="event-div">
                     <div>
                         <div class="cric-overflow-hide">
-                            <span style="color:#232ebf">Cricket World Cup</span>
+                            <span style="color:#232ebf">{{matchModel.leagueName}}</span>
                             <span> · </span>
-                            <span>14/7/19</span>
+                            <span>{{matchModel.date |  date: 'dd/MM/yyyy'}}</span>
                         </div>
                     </div>
                 </div>
@@ -17,12 +17,12 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6 row center-align-item">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                    <div><img alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/-6moqr0dxYpIhERhbiVLSA_96x96.png" style="width:64px;height:48px"></div>
-                                    <div class="cric-overflow-hide"><span>Sri Lanka</span></div>
+                                    <div><img alt="" src="assets/images/team/{{matchModel.team1Name.split(':')[1]}}.png" style="width:64px;height:48px"></div>
+                                    <div class="cric-overflow-hide"><span>{{matchModel.team1Name.split(':')[0]}}</span></div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                    <div>203</div>
-                                    <div>(49.3)</div>
+                                    <div>{{matchModel.team1Score}}</div>
+                                    <div>({{matchModel.team1Overs}})</div>
                                 </div>
 
 
@@ -31,16 +31,16 @@
 
                             <div class="col-md-6 col-sm-6 col-xs-6 row center-align-item team2-div">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                    <div>206/1</div>
-                                    <div>(37.2)</div>
+                                    <div>{{matchModel.team2Score}}</div>
+                                    <div>({{matchModel.team2Overs}})</div>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-center">
                                     <div>
-                                        <img src="//ssl.gstatic.com/onebox/media/sports/logos/EGwD4_SUlmwZWbnHhcmTPA_96x96.png" style="width:64px;height:48px">
+                                        <img src="assets/images/team/{{matchModel.team2Name.split(':')[1]}}.png" style="width:64px;height:48px">
                                     </div>
                                     <div class="cric-overflow-hide">
-                                        <span>South Africa</span>
+                                        <span>{{matchModel.team2Name.split(':')[0]}}</span>
                                     </div>
                                 </div>
 
@@ -53,12 +53,12 @@
 
                     <div class="margin-top1rem">
                         <div class="text-center">
-                            <div class="text-center mt-2">ENG won the Super Over</div>
+                            <div class="text-center mt-2">{{matchModel.gameNote}}</div>
 
                         </div>
 
                         <div class="text-center">
-                            <div class="text-center mt-2">ODI</div>
+                            <div class="text-center mt-2">{{matchModel.gameClass}}</div>
 
                         </div>
                     </div>
@@ -70,10 +70,10 @@
 
     <mat-tab-group animationDuration="0ms">
         <mat-tab label="Summary">
-            <app-summary></app-summary>
+            <app-summary [matchModel]="matchModel"></app-summary>
         </mat-tab>
         <mat-tab label="Scorecard">
-            <app-scorecard></app-scorecard>
+            <app-scorecard  [matchModel]="matchModel"></app-scorecard>
         </mat-tab>
         <mat-tab label="Commentary">
             <app-commentary></app-commentary>
