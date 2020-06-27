@@ -26,8 +26,7 @@
                                         <tr class="scr-hd-br">
                                             <td class="plyr-img-td">
                                                 <div>
-                                                    <img class="mom-img img-border" src="/assets/images/player/{{battingScoreLeaf.playerName.split(':')[1]}}.png"
-                                                                                      style="width:42px;height:42px" alt="">
+                                                    <img class="mom-img img-border" src="/assets/images/player/{{battingScoreLeaf.playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="">
                                                 </div>
                                             </td>
                                             <td class="stat-td">
@@ -58,15 +57,15 @@
                                     </tbody>
                                     <tbody>
                                         <tr class="scr-hd-br ex-tr">
-                                            <td colspan="2">Extras</td>
-                                            <td>{{scorecard.inningsInfo.extras}}</td>
-                                            <td colspan="4">(W {{scorecard.inningsInfo.wides}}, LB {{scorecard.inningsInfo.legByes}}, B {{scorecard.inningsInfo.byes}}, NB {{scorecard.inningsInfo.noBalls}})</td>
+                                            <td colspan="2" class="stat-td">Extras</td>
+                                            <td class="stat-td det-de">{{scorecard.inningsInfo.extras}}</td>
+                                            <td colspan="4" class="stat-td det-de" style="font-size: smaller;">(W {{scorecard.inningsInfo.wides}}, LB {{scorecard.inningsInfo.legByes}}, B {{scorecard.inningsInfo.byes}}, NB {{scorecard.inningsInfo.noBalls}})</td>
 
                                         </tr>
                                         <tr class="scr-hd-br ex-tr">
-                                            <td colspan="2">Total Runs</td>
-                                            <td>{{scorecard.inningsInfo.runs}}</td>
-                                            <td colspan="4">({{scorecard.inningsInfo.wickets}} wkts, {{scorecard.inningsInfo.overs}} ov)</td>
+                                            <td colspan="2" class="stat-td">Total Runs</td>
+                                            <td class="stat-td det-de">{{scorecard.inningsInfo.runs}}</td>
+                                            <td colspan="4" class="stat-td det-de" style="font-size: smaller;">({{scorecard.inningsInfo.wickets}} wkts, {{scorecard.inningsInfo.overs}} ov)</td>
 
                                         </tr>
 

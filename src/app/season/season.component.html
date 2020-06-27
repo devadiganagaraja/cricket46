@@ -1,55 +1,78 @@
+<div class="cric-container" *ngIf="season">
+    <div>
+
+        <div class="cric-pad-top2rem border-bottom padding-bottom2rem">
+            <div class="event-div">
+                <div>
+                    <span class="season-head">{{season.name}}</span>
+                </div>
+                <div>
+                    <span style="color: #80868b;">
+                    {{season.startDate | date: 'longDate'}} - {{season.endDate | date: 'longDate'}}</span>
+                </div>
+            </div>
+        </div>
 
 
 
- <div class="container">
+        <div>
+            <div>
+                <div class="league-container">
+                    <div class="det-cont">
+                        <!-- batting -->
+                        <div>
+                            <div>
+                                <table class="score-tbl">
+                                    <thead>
+                                        <tr class="scr-hd-br">
+                                            <th scope="col" style="width:15rem">Start Date</th>
+                                            <th scope="col">Match Details</th>
+                                            <th scope="col" style="width:10rem">Time</th>
+                                            <!-- <th scope="col" class="text-center head-desc" >4s</th>
+                                            <th scope="col" class="text-center head-desc" >6s</th>
+                                            <th scope="col" class="text-center head-desc" >S/R</th> -->
+                                            <!-- <th style="width:18px"></th> -->
+                                        </tr>
+                                    </thead>
+
+                                    <tbody *ngFor='let match of matches'>
+                                        <tr></tr>
+                                        <tr class="scr-hd-br">
+                                            <td class="stat-td" style="width:15rem">
+                                                {{match.date | date: 'longDate'}}
+                                            </td>
+                                            <td class="stat-td">
+                                                <div><span><u  class="pointr" (click)='viewMatch(match.id)'>{{match.team1Name.split(':')[0]}} vs {{match.team2Name.split(':')[0]}}</u>, {{match.gameClass}}</span> </div>
+                                                <div class="note-det"> <span>{{match.gameNote}}</span></div>
+                                            </td>
+                                            <td class="stat-td" style="width:10rem">
+                                                <span> {{match.date | date: 'shortTime'}} IST</span>
+                                            </td>
+
+                                            <!-- <td style="width:18px"></td> -->
+
+                                        </tr>
+
+                                        <tr></tr>
+
+                                    </tbody>
 
 
-    <dl class="row">
-        <dt class="col-sm-3">Name</dt>
-        <dd class="col-sm-9">{{season.name}}</dd>
-      
-        <dt class="col-sm-3">Short Name</dt>
-        <dd class="col-sm-9">
-            {{season.shortName}}
-        </dd>
-        <dt class="col-sm-3">Year</dt>
-        <dd class="col-sm-9">
-            {{season.year}}
-        </dd>
-        <dt class="col-sm-3">Start Date</dt>
-        <dd class="col-sm-9">
-            {{season.startDate | date: 'longDate'}}
-        </dd>
+                                </table>
+                            </div>
+                            <div class="scr-hd-br"></div>
+                        </div>
+                    </div>
 
-        <dt class="col-sm-3">End Date</dt>
-        <dd class="col-sm-9">
-            {{season.endDate | date: 'longDate'}}
-        </dd>
-      </dl>
 
-      <h2>List of matches</h2>
+                </div>
 
-     <table class="table">
-     
- 
-         <thead>
-             <tr>
 
-                 <th>Name</th>
-                 <th>Start Date</th>
-                 
-                 
-                 <th></th>
-             </tr>
- 
-         </thead>
-         <tbody>
-             <tr *ngFor='let match of matches'>
-                 <td>{{match.name}}</td>
-                 <td>{{match.date | date: 'longDate'}}</td>
-                
-                 <td><button (click) = 'viewMatch(match.id)' class="btn btn-info">View</button></td>
-             </tr>
-         </tbody>
-     </table>
- </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

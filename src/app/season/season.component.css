@@ -1,0 +1,37 @@
+.season-head {
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.league-container {
+    padding-bottom: 24px;
+    border-bottom: solid 1px #ebebeb;
+}
+
+.det-cont {
+    padding-left: 24px;
+    padding-top: 16px;
+}
+
+.score-tbl {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    text-align: left;
+}
+
+.scr-hd-br {
+    border-bottom: 1px solid #ebebeb;
+}
+
+.stat-td {
+    padding-top: 8px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+}
+
+.note-det {
+    padding-bottom: 10px;
+    font-size: 13px;
+    font-weight: 200;
+}
