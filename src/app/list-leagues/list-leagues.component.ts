@@ -27,9 +27,9 @@ export class ListLeaguesComponent implements OnInit {
     this.leagues = response;
   }
 
-  viewLeague(league){
-    console.log("league id::"+league)
-    this.router.navigate(["leagues", league])
+  viewLeague(leagueid){
+    // console.log("league id::"+league)
+    this.router.navigate(["leagues", leagueid])
   }
 
 

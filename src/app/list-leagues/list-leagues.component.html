@@ -1,31 +1,96 @@
+<div class="cric-container">
+    <div>
 
- <h1>List of leagues</h1>
+        <div class="cric-pad-top2rem border-bottom padding-bottom2rem">
+            <div class="event-div">
+                <div>
+                    <span class="season-head">Series</span>
+                </div>
+
+            </div>
+        </div>
 
 
- <div class="container">
-     <table class="table">
-     
- 
-         <thead>
-             <tr>
-                 <th>Id</th>
-                 <th>Abbreviation</th>
-                 <th>Name</th>
-                 <th>Tournament</th> 
-                 <th></th>    
-             </tr>
- 
-         </thead>
-         <tbody>
-             <tr *ngFor='let league of leagues'>
-                 <td>{{league.id}}</td>
-                 <td>{{league.abbreviation}}</td>
-                 <td>{{league.name}}</td>
-                 <td>{{league.tournament}}</td>
-                 <td><button (click) = viewLeague(league.id) class="btn btn-info">View</button></td>
 
-             </tr>
- 
-         </tbody>
-     </table>
- </div>
+        <div>
+            <div>
+                <div class="tab-container">
+                    <div class="det-cont">
+                        <!-- batting -->
+                        <div>
+                            <div>
+                                <table class="cric-tbl">
+                                    <!-- <thead>
+                                        <tr class="scr-hd-br">
+                                            <th scope="col">Name</th>
+
+                                        </tr>
+                                    </thead> -->
+
+                                    <tbody *ngFor='let league of leagues'>
+                                        <tr></tr>
+                                        <tr class="scr-hd-br">
+                                            <td class="stat-td" style="width:15rem">
+                                                <span class="pointr" (click)=viewLeague(league.id)><u>{{league.name}}</u>  </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr></tr>
+
+                                    </tbody>
+
+
+                                </table>
+                            </div>
+                            <div class="scr-hd-br"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+<!-- 
+
+<h1>List of leagues</h1>
+
+
+<div class="container">
+    <table class="table">
+
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Abbreviation</th>
+                <th>Name</th>
+                <th>Tournament</th>
+                <th></th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor='let league of leagues'>
+                <td>{{league.id}}</td>
+                <td>{{league.abbreviation}}</td>
+                <td>{{league.name}}</td>
+                <td>{{league.tournament}}</td>
+                <td><button (click)=v iewLeague(league.id) class="btn btn-info">View</button></td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div> -->
