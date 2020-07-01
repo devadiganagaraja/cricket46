@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6 row center-align-item">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                    <div><img alt="" src="assets/images/team/{{matchModel.team1Name.split(':')[1]}}.png" style="width:64px;height:48px"></div>
+                                    <div><img alt="" src="{{imageHostName}}/teams/{{matchModel.team1Name.split(':')[1]}}.png" style="width:64px;height:48px"></div>
                                     <div class="cric-overflow-hide"><span>{{matchModel.team1Name.split(':')[0]}}</span></div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-center">
@@ -37,7 +37,7 @@
 
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-center">
                                     <div>
-                                        <img src="assets/images/team/{{matchModel.team2Name.split(':')[1]}}.png" style="width:64px;height:48px">
+                                        <img src="{{imageHostName}}/teams/{{matchModel.team2Name.split(':')[1]}}.png" style="width:64px;height:48px">
                                     </div>
                                     <div class="cric-overflow-hide">
                                         <span>{{matchModel.team2Name.split(':')[0]}}</span>
@@ -85,91 +85,3 @@
     </mat-tab-group>
 
 </div>
-<!-- <div class="padd1rem">
-    <div>
-
-        <span style="color:#232ebf">Cricket World Cup</span>
-        <span> · </span>
-        <span>14/7/19</span>
-    </div>
-
-    <div class="container ">
-        <div class="row  mt-2">
-            <div class="col-2">
-                <div><img alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/-6moqr0dxYpIhERhbiVLSA_96x96.png" style="width:64px;height:48px"></div>
-                <div><span>Sri Lanka</span></div>
-            </div>
-            <div class="col-3">
-
-            </div>
-            <div class="col-1">
-                <div>203</div>
-                <div>(49.3)</div>
-            </div>
-
-            <div class="col-1">
-                <div>206/1</div>
-                <div>(37.2)</div>
-            </div>
-            <div class="col-3">
-
-            </div>
-            <div class="col-2">
-                <div>
-                    <img src="//ssl.gstatic.com/onebox/media/sports/logos/EGwD4_SUlmwZWbnHhcmTPA_96x96.png" style="width:64px;height:48px">
-                </div>
-                <div>
-                    <span>South Africa</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="text-center mt-2">ENG won the Super Over</div>
-
-
-</div> -->
-
-<!-- <div class="list-group mt-4">
-    <ul ngbNav #nav="ngbNav" [(activeId)]="active">
-        <li [ngbNavItem]="1" class="list-group-item">
-            <a ngbNavLink> SUMMARY</a>
-            <ng-template ngbNavContent>
-                <div class="container">
-                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-                        synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-                </div>
-            </ng-template>
-        </li>
-        <li [ngbNavItem]="2" class="list-group-item">
-            <a ngbNavLink>SCORECARD</a>
-            <ng-template ngbNavContent>
-                <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
-                    PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard
-                    ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-            </ng-template>
-        </li>
-        <li [ngbNavItem]="3" class="list-group-item">
-            <a ngbNavLink>COMMENTS</a>
-            <ng-template ngbNavContent>
-                <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio. Duis pharetra
-                    et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec tristique ipsum euismod
-                    facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus nec tortor vel tellus
-                    pulvinar feugiat.</p>
-            </ng-template>
-        </li>
-
-        <li [ngbNavItem]="4" class="list-group-item">
-            <a ngbNavLink>NEWS</a>
-            <ng-template ngbNavContent>
-                <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio. Duis pharetra
-                    et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec tristique ipsum euismod
-                    facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus nec tortor vel tellus
-                    pulvinar feugiat.</p>
-            </ng-template>
-        </li>
-    </ul>
-
-    <div [ngbNavOutlet]="nav" class="mt-2"></div>
-
-    <pre>Active: {{ active }}</pre>
-</div> -->

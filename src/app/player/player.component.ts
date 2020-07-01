@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserDataService } from '../service/data/user-data.service';
 import { PlayerDataService} from '../service/data/player-data.service';
 import { PlayerModel } from '../player/playerModel';
+import {IMAGE_S3_BUCKET_URL} from 'src/app/constants';
 
 @Component({
   selector: 'app-player',
@@ -24,8 +25,8 @@ export class PlayerComponent implements OnInit {
     private router : Router) { }
 
     playerId: number
-    //player: Player = new Player()
 
+    imageHostName : string = IMAGE_S3_BUCKET_URL
 
   ngOnInit(): void {
 
