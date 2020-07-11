@@ -21,7 +21,7 @@
                             </div>
 
                             <div style="float: right;">
-                                <img src="" style="width:64px;height:64px" alt="" aria-hidden="true" data-url=""
+                                <img src="{{imageHostName}}/players/{{matchModel.manOfTheMatch.playerName.split(':')[1]}}.png" style="width:64px;height:64px" alt="" aria-hidden="true" data-url=""
                                     role="link" tabindex="0" class="mom-img">
 
                             </div>
@@ -40,7 +40,7 @@
                                     <span class="summary-hr"></span>
                                     <span class="summary-team-span">
                                         <span class="team-logo-span">
-                                            <img class="imso_btl__mh-logo" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png" style="width:20px;height:20px">
+                                            <img class="imso_btl__mh-logo" alt="" src="{{imageHostName}}/teams/{{leader.inningsInfo.battingTeamName.split(':')[1]}}.png" style="width:20px;height:20px">
                                         </span>
                                     <span>{{leader.inningsInfo.battingTeamName.split(':')[0]}}</span>
                                     <span>.</span>
@@ -57,17 +57,22 @@
                                             <tr  *ngFor="let p of leader.battingLeaders;let i = index">
                                                 <td class="player-sum-td">
                                                     <div class="bat-sum-div">
-                                                        <img class="mom-img img-border" src="" style="width:42px;height:42px" alt="" aria-hidden="true" role="link">
+                                                        <img class="mom-img img-border" src="{{imageHostName}}/players/{{leader.battingLeaders[i].playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="" aria-hidden="true" role="link">
                                                     </div>
-                                                    <div class="player-name-div">{{leader.battingLeaders[i].playerName.split(':')[0]}}</div>
+                                                    
+                                                    <div class="player-name-div">
+                                                        <span class="pointr" (click)="viewPlayer(leader.battingLeaders[i].playerName.split(':')[1])">  {{leader.battingLeaders[i].playerName.split(':')[0]}} </span>
+                                                    </div>
                                                     <div>{{leader.battingLeaders[i].runs}} ({{leader.battingLeaders[i].balls}})</div>
                                                 </td>
 
                                                 <td class="player-sum-td">
                                                     <div class="bowl-sum-div">
-                                                        <img class="mom-img img-border" src="" style="width:42px;height:42px" alt="" aria-hidden="true" role="link">
+                                                        <img class="mom-img img-border" src="{{imageHostName}}/players/{{leader.bowlingLeaders[i].playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="" aria-hidden="true" role="link">
                                                     </div>
-                                                    <div class="player-name-div text-right">{{leader.bowlingLeaders[i].playerName.split(':')[0]}}</div>
+                                                    <div class="player-name-div text-right">
+                                                        <span class="pointr" (click)="viewPlayer(leader.bowlingLeaders[i].playerName.split(':')[1])">  {{leader.bowlingLeaders[i].playerName.split(':')[0]}} </span>
+                                                    </div>
                                                     <div class="text-right">{{leader.bowlingLeaders[i].wickets}}/{{leader.bowlingLeaders[i].runs}} ({{leader.bowlingLeaders[i].overs}})</div>
 
 

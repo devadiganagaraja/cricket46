@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatchDataService } from '../service/data/match-data.service';
 import { PlayerModel } from '../player/playerModel';
 import { MatchModel } from './MatchModel';
+import {IMAGE_S3_BUCKET_URL} from 'src/app/constants';
 
 @Component({
   selector: 'app-match',
@@ -15,6 +16,8 @@ export class MatchComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router : Router, private matchDataService : MatchDataService) { }
+
+    imageHostName : string = IMAGE_S3_BUCKET_URL
 
     matchId: number
 

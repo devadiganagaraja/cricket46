@@ -26,11 +26,13 @@
                                         <tr class="scr-hd-br">
                                             <td class="plyr-img-td">
                                                 <div>
-                                                    <img class="mom-img img-border" src="/assets/images/player/{{battingScoreLeaf.playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="">
+                                                    <img class="mom-img img-border" src="{{imageHostName}}/players/{{battingScoreLeaf.playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="">
                                                 </div>
                                             </td>
                                             <td class="stat-td">
-                                                <div>{{battingScoreLeaf.playerName.split(':')[0]}}</div>
+                                                <div> 
+                                                     <span class="pointr" (click)="viewPlayer(battingScoreLeaf.playerName.split(':')[1])">  {{battingScoreLeaf.playerName.split(':')[0]}} </span>
+                                                </div>
                                                 <div class="wkt-det"> <span>{{battingScoreLeaf.dismissalText}}</span></div>
                                             </td>
                                             <td class="stat-td det-de">
@@ -103,11 +105,11 @@
                                         <tr class="scr-hd-br">
                                             <td class="plyr-img-td">
                                                 <div>
-                                                    <img class="mom-img img-border" src="/assets/images/player/{{bowlingScoreLeaf.playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="">
+                                                    <img class="mom-img img-border" src="{{imageHostName}}/players/{{bowlingScoreLeaf.playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="">
                                                 </div>
                                             </td>
                                             <td class="stat-td">
-                                                <div> {{bowlingScoreLeaf.playerName.split(':')[0]}}</div>
+                                                <span class="pointr" (click)="viewPlayer(bowlingScoreLeaf.playerName.split(':')[1])">  {{bowlingScoreLeaf.playerName.split(':')[0]}} </span>
                                             </td>
                                             <td class="stat-td det-de">
                                                 <span>{{bowlingScoreLeaf.overs}}</span>
