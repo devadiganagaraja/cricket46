@@ -15,6 +15,27 @@
     padding-bottom: 1rem;
 }
 
+.first-score {
+    float: left;
+    width: 64px;
+}
+
+.second-score {
+    float: left;
+    width: 64px;
+}
+
+.team-live-div {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.live-div {
+    padding: 16px 80px 16px 80px;
+    border-top: 1px solid #eae4e4
+}
+
 .team2-div {
     margin: 0rem 15px;
 }

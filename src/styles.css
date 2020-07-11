@@ -104,3 +104,11 @@ body {
     padding-bottom: 24px;
     border-bottom: solid 1px #ebebeb;
 }
+
+.left-float {
+    float: left;
+}
+
+.right-float {
+    float: right;
+}
