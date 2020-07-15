@@ -23,6 +23,8 @@ export class MatchComponent implements OnInit {
 
     matchModel: MatchModel
 
+    live: boolean = false
+
   ngOnInit(): void {
     this.matchId = this.route.snapshot.params["matchId"] 
     console.log("this.matchId:::::"+this.matchId)
@@ -30,6 +32,9 @@ export class MatchComponent implements OnInit {
     this.matchDataService.retrieveMatch(this.matchId).subscribe(response => 
       {
         this.matchModel=response
+        if(response.gameStatus == 'live'){
+          this.live =true;
+        }
       }, 
       error => {
         console.log("error==>"+error)

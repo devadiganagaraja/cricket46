@@ -8,15 +8,24 @@ export class MatchModel {
     team1Name: string;
     team2Name: string;
     date: Date;
-    team1Score: string;
-    team2Score: string;
-    team1Overs: string;
-    team2Overs: string;
+    team1Score: string[];
+    team2Score: string[];
+    team1Overs: string[];
+    team2Overs: string[];
+    gameStatus: string
     scoreCards: ScoreCard[]
     leaders: Leaders[]
     manOfTheMatch: ManOfTheMatch
     toss: string;
     venue: string;
+    liveScore: LiveScore;
+}
+
+export class LiveScore{
+    striker: BattingScoreLeaf;
+    nonStriker: BattingScoreLeaf;
+    bowler: BowlingScoreLeaf;
+    otherBowler: BowlingScoreLeaf;
 }
 
 export class ManOfTheMatch {
@@ -46,6 +55,7 @@ export class InningsInfo{
     battingTeamName: string;
     liveInnings: boolean;
     extras: number;
+    inningsName: string;
 }
 
 

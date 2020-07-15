@@ -1,5 +1,5 @@
-<mat-tab-group animationDuration="0ms">
-    <mat-tab *ngFor="let scorecard of matchModel.scoreCards" label="{{scorecard.inningsInfo.battingTeamName.split(':')[0]}}">
+<mat-tab-group animationDuration="0ms" [selectedIndex]="matchModel.scoreCards.length -1">
+    <mat-tab *ngFor="let scorecard of matchModel.scoreCards"  label="{{scorecard.inningsInfo.battingTeamName.split(':')[0]}}  {{scorecard.inningsInfo.inningsName}}">
         <div>
             <div>
                 <div class="tab-container">
@@ -58,11 +58,21 @@
 
                                     </tbody>
                                     <tbody>
+
+                                        <tr class="scr-hd-br ex-tr">
+                                            <td colspan="1" class="stat-td">DNB</td>
+                                            <td colspan="5">
+                                            <span class="pointr" (click)="viewPlayer(yetToBatPlayer.playerName.split(':')[1])" *ngFor="let yetToBatPlayer of scorecard.battingScoreCard.yetToBat; let isLast=last">
+
+                                                {{yetToBatPlayer.playerName.split(':')[0]}}{{isLast ? '' : ', '}}
+                                            </span>
+                                            </td>
+                                        </tr>
+
                                         <tr class="scr-hd-br ex-tr">
                                             <td colspan="2" class="stat-td">Extras</td>
                                             <td class="stat-td det-de">{{scorecard.inningsInfo.extras}}</td>
                                             <td colspan="4" class="stat-td det-de" style="font-size: smaller;">(W {{scorecard.inningsInfo.wides}}, LB {{scorecard.inningsInfo.legByes}}, B {{scorecard.inningsInfo.byes}}, NB {{scorecard.inningsInfo.noBalls}})</td>
-
                                         </tr>
                                         <tr class="scr-hd-br ex-tr">
                                             <td colspan="2" class="stat-td">Total Runs</td>
