@@ -6,13 +6,14 @@
             <div class="imspo_cmt__cmt-os" *ngIf='overCommentary.overSummary.complete'>
                 <div class="imspo_cmt__os-hd">End of over {{overCommentary.overSummary.overNo}}<span class="imspo_cmt__os-tm-fr">{{overCommentary.inningCommentarySummary.battingTeamName.split(':')[0]}} {{overCommentary.inningCommentarySummary.totalRuns}}/{{overCommentary.inningCommentarySummary.wickets}}</span></div><div class="imspo_cmt__os-tx-sz">
                     <div class="imspo_cmt__os-tr">{{overCommentary.overSummary.totalRuns}} Run<span class="imspo_cmt__os-tr-ws"> · </span></div>
-                    
-                    <div class="imspo_cmt__os-bo-sz" [innerHTML] = "overCommentary.overRunsSummary">
+                    <div class="imspo_cmt__os-bo-sz" [innerHTML] = "overCommentary.overRunsSummary"></div>    
                     <div class="imspo_cmt__os-rr">RR: {{overCommentary.inningCommentarySummary.runRate}}</div></div>
                     <div class="imspo_cmt__os-hr"><div class="imspo_cmt__os-pl-sc">
                         <div>{{overCommentary.ballCommentarySet[0].batsmanSummary.batsmanName.split(':')[0]}}<span class="imspo_cmt__os-fr">{{overCommentary.ballCommentarySet[0].batsmanSummary.batsmanRuns}}* ({{overCommentary.ballCommentarySet[0].batsmanSummary.batsmanBalls}})</span></div>
                         <div>{{overCommentary.ballCommentarySet[0].otherBatsmanSummary.batsmanName.split(':')[0]}}<span class="imspo_cmt__os-fr">{{overCommentary.ballCommentarySet[0].otherBatsmanSummary.batsmanRuns}} ({{overCommentary.ballCommentarySet[0].otherBatsmanSummary.batsmanBalls}})</span></div></div>
                         <div class="imspo_cmt__os-pl-sc imspo_cmt__os-fr">{{overCommentary.ballCommentarySet[0].bowlerSummary.bowlerName.split(':')[0]}}<span class="imspo_cmt__os-fr">{{overCommentary.ballCommentarySet[0].bowlerSummary.bowlerWickets}}/{{overCommentary.ballCommentarySet[0].bowlerSummary.bowlerRuns}} ({{overCommentary.ballCommentarySet[0].bowlerSummary.bowlerOvers}})</span></div></div> 
+            
+            
                     </div>
             <div *ngFor='let ballCommentary of overCommentary.ballCommentarySet'>
                 <div>
@@ -33,7 +34,7 @@
 
                                     </ng-template>
                                 </td>
-                                <td style="font-family: arial,sans-serif;font-weight: normal;">{{ballCommentary.ballSummary.overActual}}: {{ballCommentary.ballSummary.shortText}}. {{ballCommentary.ballSummary.text}}</td>
+                                <td style="font-family: arial,sans-serif;font-weight: normal;">{{ballCommentary.ballSummary.overActual}}: {{ballCommentary.ballSummary.shortText}}. <br>{{ballCommentary.ballSummary.text}}</td>
                             </tr>
                         </tbody>
                     </table>
