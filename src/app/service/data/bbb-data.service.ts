@@ -14,11 +14,7 @@ export class GameCommentary{
 
 export class InningsComment{
   constructor( 
-            public inningsNo: number,
-            public totalRuns: number,
-            public wickets: number,
-            public oversUnique: number,
-            private battingTeamName: string,
+            public inningsNumber: number,
             private overCommentarySet: OverCommentary[]
             ){
   }
@@ -28,8 +24,21 @@ export class InningsComment{
 export class OverCommentary{
   constructor( 
             public overNumber: number,
+            public overRunsSummary: String,
+            public inningCommentarySummary: InningCommentarySummary,
             public overSummary: OverSummary,
             public ballCommentarySet: BallCommentary[]
+            ){
+  }
+}
+
+export class InningCommentarySummary{
+  constructor( 
+            public inningsNo: number,
+            public totalRuns: number,
+            public wickets: number,
+            public oversUnique: number,
+            public battingTeamName: string
             ){
   }
 }

@@ -56,6 +56,21 @@ td {
     width: calc(100% - 180px);
 }
 
+.runSummaryPadding {
+    padding-left: 3px;
+}
+.runSummaryColorGreen {
+    color: green; font-weight: bold;
+}
+
+.runSummaryColorRed {
+    color: red; font-weight: bold;
+}
+
+.runSummaryColorPurple {
+    color: purple; font-weight: bold;
+}
+
 
 .imspo_cmt__os-rr {
     display: inline-block;
@@ -83,3 +98,6 @@ td {
 .imspo_cmt__os-bo-bd {
     font-weight: bold;
 }
+
+
+

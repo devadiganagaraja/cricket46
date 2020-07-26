@@ -25,20 +25,35 @@ export class MatchComponent implements OnInit {
 
     live: boolean = false
 
+    interval: any;
+
+
   ngOnInit(): void {
     this.matchId = this.route.snapshot.params["matchId"] 
     console.log("this.matchId:::::"+this.matchId)
 
+    this.refreshData();
+    if(this.live){
+        this.interval = setInterval(() => { 
+          this.refreshData(); 
+      }, 20000);
+    }
+  }
+
+
+  refreshData(){
     this.matchDataService.retrieveMatch(this.matchId).subscribe(response => 
       {
         this.matchModel=response
         if(response.gameStatus == 'live'){
+          console.log("refreshing this.matchId:::::"+this.matchId)
           this.live =true;
         }
       }, 
       error => {
         console.log("error==>"+error)
-      })
-  }
+      });
+    }
+
 
 }

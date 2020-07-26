@@ -4,15 +4,15 @@
         
         <div>
             <div class="imspo_cmt__cmt-os" *ngIf='overCommentary.overSummary.complete'>
-                <div class="imspo_cmt__os-hd">End of over {{overCommentary.overSummary.overNo}}<span class="imspo_cmt__os-tm-fr">{{inningComment.inningCommentarySummary.battingTeamName.split(':')[0]}} {{inningComment.inningCommentarySummary.totalRuns}}/{{inningComment.inningCommentarySummary.wickets}}</span></div><div class="imspo_cmt__os-tx-sz">
+                <div class="imspo_cmt__os-hd">End of over {{overCommentary.overSummary.overNo}}<span class="imspo_cmt__os-tm-fr">{{overCommentary.inningCommentarySummary.battingTeamName.split(':')[0]}} {{overCommentary.inningCommentarySummary.totalRuns}}/{{overCommentary.inningCommentarySummary.wickets}}</span></div><div class="imspo_cmt__os-tx-sz">
                     <div class="imspo_cmt__os-tr">{{overCommentary.overSummary.totalRuns}} Run<span class="imspo_cmt__os-tr-ws"> · </span></div>
-                    <div class="imspo_cmt__os-bo-sz"><span><span class="imspo_cmt__os-bo-bd">1 </span></span><span><span>0 </span></span><span><span>0 </span></span><span><span>0 </span></span><span><span>0 </span></span><span><span>0 </span></span></div><div class="imspo_cmt__os-rr">RR: 3.06</div></div>
+                    
+                    <div class="imspo_cmt__os-bo-sz" [innerHTML] = "overCommentary.overRunsSummary">
+                    <div class="imspo_cmt__os-rr">RR: {{overCommentary.inningCommentarySummary.runRate}}</div></div>
                     <div class="imspo_cmt__os-hr"><div class="imspo_cmt__os-pl-sc">
                         <div>{{overCommentary.ballCommentarySet[0].batsmanSummary.batsmanName.split(':')[0]}}<span class="imspo_cmt__os-fr">{{overCommentary.ballCommentarySet[0].batsmanSummary.batsmanRuns}}* ({{overCommentary.ballCommentarySet[0].batsmanSummary.batsmanBalls}})</span></div>
                         <div>{{overCommentary.ballCommentarySet[0].otherBatsmanSummary.batsmanName.split(':')[0]}}<span class="imspo_cmt__os-fr">{{overCommentary.ballCommentarySet[0].otherBatsmanSummary.batsmanRuns}} ({{overCommentary.ballCommentarySet[0].otherBatsmanSummary.batsmanBalls}})</span></div></div>
                         <div class="imspo_cmt__os-pl-sc imspo_cmt__os-fr">{{overCommentary.ballCommentarySet[0].bowlerSummary.bowlerName.split(':')[0]}}<span class="imspo_cmt__os-fr">{{overCommentary.ballCommentarySet[0].bowlerSummary.bowlerWickets}}/{{overCommentary.ballCommentarySet[0].bowlerSummary.bowlerRuns}} ({{overCommentary.ballCommentarySet[0].bowlerSummary.bowlerOvers}})</span></div></div> 
-            
-            
                     </div>
             <div *ngFor='let ballCommentary of overCommentary.ballCommentarySet'>
                 <div>
@@ -20,9 +20,20 @@
                         <tbody>
                             <tr>
                                 <td style="vertical-align: text-top;width: 48px;font-family: arial,sans-serif-medium,sans-serif;font-weight: normal;">
-                                    <div style="background-color: #f5f5f5; color: #616161;border-radius: 2px;display: table-cell;font-size: 14px;height: 24px;text-align: center;vertical-align: middle;width: 24px;">{{ballCommentary.ballSummary.runs}}</div>
+
+                                    <div  *ngIf="ballCommentary.dismissalSummary.dismissal; else notDismissal" style="background-color: red; color: #fff;;border-radius: 2px;display: table-cell;font-size: 14px;height: 24px;text-align: center;vertical-align: middle;width: 24px;">W</div>
+
+                                    <ng-template #notDismissal>
+            
+                                        <div *ngIf="ballCommentary.ballSummary.runs >= 4 && ballCommentary.ballSummary.runs < 6" style=" background-color: #259b24; color: #fff;border-radius: 2px;display: table-cell;font-size: 14px;height: 24px;text-align: center;vertical-align: middle;width: 24px;">{{ballCommentary.ballSummary.runs}}</div>
+
+                                        <div *ngIf="ballCommentary.ballSummary.runs >= 6" style=" background-color:purple; color: #fff;border-radius: 2px;display: table-cell;font-size: 14px;height: 24px;text-align: center;vertical-align: middle;width: 24px;">{{ballCommentary.ballSummary.runs}}</div>
+
+                                        <div  *ngIf="ballCommentary.ballSummary.runs < 4" style="background-color: #f5f5f5; color: #616161;border-radius: 2px;display: table-cell;font-size: 14px;height: 24px;text-align: center;vertical-align: middle;width: 24px;">{{ballCommentary.ballSummary.runs}}</div>
+
+                                    </ng-template>
                                 </td>
-                                <td style="font-family: arial,sans-serif;font-weight: normal;">{{ballCommentary.ballSummary.overActual}}: {{ballCommentary.ballSummary.text}}.</td>
+                                <td style="font-family: arial,sans-serif;font-weight: normal;">{{ballCommentary.ballSummary.overActual}}: {{ballCommentary.ballSummary.shortText}}. {{ballCommentary.ballSummary.text}}</td>
                             </tr>
                         </tbody>
                     </table>
