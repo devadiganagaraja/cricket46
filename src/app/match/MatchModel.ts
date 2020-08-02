@@ -1,3 +1,5 @@
+
+import {GameCommentary} from '../service/data/bbb-data.service';
 export class MatchModel {
     id: number;
     leagueId: number;
@@ -19,6 +21,7 @@ export class MatchModel {
     toss: string;
     venue: string;
     liveScore: LiveScore;
+    gameCommentary: GameCommentary;
 }
 
 export class LiveScore{
