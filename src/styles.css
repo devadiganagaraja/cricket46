@@ -61,7 +61,6 @@ body {
     background-color: white;
 }
 
-
 .cric-league-season-container {
     margin: 0 auto;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .16);
@@ -91,6 +90,14 @@ body {
     border-bottom: 1px solid #ebebeb;
 }
 
+.scr-hd-br-rt {
+    border-right: 1px solid #ebebeb !important;
+}
+
+.scr-hd-br-lt {
+    border-left: 1px solid #ebebeb !important;
+}
+
 .stat-td {
     padding-top: 8px;
     padding-bottom: 2px;
@@ -117,5 +124,17 @@ body {
 }
 
 .right-float {
+    float: right;
+}
+
+.ellipsisize {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sm_mt__t-sc {
+    padding-left: 8px;
+    text-align: right;
     float: right;
 }
