@@ -391,6 +391,14 @@
     overflow-y: auto;
 }
 
+.event-overflow::-webkit-scrollbar {
+    width: 2px;
+}
+
+.event-overflow::-webkit-scrollbar-thumb {
+    border: 2px solid #17abcc;
+}
+
 @media (max-width:1100px) {
     .left-float {
         float: none;
