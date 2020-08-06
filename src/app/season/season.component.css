@@ -9,18 +9,6 @@
     font-weight: 200;
 }
 
-.league-live-events {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    border-bottom: solid 1px #ebebeb;
-}
-
 .league-live-events-heading {
     font-size: 20px;
     text-align: left;
@@ -33,145 +21,6 @@
     font-family: arial, sans-serif-medium, sans-serif;
     font-weight: normal;
     font-size: initial;
-}
-
-.league-live-event {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-}
-
-.league-live-event-tb {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.league-live-event-td {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    border-collapse: collapse;
-    border-right: solid 1px #e0e0e0;
-    width: 50%;
-}
-
-.league-live-event-td-div {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    border-collapse: collapse;
-    outline: none;
-}
-
-.league-live-event-td-div-div {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    border-collapse: collapse;
-    cursor: pointer;
-}
-
-.league-live-event-td-div-div-div {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    border-collapse: collapse;
-    cursor: pointer;
-}
-
-.league-live-event-td-div-div-div-table {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    cursor: pointer;
-    width: 100%;
-    table-layout: fixed;
-    border-spacing: 0;
-    min-height: 108px;
-}
-
-.league-live-event-td-div-div-div-table-tr {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    cursor: pointer;
-    border-spacing: 0;
-    height: 16px;
-}
-
-.league-live-event-td-div-div-div-team-tr {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    cursor: pointer;
-    border-spacing: 0;
-    height: 32px;
-}
-
-.league-live-event-td-div-div-div-team-td {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #222;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    cursor: pointer;
-    border-spacing: 0;
-    vertical-align: top;
-    box-sizing: border-box;
-    padding: 0 16px 0;
-    width: 64px;
-    padding-left: 24px;
 }
 
 .league-live-event-td-div-div-div-team-td-image {
@@ -187,40 +36,6 @@
     border-spacing: 0;
     width: 24px;
     height: 24px;
-}
-
-.league-live-event-td-div-div-div-team-td-name {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    cursor: pointer;
-    border-spacing: 0;
-    padding-top: 2px;
-    line-height: 20px;
-    vertical-align: top;
-    position: relative;
-    color: #212121;
-}
-
-.league-live-event-td-div-div-div-team-score {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    visibility: inherit;
-    text-align: left;
-    white-space: normal;
-    user-select: none;
-    cursor: pointer;
-    border-spacing: 0;
-    padding-top: 2px;
-    line-height: 20px;
-    vertical-align: top;
-    position: relative;
-    color: #212121;
 }
 
 .score-tbl {
@@ -378,6 +193,14 @@
     width: 25%;
 }
 
+.tbl-wdt-70 {
+    width: 70%;
+}
+
+.tbl-wdt-15 {
+    width: 15%;
+}
+
 .seson-det-container {
     height: 595px;
 }
@@ -399,6 +222,10 @@
     border: 2px solid #17abcc;
 }
 
+.inline {
+    display: inline-block;
+}
+
 @media (max-width:1100px) {
     .left-float {
         float: none;
@@ -412,7 +239,13 @@
     .tbl-wdt-50 {
         width: 100%;
     }
-    .tbl-wdt-50 .event-div {
+    .tbl-wdt-70 {
+        width: 100%;
+    }
+    .tbl-wdt-15 {
+        width: 100%;
+    }
+    .tbl-wdt-70 .event-div {
         margin: unset;
     }
     .event-overflow {
