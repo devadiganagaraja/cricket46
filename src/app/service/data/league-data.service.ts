@@ -37,8 +37,52 @@ export class Season{
             public name: string,
             public shortName: string,
             public startDate: Date,
-            public endDate: Date
+            public endDate: Date,
+            public postGameInfoList:  PostGameInfo [],
+            public liveGameInfoList:  LiveGameInfo [],
+            public preGameInfoList:  PreGameInfo []
             ){
+  }
+}
+
+export class PostGameInfo{
+  constructor( 
+    public team1Name: string,
+    public team2Name: string,
+    public team1Score: string,
+    public team2Score: string,
+    public team1Won: boolean,
+    public team2Won: boolean,
+    public classType: string,
+    public dateStr: string,
+    public note: string
+  ){
+  }
+}
+
+
+export class LiveGameInfo{
+  constructor( 
+    public team1Name: string,
+    public team2Name: string,
+    public team1Score: string,
+    public team2Score: string,
+    public classType: string,
+    public dateStr: string,
+    public note: string
+  ){
+  }
+}
+
+export class PreGameInfo  {
+  constructor( 
+    public team1Name: string,
+    public team2Name: string,
+    public classType: string,
+    public dateStr: string,
+    public timeStr: string,
+    public note: string
+  ){
   }
 }
 
