@@ -1,4 +1,4 @@
-<div class="cric-league-season-container">
+<div class="cric-league-season-container" *ngIf="season">
     <div class="event-div">
 
         <div class="cric-pad-top2rem border-bottom padding-bottom2rem">
@@ -11,25 +11,17 @@
                     {{season.startDate | date: 'longDate'}} - {{season.endDate | date: 'longDate'}}</span>
                 </div>
             </div>
-
-
-
         </div>
-
         <div class="seson-det-container">
 
-
-
-
             <div>
-
-                <div class="scr-hd-br-rt scr-hd-br-lt left-float tbl-wdt-15">
+                <div class="scr-hd-br-rt scr-hd-br-lt left-float tbl-wdt-25">
                     <div class="text-center border-bottom league-live-events-heading">
                         Completed
                     </div>
                     <div class="event-overflow">
 
-                        <div class="border-bottom">
+                        <div class="border-bottom" *ngFor='let postGameInfo of season.postGameInfoList'>
                             <div>
                                 <table class="seson-tbl">
                                     <tbody>
@@ -45,14 +37,14 @@
                                         <tr>
                                             <td class="mtch-note-td" colspan="5">
                                                 <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
+                                                    <span>{{postGameInfo.classType}}</span>
                                                 </div>
                                             </td>
 
                                             <td class="mtch-dt-td" colspan="3">
                                                 <div>
                                                     <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
+                                                        <span>{{postGameInfo.dateStr}}</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -60,13 +52,13 @@
 
                                         <tr class="sm_mt__tr">
                                             <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
+                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{postGameInfo.team1Name.split(':')[1]}}.png">
                                             </td>
                                             <td class="sm_mt__tm-td" colspan="7">
                                                 <div class="sm_mt__tm_ttl-div">
                                                     <div>
                                                         <div class="ellipsisize">
-                                                            <span>Australia</span>
+                                                            <span>{{postGameInfo.team1Name.split(':')[0]}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -74,7 +66,7 @@
                                                 <div class="sm_mt__sc-div">
                                                     <div class="sm_mt__t-sc">
                                                         <div>
-                                                            258/7 (50)
+                                                            {{postGameInfo.team1Score}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -82,13 +74,13 @@
                                         </tr>
                                         <tr class="sm_mt__tr">
                                             <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
+                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{postGameInfo.team2Name.split(':')[1]}}.png">
                                             </td>
                                             <td class="sm_mt__tm-td" colspan="7">
                                                 <div class="sm_mt__tm_ttl-div">
                                                     <div>
                                                         <div class="ellipsisize">
-                                                            <span>Newzeland</span>
+                                                            <span>{{postGameInfo.team2Name.split(':')[0]}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -96,7 +88,7 @@
                                                 <div class="sm_mt__sc-div">
                                                     <div class="sm_mt__t-sc">
                                                         <div>
-                                                            258/7 (50)
+                                                            {{postGameInfo.team2Score}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -105,348 +97,7 @@
                                         <tr>
                                             <td colspan="6" class="mtch-note-td">
                                                 <div>
-                                                    <span>AUS Won by 71 runs</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="border-bottom">
-                            <div>
-                                <table class="seson-tbl">
-                                    <tbody>
-                                        <tr class="emp-tr">
-                                            <td class="lc-np"></td>
-                                            <td></td>
-                                            <td class="imspo_mt__rg"></td>
-                                            <td class="imspo_mt__sc-sp"></td>
-                                            <td class="imspo_mt__sc"></td>
-                                            <td class="imspo_mt__rpo-c"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="mtch-note-td" colspan="5">
-                                                <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
-                                                </div>
-                                            </td>
-
-                                            <td class="mtch-dt-td" colspan="3">
-                                                <div>
-                                                    <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Australia</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Newzeland</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="mtch-note-td">
-                                                <div>
-                                                    <span>AUS Won by 71 runs</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="border-bottom">
-                            <div>
-                                <table class="seson-tbl">
-                                    <tbody>
-                                        <tr class="emp-tr">
-                                            <td class="lc-np"></td>
-                                            <td></td>
-                                            <td class="imspo_mt__rg"></td>
-                                            <td class="imspo_mt__sc-sp"></td>
-                                            <td class="imspo_mt__sc"></td>
-                                            <td class="imspo_mt__rpo-c"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="mtch-note-td" colspan="5">
-                                                <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
-                                                </div>
-                                            </td>
-
-                                            <td class="mtch-dt-td" colspan="3">
-                                                <div>
-                                                    <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Australia</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Newzeland</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="mtch-note-td">
-                                                <div>
-                                                    <span>AUS Won by 71 runs</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="border-bottom">
-                            <div>
-                                <table class="seson-tbl">
-                                    <tbody>
-                                        <tr class="emp-tr">
-                                            <td class="lc-np"></td>
-                                            <td></td>
-                                            <td class="imspo_mt__rg"></td>
-                                            <td class="imspo_mt__sc-sp"></td>
-                                            <td class="imspo_mt__sc"></td>
-                                            <td class="imspo_mt__rpo-c"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="mtch-note-td" colspan="5">
-                                                <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
-                                                </div>
-                                            </td>
-
-                                            <td class="mtch-dt-td" colspan="3">
-                                                <div>
-                                                    <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Australia</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Newzeland</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="mtch-note-td">
-                                                <div>
-                                                    <span>AUS Won by 71 runs</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="border-bottom">
-                            <div>
-                                <table class="seson-tbl">
-                                    <tbody>
-                                        <tr class="emp-tr">
-                                            <td class="lc-np"></td>
-                                            <td></td>
-                                            <td class="imspo_mt__rg"></td>
-                                            <td class="imspo_mt__sc-sp"></td>
-                                            <td class="imspo_mt__sc"></td>
-                                            <td class="imspo_mt__rpo-c"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="mtch-note-td" colspan="5">
-                                                <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
-                                                </div>
-                                            </td>
-
-                                            <td class="mtch-dt-td" colspan="3">
-                                                <div>
-                                                    <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Australia</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Newzeland</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-
-                                            <td colspan="6" class="mtch-note-td">
-                                                <div>
-                                                    <span>AUS Won by 71 runs</span>
+                                                    <span>{{postGameInfo.note}}</span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -456,12 +107,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="left-float tbl-wdt-70">
+                <div class="left-float tbl-wdt-50">
                     <div class="text-center border-bottom league-live-events-heading">
                         Live
                     </div>
                     <div class="event-overflow">
-                        <div class="border-bottom scr-hd-br-lt scr-hd-br-rt tbl-wdt-25 left-float inline">
+                        <div class="border-bottom scr-hd-br-lt scr-hd-br-rt tbl-wdt-50 left-float" *ngFor='let liveGameInfo of season.liveGameInfoList'>
                             <div>
                                 <table class="seson-tbl">
                                     <tbody>
@@ -477,14 +128,14 @@
                                         <tr>
                                             <td class="mtch-note-td" colspan="5">
                                                 <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
+                                                    <span>{{liveGameInfo.classType}}</span>
                                                 </div>
                                             </td>
 
                                             <td class="mtch-dt-td" colspan="3">
                                                 <div>
                                                     <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
+                                                        <span>{{liveGameInfo.dateStr}}</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -492,13 +143,13 @@
 
                                         <tr class="sm_mt__tr">
                                             <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
+                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{liveGameInfo.team1Name.split(':')[1]}}.png">
                                             </td>
                                             <td class="sm_mt__tm-td" colspan="7">
                                                 <div class="sm_mt__tm_ttl-div">
                                                     <div>
                                                         <div class="ellipsisize">
-                                                            <span>Australia</span>
+                                                            <span>{{liveGameInfo.team1Name.split(':')[0]}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -506,7 +157,7 @@
                                                 <div class="sm_mt__sc-div">
                                                     <div class="sm_mt__t-sc">
                                                         <div>
-                                                            258/7 (50)
+                                                            {{liveGameInfo.team1Score}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -514,13 +165,13 @@
                                         </tr>
                                         <tr class="sm_mt__tr">
                                             <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
+                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{liveGameInfo.team2Name.split(':')[1]}}.png">
                                             </td>
                                             <td class="sm_mt__tm-td" colspan="7">
                                                 <div class="sm_mt__tm_ttl-div">
                                                     <div>
                                                         <div class="ellipsisize">
-                                                            <span>Newzeland</span>
+                                                            <span>{{liveGameInfo.team2Name.split(':')[0]}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -528,7 +179,7 @@
                                                 <div class="sm_mt__sc-div">
                                                     <div class="sm_mt__t-sc">
                                                         <div>
-                                                            258/7 (50)
+                                                            {{liveGameInfo.team2Score}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -537,7 +188,7 @@
                                         <tr>
                                             <td colspan="6" class="mtch-note-td">
                                                 <div>
-                                                    <span>AUS Won by 71 runs</span>
+                                                    <span>{{liveGameInfo.note}}</span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -545,186 +196,17 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="border-bottom scr-hd-br-lt scr-hd-br-rt tbl-wdt-25 left-float inline">
-                            <div>
-                                <table class="seson-tbl">
-                                    <tbody>
-                                        <tr class="emp-tr">
-                                            <td class="lc-np"></td>
-                                            <td></td>
-                                            <td class="imspo_mt__rg"></td>
-                                            <td class="imspo_mt__sc-sp"></td>
-                                            <td class="imspo_mt__sc"></td>
-                                            <td class="imspo_mt__rpo-c"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="mtch-note-td" colspan="5">
-                                                <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
-                                                </div>
-                                            </td>
-
-                                            <td class="mtch-dt-td" colspan="3">
-                                                <div>
-                                                    <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Australia</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Newzeland</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="mtch-note-td">
-                                                <div>
-                                                    <span>AUS Won by 71 runs</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="border-bottom scr-hd-br-lt scr-hd-br-rt tbl-wdt-25 left-float inline">
-                            <div>
-                                <table class="seson-tbl">
-                                    <tbody>
-                                        <tr class="emp-tr">
-                                            <td class="lc-np"></td>
-                                            <td></td>
-                                            <td class="imspo_mt__rg"></td>
-                                            <td class="imspo_mt__sc-sp"></td>
-                                            <td class="imspo_mt__sc"></td>
-                                            <td class="imspo_mt__rpo-c"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="mtch-note-td" colspan="5">
-                                                <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
-                                                </div>
-                                            </td>
-
-                                            <td class="mtch-dt-td" colspan="3">
-                                                <div>
-                                                    <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Australia</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Newzeland</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="mtch-note-td">
-                                                <div>
-                                                    <span>AUS Won by 71 runs</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
 
 
                     </div>
                 </div>
-                <div class="scr-hd-br-rt scr-hd-br-lt right-float tbl-wdt-15">
+                <div class="scr-hd-br-rt scr-hd-br-lt right-float tbl-wdt-25">
                     <div class="text-center border-bottom league-live-events-heading">
                         Upcoming
                     </div>
 
                     <div class="event-overflow">
-                        <div class="border-bottom">
+                        <div class="border-bottom" *ngFor='let  preGameInfo of season.preGameInfoList'>
                             <div>
                                 <table class="seson-tbl">
                                     <tbody>
@@ -740,14 +222,14 @@
                                         <tr>
                                             <td class="mtch-note-td" colspan="5">
                                                 <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
+                                                    <span>{{preGameInfo.classType}}</span>
                                                 </div>
                                             </td>
 
                                             <td class="mtch-dt-td" colspan="3">
                                                 <div>
                                                     <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
+                                                        <span>{{preGameInfo.dateStr}}</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -755,13 +237,13 @@
 
                                         <tr class="sm_mt__tr">
                                             <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
+                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{preGameInfo.team1Name.split(':')[1]}}.png">
                                             </td>
                                             <td class="sm_mt__tm-td" colspan="7">
                                                 <div class="sm_mt__tm_ttl-div">
                                                     <div>
                                                         <div class="ellipsisize">
-                                                            <span>Australia</span>
+                                                            <span>{{preGameInfo.team1Name.split(':')[0]}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -769,7 +251,7 @@
                                                 <div class="sm_mt__sc-div">
                                                     <div class="sm_mt__t-sc">
                                                         <div>
-                                                            258/7 (50)
+                                                            starts at {{preGameInfo.timeStr}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -777,13 +259,13 @@
                                         </tr>
                                         <tr class="sm_mt__tr">
                                             <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
+                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{preGameInfo.team2Name.split(':')[1]}}.png">
                                             </td>
                                             <td class="sm_mt__tm-td" colspan="7">
                                                 <div class="sm_mt__tm_ttl-div">
                                                     <div>
                                                         <div class="ellipsisize">
-                                                            <span>Newzeland</span>
+                                                            <span>{{preGameInfo.team2Name.split(':')[0]}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -791,7 +273,6 @@
                                                 <div class="sm_mt__sc-div">
                                                     <div class="sm_mt__t-sc">
                                                         <div>
-                                                            258/7 (50)
                                                         </div>
                                                     </div>
                                                 </div>
@@ -800,7 +281,7 @@
                                         <tr>
                                             <td colspan="6" class="mtch-note-td">
                                                 <div>
-                                                    <span>AUS Won by 71 runs</span>
+                                                    <span>{{preGameInfo.venue}}</span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -808,178 +289,6 @@
                                 </table>
                             </div>
                         </div>
-
-                        <div class="border-bottom">
-                            <div>
-                                <table class="seson-tbl">
-                                    <tbody>
-                                        <tr class="emp-tr">
-                                            <td class="lc-np"></td>
-                                            <td></td>
-                                            <td class="imspo_mt__rg"></td>
-                                            <td class="imspo_mt__sc-sp"></td>
-                                            <td class="imspo_mt__sc"></td>
-                                            <td class="imspo_mt__rpo-c"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="mtch-note-td" colspan="5">
-                                                <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
-                                                </div>
-                                            </td>
-
-                                            <td class="mtch-dt-td" colspan="3">
-                                                <div>
-                                                    <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Australia</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Newzeland</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="mtch-note-td">
-                                                <div>
-                                                    <span>AUS Won by 71 runs</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="border-bottom">
-                            <div>
-                                <table class="seson-tbl">
-                                    <tbody>
-                                        <tr class="emp-tr">
-                                            <td class="lc-np"></td>
-                                            <td></td>
-                                            <td class="imspo_mt__rg"></td>
-                                            <td class="imspo_mt__sc-sp"></td>
-                                            <td class="imspo_mt__sc"></td>
-                                            <td class="imspo_mt__rpo-c"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="mtch-note-td" colspan="5">
-                                                <div class="mtch-note-div">
-                                                    <span>ODI 1 of 3 (AUS leads 1-0)</span>
-                                                </div>
-                                            </td>
-
-                                            <td class="mtch-dt-td" colspan="3">
-                                                <div>
-                                                    <div class="mtch-dt-div">
-                                                        <span>13/3/20</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Australia</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="sm_mt__tr">
-                                            <td class="sm_mt__lc-img-div lc-np">
-                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/VnSt4NnQhVxsjgNck2HkKw_48x48.png">
-                                            </td>
-                                            <td class="sm_mt__tm-td" colspan="7">
-                                                <div class="sm_mt__tm_ttl-div">
-                                                    <div>
-                                                        <div class="ellipsisize">
-                                                            <span>Newzeland</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="sm_mt__sc-div">
-                                                    <div class="sm_mt__t-sc">
-                                                        <div>
-                                                            258/7 (50)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-
-                                            <td colspan="6" class="mtch-note-td">
-                                                <div>
-                                                    <span>AUS Won by 71 runs</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
 

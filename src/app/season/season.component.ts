@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import {IMAGE_S3_BUCKET_URL} from 'src/app/constants';
+
 
 import { LeagueDataService, Season } from '../service/data/league-data.service';
 
@@ -24,6 +26,8 @@ export class SeasonComponent implements OnInit {
   season: Season
   teams = []
   matches = []
+  imageHostName : string = IMAGE_S3_BUCKET_URL
+
 
   refreshSeason(){
     this.leagueId = this.route.snapshot.params["league"] 
