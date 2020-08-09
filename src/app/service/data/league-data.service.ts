@@ -3,13 +3,32 @@ import { HttpClient } from '@angular/common/http';
 import {API_PUBLIC_IP} from 'src/app/constants';
 
 
+export class LeagueIndex{
+  constructor( 
+            public tournaments: League [],
+            public tours: League []){
+  }
+}
+
 export class League{
   constructor( 
             public id: number,
             public abbreviation: string,
             public name: string,
-            public tournament: boolean){
+            public tournament: boolean,
+            public childLeagues: ChildLeague []
+            ){
   }
+}
+
+
+export class ChildLeague{
+  constructor(
+    public id: number,
+    public name: string,
+    public abbreviation: string,
+    public classId: number
+  ){}
 }
 
 export class Team{
@@ -97,6 +116,11 @@ export class LeagueDataService {
 
   retrieveAllLeagues(){
     return this.http.get<League[]>(`${this.hostName}/leagues`)
+  }
+
+
+  retrieveLeagueIndex(){
+    return this.http.get<LeagueIndex>(`${this.hostName}/leagueIndex`)
   }
 
   retrieveLeague(id){

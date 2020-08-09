@@ -4,7 +4,7 @@
         <div class="cric-pad-top2rem border-bottom padding-bottom2rem">
             <div class="event-div">
                 <div>
-                    <span class="season-head">Series</span>
+                    <span class="season-head">Tournaments</span>
                 </div>
 
             </div>
@@ -27,7 +27,66 @@
                                         </tr>
                                     </thead> -->
 
-                                    <tbody *ngFor='let league of leagues'>
+                                    <tbody *ngFor='let league of leagueIndex.tournaments'>
+                                        <tr></tr>
+                                        <tr class="scr-hd-br">
+                                            <td class="stat-td" style="width:15rem">
+                                                <span class="pointr" (click)=viewTournament(league.id)><u>{{league.name}}</u>  </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr></tr>
+
+                                    </tbody>
+
+
+                                </table>
+                            </div>
+                            <div class="scr-hd-br"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div>
+
+        <div class="cric-pad-top2rem border-bottom padding-bottom2rem">
+            <div class="event-div">
+                <div>
+                    <span class="season-head">Tours</span>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div>
+            <div>
+                <div class="tab-container">
+                    <div class="det-cont">
+                        <!-- batting -->
+                        <div>
+                            <div>
+                                <table class="cric-tbl">
+                                    <!-- <thead>
+                                        <tr class="scr-hd-br">
+                                            <th scope="col">Name</th>
+
+                                        </tr>
+                                    </thead> -->
+
+                                    <tbody *ngFor='let league of leagueIndex.tours'>
                                         <tr></tr>
                                         <tr class="scr-hd-br">
                                             <td class="stat-td" style="width:15rem">
