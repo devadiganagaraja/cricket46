@@ -22,7 +22,6 @@
                                 <table class="cric-tbl">
                                     <thead>
                                         <tr class="scr-hd-br">
-                                            <th scope="col" style="width:20rem">Date</th>
                                             <th scope="col">Series Name</th>
                                             <!-- <th scope="col" style="width:10rem">Time</th> -->
                                             <!-- <th scope="col" class="text-center head-desc" >4s</th>
@@ -32,14 +31,11 @@
                                         </tr>
                                     </thead>
 
-                                    <tbody *ngFor='let season of seasons'>
+                                    <tbody *ngFor='let childLeague of league.childLeagues'>
                                         <tr></tr>
                                         <tr class="scr-hd-br">
-                                            <td class="stat-td" style="width:18rem">
-                                                {{season.startDate | date: 'longDate'}} - {{season.endDate | date: 'longDate'}}
-                                            </td>
                                             <td class="stat-td">
-                                                <div><span class="pointr"><u  (click) ='viewSeason(season.id, season.year)'>{{season.name}}</u></span> </div>
+                                                <div><span class="pointr"><u  (click) ='viewSeason(childLeague.leagueId)'>{{childLeague.name}}</u></span> </div>
                                             </td>
 
                                             <!-- <td style="width:18px"></td> -->

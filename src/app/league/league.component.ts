@@ -16,7 +16,6 @@ export class LeagueComponent implements OnInit {
 
     leagueId: number
     league: League
-    seasons = []
 
   ngOnInit(): void {
     this.refreshLeague()
@@ -32,18 +31,12 @@ export class LeagueComponent implements OnInit {
   handleSuccessfullLeagueResponse(response){
     console.log("response1"+response)
     this.league = response;
-    this.leagueDataService.retrieveLeagueSeasons(this.leagueId).subscribe(response => this.handleSuccessfullSeasonsResponse(response),  error => console.log(console.error()));
 
   }
 
-  handleSuccessfullSeasonsResponse(response){
-    console.log("response2"+response)
-    this.seasons = response;
-  }
 
-  viewSeason(league, year){
-    console.log("league id::"+league+ " ::: season year:"+year)
-    this.router.navigate(["leagues", league, "seasons", year])
+  viewSeason(league){
+    this.router.navigate(["leagues", league, "seasons", 0])
   }
 
 }
