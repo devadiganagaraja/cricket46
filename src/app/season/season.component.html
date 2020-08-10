@@ -10,6 +10,12 @@
                     <span style="color: #80868b;">
                     {{season.startDate | date: 'longDate'}} - {{season.endDate | date: 'longDate'}}</span>
                 </div>
+                <div>
+                    <select [(ngModel)]="seasonYear" (change)="refreshLeagueSeason($event.target.value)">
+                        <option selected="selected">{{seasonYear}}</option>
+                        <option >{{seasonYear+1}}</option>
+                    </select>
+                </div>
             </div>
         </div>
         <div class="seson-det-container">
@@ -21,7 +27,7 @@
                     </div>
                     <div class="event-overflow">
 
-                        <div class="border-bottom" *ngFor='let postGameInfo of season.postGameInfoList'>
+                        <div (click)='viewMatch(postGameInfo.gameId)' class="border-bottom" *ngFor='let postGameInfo of season.postGameInfoList'>
                             <div>
                                 <table class="seson-tbl">
                                     <tbody>
@@ -112,7 +118,7 @@
                         Live
                     </div>
                     <div class="event-overflow">
-                        <div class="border-bottom scr-hd-br-lt scr-hd-br-rt tbl-wdt-50 left-float" *ngFor='let liveGameInfo of season.liveGameInfoList'>
+                        <div (click)='viewMatch(liveGameInfo.gameId)' class="border-bottom scr-hd-br-lt scr-hd-br-rt tbl-wdt-50 left-float" *ngFor='let liveGameInfo of season.liveGameInfoList'>
                             <div>
                                 <table class="seson-tbl">
                                     <tbody>
@@ -198,6 +204,86 @@
                         </div>
 
 
+                        <div>
+
+                            <h2> Standing </h2>
+
+                            <table class="table" *ngFor='let teamGroup of season.teamGroups'>
+                                <thead>
+                                    <tr><th colspan="8">{{teamGroup.name}}</th></tr>
+                                  <tr>
+                                    <th scope="col">Rank</th>
+                                    <th scope="col">Team</th>
+                                    <th scope="col">Played</th>
+                                    <th scope="col">Won</th>
+                                    <th scope="col">Lost</th>
+                                    <th scope="col">Tie/Draw</th>
+                                    <th scope="col">Total Points</th>
+                                    <th scope="col">Net RR</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr  *ngFor='let teamsStanding of teamGroup.teamsStandings'>
+                                    <td>{{teamsStanding.rank}}</td>
+                                    <td>{{teamsStanding.teamName.split(':')[0]}}</td>
+                                    <td>{{teamsStanding.matchesPlayed}}</td>
+                                    <td>{{teamsStanding.matchesWon}}</td>
+                                    <td>{{teamsStanding.matchesLost}}</td>
+                                    <td>{{teamsStanding.matchesTied}}</td>
+                                    <td>{{teamsStanding.matchPoints}}</td>
+                                    <td>{{teamsStanding.netrr}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+
+                              <h2> Batting Leaders </h2>
+
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Matches</th>
+                                    <th scope="col">Runs</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr  *ngFor='let battingLeader of season.battingLeaders; let i = index'>
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{battingLeader.playerName.split(":")[0]}}</td>
+                                    <td>{{battingLeader.matches}}</td>
+                                    <td>{{battingLeader.runs}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+
+                              <h2> Bowling Leaders </h2>
+
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                <tr  *ngFor='let bowlingLeader of season.bowlingLeaders; let i = index'>
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{bowlingLeader.playerName.split(":")[0]}}</td>
+                                    <td>{{bowlingLeader.matches}}</td>
+                                    <td>{{bowlingLeader.wickets}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+                        '
+                        </div>
+
+
                     </div>
                 </div>
                 <div class="scr-hd-br-rt scr-hd-br-lt right-float tbl-wdt-25">
@@ -206,7 +292,7 @@
                     </div>
 
                     <div class="event-overflow">
-                        <div class="border-bottom" *ngFor='let  preGameInfo of season.preGameInfoList'>
+                        <div (click)='viewMatch(preGameInfo.gameId)' class="border-bottom" *ngFor='let  preGameInfo of season.preGameInfoList'>
                             <div>
                                 <table class="seson-tbl">
                                     <tbody>
