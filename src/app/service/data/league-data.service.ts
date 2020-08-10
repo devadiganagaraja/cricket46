@@ -59,9 +59,70 @@ export class Season{
             public endDate: Date,
             public postGameInfoList:  PostGameInfo [],
             public liveGameInfoList:  LiveGameInfo [],
-            public preGameInfoList:  PreGameInfo []
+            public preGameInfoList:  PreGameInfo [],
+            public seasons: number [], 
+            public teamGroups: TeamStandingGroup[],
+            public battingLeaders: BattingLeader[],
+            public bowlingLeaders: BowlingLeader[],
             ){
   }
+}
+
+export class TeamStandingGroup{
+  constructor(
+    public id: number,
+    public name: string,
+    public abbreviation: string,
+    public teamsStandings: TeamsStanding []
+
+  ){}
+}
+
+export class BattingLeader{
+  constructor( 
+    private playerId: number,
+    private playerName: string,
+    private teamName: string,
+    private matches: number,
+    private runs: number,
+    private balls: number,
+    private sixes: number,
+    private fours: number,
+    private strikeRate: string,
+    private average: string
+  ){}
+}
+
+export class BowlingLeader{
+  constructor(
+    private playerId: number,
+    private playerName: string,
+    private teamName: string,
+    private matches: number,
+    private runsConceded: number,
+    private overs: number,
+    private wickets: number,
+    private extras: number,
+    private strikeRate: string,
+    private average: string,
+    private maidens: string
+  ){}
+}
+
+
+export class TeamsStanding{
+  constructor(
+    public teamId: number,
+    public teamName: string,
+    public rank: string,
+    public matchesPlayed: string,
+    public matchesWon: string,
+    public matchesLost: string,
+    public matchesDraw: string,
+    public matchesTied: string,
+    public matchPoints: string,
+    public noresult: string
+  ){}
 }
 
 export class PostGameInfo{
