@@ -189,20 +189,33 @@
     width: 50%;
 }
 
+.leader-div {
+    border-right: solid 1px #eee;
+    border-top: solid 1px #17abcc;
+}
+
+.teamname-text-wdt {
+    width: 56%;
+}
+
+.tbl-wdt-88 {
+    width: 87%;
+}
+
 .tbl-wdt-25 {
     width: 25%;
 }
 
 .tbl-wdt-70 {
-    width: 68%;
+    width: 70%;
 }
 
-.tbl-wdt-16 {
-    width: 16%;
+.tbl-wdt-18 {
+    width: 17%;
 }
 
-.tbl-wdt-14 {
-    width: 14%;
+.tbl-wdt-12 {
+    width: 13%;
 }
 
 .tbl-wdt-45 {
@@ -262,13 +275,16 @@
     .tbl-wdt-70 {
         width: 100%;
     }
-    .tbl-wdt-16 {
+    .tbl-wdt-18 {
         width: 100%;
     }
-    .tbl-wdt-14 {
+    .tbl-wdt-12 {
         width: 100%;
     }
     .tbl-wdt-45 {
+        width: 100%;
+    }
+    .tbl-wdt-88 {
         width: 100%;
     }
     .tbl-wdt-70 .event-div {
