@@ -194,17 +194,21 @@
 }
 
 .tbl-wdt-70 {
-    width: 65%;
+    width: 68%;
 }
 
-.tbl-wdt-15 {
-    width: 15%;
+.tbl-wdt-16 {
+    width: 16%;
 }
 
-
-.tbl-wdt-20 {
-    width: 20%;
+.tbl-wdt-14 {
+    width: 14%;
 }
+
+.tbl-wdt-45 {
+    width: 45%;
+}
+
 .seson-det-container {
     height: 595px;
 }
@@ -216,6 +220,18 @@
 .event-overflow {
     height: 540px;
     overflow-y: auto;
+}
+
+.lead-container {
+    padding-left: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.lead-header {
+    padding-bottom: 15px;
+    font-size: large;
+    font-weight: 500;
 }
 
 .event-overflow::-webkit-scrollbar {
@@ -246,7 +262,13 @@
     .tbl-wdt-70 {
         width: 100%;
     }
-    .tbl-wdt-15 {
+    .tbl-wdt-16 {
+        width: 100%;
+    }
+    .tbl-wdt-14 {
+        width: 100%;
+    }
+    .tbl-wdt-45 {
         width: 100%;
     }
     .tbl-wdt-70 .event-div {
