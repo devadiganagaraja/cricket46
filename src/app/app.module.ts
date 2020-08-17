@@ -31,6 +31,9 @@ import { ArticleComponent } from './article/article.component';
 import { PlayerComponent } from './player/player.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +67,10 @@ import {MatCardModule} from '@angular/material/card';
     BrowserAnimationsModule,
     MatTabsModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule
 
   ],
   providers: [],
