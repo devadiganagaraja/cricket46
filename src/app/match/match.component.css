@@ -43,3 +43,16 @@
 .mat-tab-group {
     margin-bottom: 48px;
 }
+
+.ven-cont {
+    width: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    border-top: 1px solid #ebebeb;
+    background-color: #f8f9fa;
+    color: rgba(0, 0, 0, .54);
+}
+
+.sum-desc-div {
+    padding: 2px 16px 16px 16px;
+}

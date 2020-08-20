@@ -1,5 +1,5 @@
 <mat-tab-group animationDuration="0ms" [selectedIndex]="matchModel.scoreCards.length -1">
-    <mat-tab *ngFor="let scorecard of matchModel.scoreCards"  label="{{scorecard.inningsInfo.battingTeamName.split(':')[0]}}  {{scorecard.inningsInfo.inningsName}}">
+    <mat-tab *ngFor="let scorecard of matchModel.scoreCards" label="{{scorecard.inningsInfo.battingTeamName.split(':')[0]}}  {{scorecard.inningsInfo.inningsName}}">
         <div>
             <div>
                 <div class="tab-container">
@@ -30,8 +30,8 @@
                                                 </div>
                                             </td>
                                             <td class="stat-td">
-                                                <div> 
-                                                     <span class="pointr" (click)="viewPlayer(battingScoreLeaf.playerName.split(':')[1])">  {{battingScoreLeaf.playerName.split(':')[0]}} </span>
+                                                <div>
+                                                    <span class="pointr" (click)="viewPlayer(battingScoreLeaf.playerName.split(':')[1])">  {{battingScoreLeaf.playerName.split(':')[0]}} </span>
                                                 </div>
                                                 <div class="wkt-det"> <span>{{battingScoreLeaf.dismissalText}}</span></div>
                                             </td>
@@ -62,7 +62,7 @@
                                         <tr class="scr-hd-br ex-tr">
                                             <td colspan="1" class="stat-td">DNB</td>
                                             <td colspan="5">
-                                            <span class="pointr" (click)="viewPlayer(yetToBatPlayer.playerName.split(':')[1])" *ngFor="let yetToBatPlayer of scorecard.battingScoreCard.yetToBat; let isLast=last">
+                                                <span class="pointr" (click)="viewPlayer(yetToBatPlayer.playerName.split(':')[1])" *ngFor="let yetToBatPlayer of scorecard.battingScoreCard.yetToBat; let isLast=last">
 
                                                 {{yetToBatPlayer.playerName.split(':')[0]}}{{isLast ? '' : ', '}}
                                             </span>
@@ -150,20 +150,7 @@
                     </div>
                 </div>
 
-                <div class="ven-cont">
-                    <div>
-                        <div class="det-div">
-                            <div class="toss-div">
-                                <span style="padding-right: 5px;">Toss:</span>
-                                <Span>{{matchModel.toss}}</Span>
-                            </div>
-                            <div class="toss-div" style="padding-right: 5px;">
-                                <span>Stadium:</span>
-                                <Span>{{matchModel.venue}}</Span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
             </div>
         </div>

@@ -23,15 +23,6 @@
     vertical-align: baseline;
 }
 
-.ven-cont {
-    width: 100%;
-    font-size: 12px;
-    line-height: 20px;
-    border-top: 1px solid #ebebeb;
-    background-color: #f8f9fa;
-    color: rgba(0, 0, 0, .54);
-}
-
 .det-div {
     padding: 10px 24px;
     font-size: 14px;

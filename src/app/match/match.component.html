@@ -1,11 +1,11 @@
-<div class="cric-container">
+<div class="cric-container" *ngIf="matchModel">
     <div>
         <div class="cric-main-div border-bottom">
             <div class="cric-pad-top2rem">
                 <div class="event-div">
                     <div>
                         <div class="cric-overflow-hide">
-                            <span style="color:#232ebf">{{matchModel.leagueName}}</span>
+                            <span style="color:#232ebf" class="pointr" (click)=viewTournament(matchModel.leagueId)>{{matchModel.leagueName}}</span>
                             <span> · </span>
                             <span>{{matchModel.date |  date: 'dd/MM/yyyy'}}</span>
                         </div>
@@ -14,31 +14,35 @@
                 <div class="padding-bottom2rem">
                     <div class="score-padding">
 
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-6 row center-align-item">
-                                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                    <div><img alt="" src="{{imageHostName}}/teams/{{matchModel.team1Name.split(':')[1]}}.png" style="width:64px;height:48px"></div>
-                                    <div class="cric-overflow-hide"><span>{{matchModel.team1Name.split(':')[0]}}</span></div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                    <div>{{matchModel.team1Score[0]}}</div>
+
+                        <div class="center-align-item">
+                            <div class="width-30 left-float text-center">
+                                <div><img alt="" src="{{imageHostName}}/teams/{{matchModel.team1Name.split(':')[1]}}.png" style="width:64px;height:48px"></div>
+                                <div class="cric-overflow-hide"><span>{{matchModel.team1Name.split(':')[0]}}</span></div>
+                            </div>
+                            <div class="width-40 left-float pad-top-10">
+                                <div class="text-center left-float">
+                                    <div class="fw-500">{{matchModel.team1Score[0]}}</div>
                                     <div *ngIf="matchModel.team1Score.length == 2">{{matchModel.team1Score[1]}}</div>
 
                                     <div *ngIf="matchModel.team1Score.length == 1">({{matchModel.team1Overs[0]}})</div>
                                 </div>
 
-
-                            </div>
-
-
-                            <div class="col-md-6 col-sm-6 col-xs-6 row center-align-item team2-div">
-                                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                    <div >{{matchModel.team2Score[0]}}</div>
+                                <div class="right-float text-center">
+                                    <div class="fw-500">{{matchModel.team2Score[0]}}</div>
                                     <div *ngIf="matchModel.team2Score.length == 2">{{matchModel.team2Score[1]}}</div>
                                     <div *ngIf="matchModel.team2Score.length == 1">({{matchModel.team2Overs[0]}})</div>
                                 </div>
 
-                                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                            </div>
+
+
+
+
+                            <div class="width-30 right-float center-align-item">
+
+
+                                <div class="text-center">
                                     <div>
                                         <img src="{{imageHostName}}/teams/{{matchModel.team2Name.split(':')[1]}}.png" style="width:64px;height:48px">
                                     </div>
@@ -48,15 +52,15 @@
                                 </div>
 
                             </div>
-
                         </div>
+
 
 
                     </div>
 
                     <div class="margin-top1rem">
                         <div class="text-center">
-                            <div class="text-center mt-2">{{matchModel.gameNote}}</div>
+                            <div class="text-center mt-2 fw-500">{{matchModel.gameNote}}</div>
 
                         </div>
 
@@ -67,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="live-div"  *ngIf="live">
+                <div class="live-div" *ngIf="live">
                     <div class="text-left team-live-div">
                         <div></div>
                         <div>
@@ -88,19 +92,19 @@
 
                 </div>
 
-             </div>
+            </div>
         </div>
-     </div>
+    </div>
 
 
     <mat-tab-group animationDuration="0ms">
 
-        <mat-tab label="Summary"  *ngIf="! live">
+        <mat-tab label="Summary" *ngIf="! live">
             <app-summary [matchModel]="matchModel"></app-summary>
         </mat-tab>
 
         <mat-tab label="Scorecard">
-            <app-scorecard  [matchModel]="matchModel"></app-scorecard>
+            <app-scorecard [matchModel]="matchModel"></app-scorecard>
         </mat-tab>
         <mat-tab label="Commentary">
             <app-commentary [matchModel]="matchModel"></app-commentary>
@@ -110,5 +114,20 @@
         </mat-tab>
 
     </mat-tab-group>
+
+    <div class="ven-cont">
+        <div class="sum-desc-div">
+            <div class="det-div">
+                <div class="toss-div">
+                    <span style="padding-right: 5px;">Toss:</span>
+                    <Span>{{matchModel.toss}}</Span>
+                </div>
+                <div class="toss-div" style="padding-right: 5px;">
+                    <span>Stadium:</span>
+                    <Span>{{matchModel.venue}}</Span>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

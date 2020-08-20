@@ -36,12 +36,12 @@ export class MatchComponent implements OnInit {
     if(this.live){
         this.interval = setInterval(() => { 
           this.refreshData(); 
-      }, 15000);
+      }, 1500000);
     }
   }
 
 
-  refreshData(){
+    refreshData(){
     this.matchDataService.retrieveMatch(this.matchId).subscribe(response => 
       {
         this.matchModel=response
@@ -56,6 +56,11 @@ export class MatchComponent implements OnInit {
       error => {
         console.log("error==>"+error)
       });
+    }
+
+    viewTournament(tournamentId){
+      // console.log("league id::"+league)
+      this.router.navigate(["leagues", tournamentId, "seasons", 0])
     }
 
 

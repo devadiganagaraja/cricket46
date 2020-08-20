@@ -28,7 +28,8 @@ body {
 }
 
 .score-padding {
-    padding: 16px 80px 0 80px;
+    padding: 22px 50px 0 50px;
+    height: 90px;
 }
 
 .center-align-item {
@@ -120,7 +121,7 @@ body {
 
 .tab-container {
     padding-bottom: 24px;
-    border-bottom: solid 1px #ebebeb;
+    /* border-bottom: solid 1px #ebebeb; */
 }
 
 .left-float {
@@ -151,4 +152,24 @@ body {
     margin: 0 3rem;
     height: 700px;
     overflow: auto;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-30 {
+    width: 30%;
+}
+
+.width-40 {
+    width: 40%;
+}
+
+.pad-top-10 {
+    padding-top: 10px;
+}
+
+.fw-500 {
+    font-weight: 500;
 }
