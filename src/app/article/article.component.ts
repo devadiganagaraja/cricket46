@@ -10,7 +10,7 @@ import { ArticleModel } from './article.model';
 export class ArticleComponent implements OnInit {
 
   constructor() { }
-  model: ArticleModel = new ArticleModel();
+ 
   modelList : ArticleModel[];
   
   ngOnInit(): void {
@@ -20,8 +20,5 @@ export class ArticleComponent implements OnInit {
     ];
   }
 
-  onClickSubmit(formData) {
-   console.log(formData)
- }
 
 }

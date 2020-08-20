@@ -1,36 +1,43 @@
 <div class="cric-league-season-container">
-    <p>works</p>
 
-    <div class="example-button-row">
-        <div class="example-button-container">
-            <!-- <button mat-fab color="" aria-label="Example icon button with a delete icon">
-              <mat-icon>add</mat-icon>
-            </button> -->
+    <div class="article-div">
 
-            <form class="example-form" #article="ngForm" (ngSubmit)="onClickSubmit(article.value)">
-                <mat-form-field class="example-full-width">
-                    <mat-label>Title</mat-label>
-                    <input name="id" hidden [(ngModel)]="model.id">
-                    <input matInput name="title" [(ngModel)]="model.title">
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width">
-                    <mat-label></mat-label>
-                    <textarea matInput name="content" [(ngModel)]="model.content"></textarea>
-                </mat-form-field>
-
-                <input type="submit" value="submit">
-            </form>
-
-
+        <div class="cric-pad-top2rem padding-bottom2rem">
+            <div class="left-float">
+                <div>
+                    <span class="season-head">Your Article</span>
+                </div>
+                <div>
+                    <span style="color: #80868b;">
+                    </span>
+                </div>
+            </div>
+            <div class="right-float">
+                <a class="btn-borer-green" mat-stroked-button routerLink="/newArticle">Write Article</a>
+            </div>
         </div>
 
-    </div>
+        <div class="cric-pad-top2rem border-bottom padding-bottom1rem" *ngFor="let art of modelList">
+            <div>
+                <div class="padding-bottom1rem">
+                    <span class="season-head">{{art.title}}</span>
+                </div>
+                <div>
+                    <span style="color: #80868b;">
+                        {{art.content}}
+                    </span>
+                </div>
+            </div>
+        </div>
 
-    <div *ngFor="let art of modelList">
-        <h3>{{art.title}}</h3>
 
-        <span>{{art.content}}</span>
 
+
+        <!-- <div *ngFor="let art of modelList">
+            <h3>{{art.title}}</h3>
+
+            <span>{{art.content}}</span>
+
+        </div> -->
     </div>
 </div>

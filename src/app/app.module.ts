@@ -34,6 +34,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import { NewArticleComponent } from './article/new-article/new-article.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import {MatInputModule} from '@angular/material/input';
     CommentaryComponent,
     FeedsComponent,
     ArticleComponent,
-    PlayerComponent
+    PlayerComponent,
+    NewArticleComponent
   ],
   imports: [
     BrowserModule,

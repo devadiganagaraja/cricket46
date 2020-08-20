@@ -1,0 +1,28 @@
+<div class="cric-league-season-container">
+
+    <div class="article-div">
+
+        <div class="cric-pad-top2rem padding-bottom2rem">
+
+            <form class="example-form" #article="ngForm" (ngSubmit)="onClickSubmit(article.value)">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Title</mat-label>
+                    <input name="id" hidden [(ngModel)]="model.id">
+                    <input matInput name="title" [(ngModel)]="model.title">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label></mat-label>
+                    <textarea matInput name="content" [(ngModel)]="model.content"></textarea>
+                </mat-form-field>
+
+                <button mat-flat-button color="primary" type="submit">Save</button>
+
+            </form>
+
+
+
+        </div>
+
+    </div>
+</div>
