@@ -23,7 +23,7 @@ export class MatchComponent implements OnInit {
 
     matchModel: MatchModel
 
-    live: boolean = true
+    live: boolean = false
 
     interval: any;
 
@@ -36,7 +36,7 @@ export class MatchComponent implements OnInit {
     if(this.live){
         this.interval = setInterval(() => { 
           this.refreshData(); 
-      }, 1500000);
+      }, 15000);
     }
   }
 
@@ -46,12 +46,14 @@ export class MatchComponent implements OnInit {
       {
         this.matchModel=response
         console.log("refreshing this.matchId status:::::"+response.gameStatus)
-        if(response.gameStatus == 'live'){
-          console.log("refreshing this.matchId:::::"+this.matchId)
-          this.live =true;
-        }else{
-          this.live =false;
-        }
+
+        this.live = response.gameStatus == 'live';
+        // if(response.gameStatus == 'live'){
+        //   console.log("refreshing this.matchId:::::"+this.matchId)
+        //   this.live =true;
+        // }else{
+        //   this.live =false;
+        // }
       }, 
       error => {
         console.log("error==>"+error)

@@ -15,3 +15,34 @@ th {
 .player-desc-div {
     padding: 0rem 10rem;
 }
+
+.player-ttl {
+    width: 74%;
+    padding-top: 90px;
+}
+
+.pl-det-pad {
+    padding: 12px 0 5px;
+}
+
+.plr-info-div-bgc {
+    background-color: #b3ede7;
+}
+
+table {
+    background-color: white !important;
+}
+
+.player-container {
+    max-width: 70rem;
+    margin: 0 auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .16);
+    background-color: white;
+}
+
+@media (max-width:790px) {
+    .player-ttl {
+        width: 45%;
+        padding-top: 9px
+    }
+}

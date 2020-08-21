@@ -25,7 +25,7 @@
                     <table style="padding: 12px 24px;">
                         <tbody>
                             <tr>
-                                <td style="vertical-align: text-top;width: 48px;font-family: arial,sans-serif-medium,sans-serif;font-weight: normal;">
+                                <td style="width: 48px;font-family: arial,sans-serif-medium,sans-serif;font-weight: normal;">
 
                                     <div *ngIf="ballCommentary.dismissalSummary.dismissal; else notDismissal" style="background-color: red; color: #fff;;border-radius: 2px;display: table-cell;font-size: 14px;height: 24px;text-align: center;vertical-align: middle;width: 24px;">W</div>
 
@@ -39,7 +39,7 @@
 
                                     </ng-template>
                                 </td>
-                                <td style="font-family: arial,sans-serif;font-weight: normal;">{{ballCommentary.ballSummary.overActual}}:<span [innerHTML]="ballCommentary.ballSummary.shortText"></span>. <br><span [innerHTML]="ballCommentary.ballSummary.text"></span></td>
+                                <td style="font-family: arial,sans-serif;font-weight: normal;">{{ballCommentary.ballSummary.overActual}}: <span [innerHTML]="ballCommentary.ballSummary.shortText"></span>. <br><span [innerHTML]="ballCommentary.ballSummary.text"></span></td>
                             </tr>
                         </tbody>
                     </table>
