@@ -375,7 +375,7 @@
                     <div class="event-overflow">
 
                         <div class="border-bottom" *ngFor='let  preGameInfo of season.preGameInfoList'>
-                            <div>
+                            <div (click)="viewMatch(preGameInfo.gameId)" class="pointr">
                                 <table class="seson-tbl">
                                     <tbody>
 
