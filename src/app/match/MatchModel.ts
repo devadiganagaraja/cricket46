@@ -22,6 +22,8 @@ export class MatchModel {
     venue: string;
     liveScore: LiveScore;
     gameCommentary: GameCommentary;
+    team1squad: Squad[];
+    team2squad: Squad[];
 }
 
 export class LiveScore{
@@ -105,4 +107,9 @@ export class BowlingScoreLeaf {
     wickets: string;
     overs: string;
     economyRate: string;
+}
+
+export class Squad {
+    playerName: string;
+    role: number;
 }

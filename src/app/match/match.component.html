@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="live-div" *ngIf="live">
+                <!-- <div class="live-div" *ngIf="live">
                     <div class="text-left team-live-div">
                         <div></div>
                         <div>
@@ -90,7 +90,7 @@
                         <div><span>{{matchModel.liveScore.otherBowler.playerName.split(':')[0]}}: {{matchModel.liveScore.otherBowler.wickets}}/{{matchModel.liveScore.otherBowler.runs}} ({{matchModel.liveScore.otherBowler.overs}})</span></div>
                     </div>
 
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -99,14 +99,14 @@
 
     <mat-tab-group animationDuration="0ms">
 
-        <mat-tab label="Summary" *ngIf="! live">
+        <mat-tab label="Summary" *ngIf="!live && matchModel.gameStatus != 'pre'">
             <app-summary [matchModel]="matchModel"></app-summary>
         </mat-tab>
 
         <mat-tab label="Scorecard">
             <app-scorecard [matchModel]="matchModel"></app-scorecard>
         </mat-tab>
-        <mat-tab label="Commentary">
+        <mat-tab label="Commentary" *ngIf="matchModel.gameStatus != 'pre'">
             <app-commentary [matchModel]="matchModel"></app-commentary>
         </mat-tab>
         <mat-tab label="Feeds">
