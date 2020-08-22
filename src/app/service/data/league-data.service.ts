@@ -57,10 +57,10 @@ export class Season{
             public shortName: string,
             public startDate: Date,
             public endDate: Date,
-            public postGameInfoList:  PostGameInfo [],
-            public liveGameInfoList:  LiveGameInfo [],
-            public preGameInfoList:  PreGameInfo [],
-            public seasons: number [], 
+            public postGameInfoList:  GameInfo [],
+            public liveGameInfoList:  GameInfo [],
+            public preGameInfoList:  GameInfo[],
+            public seasons: number [],
             public teamGroups: TeamStandingGroup[],
             public battingLeaders: BattingLeader[],
             public bowlingLeaders: BowlingLeader[],
@@ -125,7 +125,7 @@ export class TeamsStanding{
   ){}
 }
 
-export class PostGameInfo{
+export class GameInfo{
   constructor( 
     public team1Name: string,
     public team2Name: string,
@@ -141,30 +141,30 @@ export class PostGameInfo{
 }
 
 
-export class LiveGameInfo{
-  constructor( 
-    public team1Name: string,
-    public team2Name: string,
-    public team1Score: string,
-    public team2Score: string,
-    public classType: string,
-    public dateStr: string,
-    public note: string
-  ){
-  }
-}
+// export class LiveGameInfo{
+//   constructor( 
+//     public team1Name: string,
+//     public team2Name: string,
+//     public team1Score: string,
+//     public team2Score: string,
+//     public classType: string,
+//     public dateStr: string,
+//     public note: string
+//   ){
+//   }
+// }
 
-export class PreGameInfo  {
-  constructor( 
-    public team1Name: string,
-    public team2Name: string,
-    public classType: string,
-    public dateStr: string,
-    public timeStr: string,
-    public note: string
-  ){
-  }
-}
+// export class PreGameInfo  {
+//   constructor( 
+//     public team1Name: string,
+//     public team2Name: string,
+//     public classType: string,
+//     public dateStr: string,
+//     public timeStr: string,
+//     public note: string
+//   ){
+//   }
+// }
 
 @Injectable({
   providedIn: 'root'

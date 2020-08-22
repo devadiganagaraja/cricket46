@@ -1,0 +1,52 @@
+<div>
+    <div>
+
+
+        <div class="tab-container">
+            <div class="det-cont">
+                <div>
+                    <div>
+                        <table class="cric-tbl">
+                            <thead>
+                                <tr class="scr-hd-br">
+                                    <th style="width: 50px;" scope="col">Squad</th>
+                                    <th scope="col"></th>
+                                    <!-- <th scope="col" class="text-center head-desc" style="width:24px">R</th>
+                <th scope="col" class="text-center head-desc" style="width:24px">B</th>
+                <th scope="col" class="text-center head-desc" style="width:24px">4s</th>
+                <th scope="col" class="text-center head-desc" style="width:24px">6s</th>
+                <th scope="col" class="text-center head-desc" style="width:44px">S/R</th>
+                <th style="width:18px"></th> -->
+                                </tr>
+                            </thead>
+
+                            <tbody *ngFor="let sqd of squad">
+                                <tr></tr>
+                                <tr class="scr-hd-br">
+                                    <td class="plyr-img-td">
+                                        <div>
+                                            <img class="mom-img img-border" src="{{imageHostName}}/players/{{sqd.playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="">
+                                        </div>
+                                    </td>
+                                    <td class="stat-td">
+                                        <div>
+                                            <span class="pointr" (click)="viewPlayer(sqd.playerName.split(':')[1])">  {{sqd.playerName.split(':')[0]}} </span>
+                                        </div>
+                                        <div class="wkt-det"> <span>{{sqd.playerName.split(':')[2]}}</span></div>
+                                    </td>
+
+
+                                </tr>
+
+                                <tr></tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

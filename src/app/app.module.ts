@@ -35,6 +35,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { NewArticleComponent } from './article/new-article/new-article.component';
+import { SquadComponent } from './match/scorecard/squad/squad.component';
+import { MatchDescComponent } from './season/match-desc/match-desc.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +60,9 @@ import { NewArticleComponent } from './article/new-article/new-article.component
     FeedsComponent,
     ArticleComponent,
     PlayerComponent,
-    NewArticleComponent
+    NewArticleComponent,
+    SquadComponent,
+    MatchDescComponent
   ],
   imports: [
     BrowserModule,

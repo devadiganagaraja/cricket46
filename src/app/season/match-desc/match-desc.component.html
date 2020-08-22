@@ -1,0 +1,80 @@
+<table class="seson-tbl">
+    <tbody>
+        <tr class="emp-tr">
+            <td class="lc-np"></td>
+            <td></td>
+            <td class="imspo_mt__rg"></td>
+            <td class="imspo_mt__sc-sp"></td>
+            <td class="imspo_mt__sc"></td>
+            <td class="imspo_mt__rpo-c"></td>
+        </tr>
+
+        <tr>
+            <td class="mtch-note-td" colspan="5">
+                <div class="mtch-note-div">
+                    <span>{{matchInfo.classType}}</span>
+                </div>
+            </td>
+
+            <td class="mtch-dt-td" colspan="3">
+                <div>
+                    <div class="mtch-dt-div">
+                        <span>{{matchInfo.dateStr}}</span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr class="sm_mt__tr">
+            <td class="sm_mt__lc-img-div lc-np">
+                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{matchInfo.team1Name.split(':')[1]}}.png">
+            </td>
+            <td class="sm_mt__tm-td" colspan="7">
+                <div class="sm_mt__tm_ttl-div teamname-text-wdt">
+                    <div>
+                        <div class="ellipsisize">
+                            <span>{{matchInfo.team1Name.split(':')[0]}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sm_mt__sc-div">
+                    <div class="sm_mt__t-sc">
+                        <div>
+                            {{matchInfo.team1Score}}
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="sm_mt__tr">
+            <td class="sm_mt__lc-img-div lc-np">
+                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{matchInfo.team2Name.split(':')[1]}}.png">
+            </td>
+            <td class="sm_mt__tm-td" colspan="7">
+                <div class="sm_mt__tm_ttl-div teamname-text-wdt">
+                    <div>
+                        <div class="ellipsisize">
+                            <span>{{matchInfo.team2Name.split(':')[0]}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sm_mt__sc-div">
+                    <div class="sm_mt__t-sc">
+                        <div>
+                            {{matchInfo.team2Score}}
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" class="mtch-note-td">
+                <div>
+                    <span>{{matchInfo.note}}</span>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

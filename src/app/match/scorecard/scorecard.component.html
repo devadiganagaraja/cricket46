@@ -158,112 +158,12 @@
 
 <mat-tab-group animationDuration="0ms" *ngIf="matchModel.gameStatus == 'pre'">
     <mat-tab label="{{matchModel.team1Name.split(':')[0]}}">
-        <div>
-            <div>
-
-
-                <div class="tab-container">
-                    <div class="det-cont">
-                        <div>
-                            <div>
-                                <table class="cric-tbl">
-                                    <thead>
-                                        <tr class="scr-hd-br">
-                                            <th style="width: 50px;" scope="col">Squad</th>
-                                            <th scope="col"></th>
-                                            <!-- <th scope="col" class="text-center head-desc" style="width:24px">R</th>
-                        <th scope="col" class="text-center head-desc" style="width:24px">B</th>
-                        <th scope="col" class="text-center head-desc" style="width:24px">4s</th>
-                        <th scope="col" class="text-center head-desc" style="width:24px">6s</th>
-                        <th scope="col" class="text-center head-desc" style="width:44px">S/R</th>
-                        <th style="width:18px"></th> -->
-                                        </tr>
-                                    </thead>
-
-                                    <tbody *ngFor="let squad of matchModel.team1squad">
-                                        <tr></tr>
-                                        <tr class="scr-hd-br">
-                                            <td class="plyr-img-td">
-                                                <div>
-                                                    <img class="mom-img img-border" src="{{imageHostName}}/players/{{squad.playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="">
-                                                </div>
-                                            </td>
-                                            <td class="stat-td">
-                                                <div>
-                                                    <span class="pointr" (click)="viewPlayer(squad.playerName.split(':')[1])">  {{squad.playerName.split(':')[0]}} </span>
-                                                </div>
-                                                <div class="wkt-det"> <span>{{squad.playerName.split(':')[2]}}</span></div>
-                                            </td>
-
-
-                                        </tr>
-
-                                        <tr></tr>
-
-                                    </tbody>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        <app-squad [squad]="matchModel.team1squad"></app-squad>
     </mat-tab>
 
-    <mat-tab label="{{matchModel.team2Name.split(':')[0]}}">
-        <div>
-            <div>
-
-
-                <div class="tab-container">
-                    <div class="det-cont">
-                        <div>
-                            <div>
-                                <table class="cric-tbl">
-                                    <thead>
-                                        <tr class="scr-hd-br">
-                                            <th style="width: 50px;" scope="col">Squad</th>
-                                            <th scope="col"></th>
-                                            <!-- <th scope="col" class="text-center head-desc" style="width:24px">R</th>
-                        <th scope="col" class="text-center head-desc" style="width:24px">B</th>
-                        <th scope="col" class="text-center head-desc" style="width:24px">4s</th>
-                        <th scope="col" class="text-center head-desc" style="width:24px">6s</th>
-                        <th scope="col" class="text-center head-desc" style="width:44px">S/R</th>
-                        <th style="width:18px"></th> -->
-                                        </tr>
-                                    </thead>
-
-                                    <tbody *ngFor="let squad of matchModel.team2squad">
-                                        <tr></tr>
-                                        <tr class="scr-hd-br">
-                                            <td class="plyr-img-td">
-                                                <div>
-                                                    <img class="mom-img img-border" src="{{imageHostName}}/players/{{squad.playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="">
-                                                </div>
-                                            </td>
-                                            <td class="stat-td">
-                                                <div>
-                                                    <span class="pointr" (click)="viewPlayer(squad.playerName.split(':')[1])">  {{squad.playerName.split(':')[0]}} </span>
-                                                </div>
-                                                <div class="wkt-det"> <span>{{squad.playerName.split(':')[2]}}</span></div>
-                                            </td>
-
-
-                                        </tr>
-
-                                        <tr></tr>
-
-                                    </tbody>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+    <mat-tab label="{{matchModel.team1Name.split(':')[0]}}">
+        <app-squad [squad]="matchModel.team2squad"></app-squad>
     </mat-tab>
+
+
 </mat-tab-group>

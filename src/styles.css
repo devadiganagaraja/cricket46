@@ -226,3 +226,170 @@ body {
     text-align: center;
     vertical-align: baseline;
 }
+
+.seson-tbl {
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+}
+
+.emp-tr {
+    height: 16px;
+}
+
+.lc-np {
+    width: 52px;
+    padding: 0 14px;
+    box-sizing: border-box;
+}
+
+.imspo_mt__rg {
+    padding-left: 6px;
+    width: 6px;
+}
+
+.imspo_mt__sc-sp {
+    width: 1px;
+    padding: 0;
+}
+
+.imspo_mt__sc {
+    width: 104px;
+}
+
+.imspo_mt__rpo-c {
+    padding: 0;
+}
+
+.mtch-note-td {
+    height: 6px;
+    padding-left: 14px;
+    color: #757575;
+}
+
+.mtch-note-div {
+    font-size: 14px;
+    padding-bottom: 6px;
+}
+
+.mtch-dt-td {
+    color: #757575;
+    text-align: right;
+    padding-right: 14px;
+    padding-bottom: 6px;
+}
+
+.mtch-dt-div {
+    font-size: 12px;
+    color: #757575;
+    vertical-align: middle;
+}
+
+.sm_mt__tr {
+    height: 32px;
+}
+
+.sm_mt__lc-img-div {
+    vertical-align: top;
+}
+
+.sm_mt__tm-td {
+    padding-top: 2px;
+    line-height: 20px;
+    vertical-align: top;
+    position: relative;
+}
+
+.sm_mt__tm_ttl-div {
+    position: absolute;
+    vertical-align: top;
+    min-width: 30px;
+    left: 0;
+}
+
+.sm_mt__sc-div {
+    position: absolute;
+    vertical-align: top;
+    width: 100%;
+    right: 14px;
+}
+
+.league-container {
+    padding-bottom: 24px;
+    border-bottom: solid 1px #ebebeb;
+}
+
+.note-det {
+    padding-bottom: 10px;
+    font-size: 13px;
+    font-weight: 200;
+}
+
+.league-live-events-heading {
+    font-size: 20px;
+    text-align: left;
+    white-space: normal;
+    user-select: none;
+    color: white;
+    border-bottom: 1px solid #ebebeb;
+    background: #17abcc;
+    padding: 12px 24px 10px;
+    font-family: arial, sans-serif-medium, sans-serif;
+    font-weight: normal;
+    font-size: initial;
+}
+
+.league-live-event-td-div-div-div-team-td-image {
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    color: #222;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    visibility: inherit;
+    text-align: left;
+    white-space: normal;
+    user-select: none;
+    cursor: pointer;
+    border-spacing: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.score-tbl {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    text-align: left;
+}
+
+.scr-hd-br th {
+    font-size: 12px;
+    color: rgba(0, 0, 0, .54);
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+.plyr-img-td {
+    vertical-align: top;
+    padding-top: 4px;
+}
+
+.det-de {
+    width: 24px;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+.ven-cont {
+    width: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    border-top: 1px solid #ebebeb;
+    background-color: #f8f9fa;
+    color: rgba(0, 0, 0, .54);
+}
+
+.det-div {
+    padding: 10px 24px;
+    font-size: 14px;
+    border-bottom: 1px solid
+}
