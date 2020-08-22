@@ -25,6 +25,10 @@ export class MatchComponent implements OnInit {
 
     live: boolean = false
 
+    post: boolean = false
+
+    pre: boolean = false
+
     interval: any;
 
 
@@ -48,6 +52,8 @@ export class MatchComponent implements OnInit {
         console.log("refreshing this.matchId status:::::"+response.gameStatus)
 
         this.live = response.gameStatus == 'live';
+        this.post = response.gameStatus == 'post';
+        this.pre = response.gameStatus == 'pre';
         // if(response.gameStatus == 'live'){
         //   console.log("refreshing this.matchId:::::"+this.matchId)
         //   this.live =true;
