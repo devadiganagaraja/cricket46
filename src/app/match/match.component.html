@@ -76,18 +76,31 @@
                         <div></div>
                         <div>
                             <span></span>
-                            <span>{{matchModel.liveScore.striker.playerName.split(':')[0]}}: {{matchModel.liveScore.striker.runs}} ({{matchModel.liveScore.striker.balls}})</span>
+                            <div ng-if="matchModel.liveScore.striker">
+                                <span>{{matchModel.liveScore.striker.playerName.split(':')[0]}}: {{matchModel.liveScore.striker.runs}} ({{matchModel.liveScore.striker.balls}})</span>
+                            </div>
                         </div>
-                        <div><span>{{matchModel.liveScore.nonStriker.playerName.split(':')[0]}}: {{matchModel.liveScore.nonStriker.runs}} ({{matchModel.liveScore.nonStriker.balls}})</span></div>
+                        <div>
+                            <div ng-if="matchModel.liveScore.nonStriker">
+                                <span>{{matchModel.liveScore.nonStriker.playerName.split(':')[0]}}: {{matchModel.liveScore.nonStriker.runs}} ({{matchModel.liveScore.nonStriker.balls}})</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="text-right team-live-div">
                         <div></div>
                         <div>
                             <span></span>
-                            <span>{{matchModel.liveScore.bowler.playerName.split(':')[0]}}: {{matchModel.liveScore.bowler.wickets}}/{{matchModel.liveScore.bowler.runs}} ({{matchModel.liveScore.bowler.overs}})</span>
+                            <div ng-if="matchModel.liveScore.bowler">
+                                <span>{{matchModel.liveScore.bowler.playerName.split(':')[0]}}: {{matchModel.liveScore.bowler.wickets}}/{{matchModel.liveScore.bowler.runs}} ({{matchModel.liveScore.bowler.overs}})</span>
+                            </div>
                         </div>
-                        <div><span>{{matchModel.liveScore.otherBowler.playerName.split(':')[0]}}: {{matchModel.liveScore.otherBowler.wickets}}/{{matchModel.liveScore.otherBowler.runs}} ({{matchModel.liveScore.otherBowler.overs}})</span></div>
+                        <div>
+                            <div ng-if="matchModel.liveScore.otherBowler">
+                                <span>{{matchModel.liveScore.otherBowler.playerName.split(':')[0]}}: {{matchModel.liveScore.otherBowler.wickets}}/{{matchModel.liveScore.otherBowler.runs}} ({{matchModel.liveScore.otherBowler.overs}})</span>
+                    
+                            </div>
+                        </div>
                     </div>
 
                 </div> -->
@@ -99,18 +112,19 @@
 
     <mat-tab-group animationDuration="0ms">
 
-        <mat-tab label="Summary" *ngIf="!live && matchModel.gameStatus != 'pre'">
+
+        <mat-tab label="Summary" *ngIf="post">
+
             <app-summary [matchModel]="matchModel"></app-summary>
         </mat-tab>
 
         <mat-tab label="Scorecard">
             <app-scorecard [matchModel]="matchModel"></app-scorecard>
         </mat-tab>
-        <mat-tab label="Commentary" *ngIf="matchModel.gameStatus != 'pre'">
+
+        <mat-tab label="Commentary" *ngIf="!pre">
+
             <app-commentary [matchModel]="matchModel"></app-commentary>
-        </mat-tab>
-        <mat-tab label="Feeds">
-            <app-feeds></app-feeds>
         </mat-tab>
 
     </mat-tab-group>
