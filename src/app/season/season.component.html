@@ -50,7 +50,7 @@
                         </div>
 
                     </div>
-                    <div class="lead-container tbl-wdt-70" *ngIf='season.teamGroups.length > 0'>
+                    <div class="lead-container width-55 left-float" *ngIf='season.teamGroups.length > 0'>
 
                         <div>
                             <div class="lead-header">
@@ -60,14 +60,14 @@
                                 <table class="cric-tbl" *ngFor='let teamGroup of season.teamGroups'>
                                     <thead>
                                         <tr class="scr-hd-br">
-                                            <th class="head-desc" style="width:5px;" scope="col">#</th>
+                                            <th class="head-desc" style="width:7px;" scope="col"></th>
                                             <th class="head-desc" style="width: 7%;" scope="col">Team</th>
-                                            <th class="head-desc" style="width: 13px;" scope="col">Matches</th>
-                                            <th scope="col" class="head-desc" style="width:10px">Won</th>
-                                            <th scope="col" class="head-desc" style="width:10px">Lost</th>
-                                            <th scope="col" class="head-desc" style="width:10px">Draw</th>
-                                            <th scope="col" class="head-desc" style="width:10px">Points</th>
-                                            <th scope="col" class="head-desc" style="width:15px">Run Rate</th>
+                                            <th class="head-desc text-center" style="width: 13px;" scope="col">Matches</th>
+                                            <th scope="col" class="head-desc text-center" style="width:10px">Won</th>
+                                            <th scope="col" class="head-desc text-center" style="width:10px">Lost</th>
+                                            <th scope="col" class="head-desc text-center" style="width:10px">Draw</th>
+                                            <th scope="col" class="head-desc text-center" style="width:10px">Points</th>
+                                            <th scope="col" class="head-desc text-center" style="width:15px">Run Rate</th>
 
                                         </tr>
                                     </thead>
@@ -77,27 +77,28 @@
                                         <tr class="scr-hd-br" *ngFor='let teamsStanding of teamGroup.teamsStandings'>
 
                                             <td class="stat-td">
-                                                <span>{{teamsStanding.rank}}</span>
+                                                <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{teamsStanding.teamName.split(':')[1]}}.png">
+
                                             </td>
                                             <td class="stat-td">
                                                 <span>{{teamsStanding.teamName.split(':')[0]}}</span>
                                             </td>
-                                            <td class="stat-td">
+                                            <td class="stat-td text-center">
                                                 <span>{{teamsStanding.matchesPlayed}}</span>
                                             </td>
-                                            <td class="stat-td">
+                                            <td class="stat-td text-center">
                                                 <span>{{teamsStanding.matchesWon}}</span>
                                             </td>
-                                            <td class="stat-td">
+                                            <td class="stat-td text-center">
                                                 <span>{{teamsStanding.matchesLost}}</span>
                                             </td>
-                                            <td class="stat-td">
+                                            <td class="stat-td text-center">
                                                 <span>{{teamsStanding.matchesTied}}</span>
                                             </td>
-                                            <td class="stat-td">
+                                            <td class="stat-td text-center">
                                                 <span>{{teamsStanding.matchPoints}}</span>
                                             </td>
-                                            <td class="stat-td">
+                                            <td class="stat-td text-center">
                                                 <span>{{teamsStanding.netrr}}</span>
                                             </td>
 
@@ -112,105 +113,62 @@
                             <div class="scr-hd-br"></div>
                         </div>
                     </div>
-
-                    <div class="lead-container left-float inline tbl-wdt-45" *ngIf='season.battingLeaders'>
-                        <!-- batting -->
-                        <div>
-                            <div class="lead-header">
-                                Batting Leaders
-                            </div>
-                            <div class="leader-div">
-                                <table class="cric-tbl">
-                                    <thead>
-                                        <tr class="scr-hd-br">
-                                            <th class="head-desc" style="width:5px;" scope="col">#</th>
-                                            <th class="head-desc" style="width: 7%;" scope="col">Name</th>
-                                            <th class="head-desc" style="width: 10px;" scope="col">Matches</th>
-                                            <th scope="col" class="head-desc" style="width:10px">Runs</th>
-
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr></tr>
-                                        <tr class="scr-hd-br" *ngFor='let battingLeader of season.battingLeaders; let i = index'>
-
-                                            <td class="stat-td">
-                                                <span>{{i+1}}</span>
-                                            </td>
-                                            <td class="stat-td">
-                                                <span>{{battingLeader.playerName.split(":")[0]}}</span>
-                                            </td>
-                                            <td class="stat-td">
-                                                <span>{{battingLeader.matches}}</span>
-                                            </td>
-                                            <td class="stat-td">
-                                                <span>{{battingLeader.runs}}</span>
-                                            </td>
-
-
-                                        </tr>
-
-                                        <tr></tr>
-
-                                    </tbody>
-
-                                </table>
-                            </div>
-                            <div class="scr-hd-br"></div>
+                    <div class="left-float lead-container ts-div width-21">
+                        <div class="lead-header">
+                            Top run Scorer
                         </div>
-                    </div>
+                        <div class="leader-div border-bottom">
+                            <div *ngFor='let battingLeader of season.battingLeaders;' class="ht-90 border-bottom">
 
-                    <div class="lead-container left-float inline" style="width: 8%;"> </div>
-                    <div class="lead-container left-float inline tbl-wdt-45" *ngIf='season.bowlingLeaders'>
-                        <!-- batting -->
-                        <div>
-                            <div class="lead-header">
-                                Bowling Leaders
+
+                                <div class="left-float cric-pad-top1rem" style="width:30%">
+                                    <img class="mom-img" src="{{imageHostName}}/players/{{battingLeader.playerName.split(':')[1]}}.png" alt="Card image cap" alt="" width="60px" height="60px" onError="this.src='../../assets/images/bat-default.jpg'">
+
+                                </div>
+                                <div class="left-float cric-pad-top1rem" style="width:70%">
+                                    <div class="">
+                                        <span class="cric-font14 fw-500">{{battingLeader.playerName.split(":")[0]}}</span>
+                                    </div>
+                                    <div class="top-run-div">
+                                        <span class="cric-font-20"><strong>{{battingLeader.runs}} </strong></span> runs
+                                    </div>
+                                    <div>
+                                        Innings: <span> <strong>{{battingLeader.matches}} </strong></span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="leader-div">
-                                <table class="cric-tbl">
-                                    <thead>
-                                        <tr class="scr-hd-br">
-                                            <th class="head-desc" style="width:5px;" scope="col">#</th>
-                                            <th class="head-desc" style="width: 7%;" scope="col">Name</th>
-                                            <th class="head-desc" style="width: 10px;" scope="col">Matches</th>
-                                            <th scope="col" class="head-desc" style="width:10px">Wickets</th>
-
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr></tr>
-                                        <tr class="scr-hd-br" *ngFor='let bowlingLeader of season.bowlingLeaders; let i = index'>
-
-                                            <td class="stat-td">
-                                                <span>{{i+1}}</span>
-                                            </td>
-                                            <td class="stat-td">
-                                                <span>{{bowlingLeader.playerName.split(":")[0]}}</span>
-                                            </td>
-                                            <td class="stat-td">
-                                                <span>{{bowlingLeader.matches}}</span>
-                                            </td>
-                                            <td class="stat-td">
-                                                <span>{{bowlingLeader.wickets}}</span>
-                                            </td>
-
-
-                                        </tr>
-
-                                        <tr></tr>
-
-                                    </tbody>
-
-                                </table>
-                            </div>
-                            <div class="scr-hd-br"></div>
-
                         </div>
 
                     </div>
+
+                    <div class="left-float lead-container ts-div width-21">
+                        <div class="lead-header">
+                            Top Wicket Taker
+                        </div>
+                        <div class="leader-div border-bottom">
+                            <div *ngFor='let bowlingLeader of season.bowlingLeaders;' class="ht-90 border-bottom">
+
+
+                                <div class="left-float cric-pad-top1rem" style="width:30%">
+                                    <img class="mom-img" src="{{imageHostName}}/players/{{bowlingLeader.playerName.split(':')[1]}}.png" alt="Card image cap" alt="" width="60px" height="60px" onError="this.src='../../assets/images/bat-default.jpg'">
+
+                                </div>
+                                <div class="left-float cric-pad-top1rem" style="width:70%">
+                                    <div class="">
+                                        <span class="cric-font14 fw-500">{{bowlingLeader.playerName.split(":")[0]}}</span>
+                                    </div>
+                                    <div class="top-run-div">
+                                        <span class="cric-font-20"><strong>{{bowlingLeader.wickets}} </strong></span> Wickets
+                                    </div>
+                                    <div>
+                                        Innings: <span> <strong>{{bowlingLeader.matches}} </strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
 
 
 

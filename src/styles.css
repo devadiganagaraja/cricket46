@@ -15,6 +15,10 @@ body {
     padding-top: 2rem;
 }
 
+.cric-pad-top1rem {
+    padding-top: 1rem;
+}
+
 .padd1rem {
     padding: 1rem;
 }
@@ -179,6 +183,10 @@ body {
     width: 60%;
 }
 
+.width-55 {
+    width: 55%;
+}
+
 .pad-top-10 {
     padding-top: 10px;
 }
@@ -206,6 +214,10 @@ body {
 
 .cric-font-16 {
     font-size: 16px;
+}
+
+.cric-font14 {
+    font-size: 14px;
 }
 
 .score-tbl {

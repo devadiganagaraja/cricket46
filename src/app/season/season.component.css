@@ -92,13 +92,33 @@
     display: inline-block;
 }
 
+.ts-div {
+    margin-right: 12px;
+}
+
+.fnt-inht {
+    font-size: inherit;
+}
+
+.top-run-div {
+    padding: 5px;
+}
+
+.ht-90 {
+    height: 90px;
+}
+
+.width-21 {
+    width: 21%;
+}
+
 @media (max-width:1100px) {
-    .left-float {
+    /* .left-float {
         float: none;
     }
     .right-float {
         float: none;
-    }
+    } */
     .tbl-wdt-25 {
         width: 100%;
     }
@@ -132,5 +152,11 @@
     }
     .ht-200 {
         height: auto;
+    }
+    .width-55 {
+        width: 100%;
+    }
+    .width-21 {
+        width: 100%;
     }
 }
