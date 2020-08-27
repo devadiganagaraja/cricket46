@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="left-float event-overflow" [ngClass]="{ 'tbl-wdt-88': (season.postGameInfoList.length == 0 && season.preGameInfoList.length != 0), 'tbl-wdt-70': !(season.postGameInfoList.length == 0 && season.preGameInfoList.length != 0) }">
+                <div class="left-float event-overflow" [ngClass]="{ 'tbl-wdt-88': (season.postGameInfoList.length == 0 && season.scheduledGameInfoList.length != 0), 'tbl-wdt-70': !(season.postGameInfoList.length == 0 && season.scheduledGameInfoList.length != 0) }">
 
                     <div class="lead-container ht-200" *ngIf="season.liveGameInfoList.length > 0">
                         <div class="lead-header">
@@ -173,13 +173,13 @@
 
 
                 </div>
-                <div class="scr-hd-br-rt scr-hd-br-lt left-float tbl-wdt-12" *ngIf="season.preGameInfoList.length > 0">
+                <div class="scr-hd-br-rt scr-hd-br-lt left-float tbl-wdt-12" *ngIf="season.scheduledGameInfoList.length > 0">
                     <div class="text-center border-bottom league-live-events-heading">
                         Upcoming
                     </div>
                     <div class="event-overflow">
 
-                        <div class="border-bottom" *ngFor='let  preGameInfo of season.preGameInfoList'>
+                        <div class="border-bottom" *ngFor='let  preGameInfo of season.scheduledGameInfoList'>
                             <div (click)="viewMatch(preGameInfo.gameId)" class="pointr">
                                 <table class="seson-tbl">
                                     <tbody>

@@ -59,7 +59,7 @@ export class Season{
             public endDate: Date,
             public postGameInfoList:  GameInfo [],
             public liveGameInfoList:  GameInfo [],
-            public preGameInfoList:  GameInfo[],
+            public scheduledGameInfoList:  GameInfo[],
             public seasons: number [],
             public teamGroups: TeamStandingGroup[],
             public battingLeaders: BattingLeader[],
