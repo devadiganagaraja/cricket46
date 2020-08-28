@@ -19,6 +19,7 @@ th {
 .player-ttl {
     width: 74%;
     padding-top: 90px;
+    padding-left: 10px;
 }
 
 .pl-det-pad {
@@ -40,9 +41,19 @@ table {
     background-color: white;
 }
 
-@media (max-width:790px) {
+@media (max-width:900px) {
     .player-ttl {
         width: 45%;
         padding-top: 9px
+    }
+    .width-35 {
+        width: 100%;
+    }
+    .pad-left-1rem {
+        width: 100%;
+        padding-top: 1rem;
+    }
+    .cric-font-40 {
+        font-size: 25px;
     }
 }

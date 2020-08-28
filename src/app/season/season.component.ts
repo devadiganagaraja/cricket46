@@ -33,7 +33,8 @@ export class SeasonComponent implements OnInit {
     this.leagueId = this.route.snapshot.params["league"] 
     this.seasonYear = this.route.snapshot.params["season"];
   
-    this.leagueDataService.retrieveLeagueSeason(this.leagueId, this.seasonYear).subscribe(response => this.handleSuccessfullLeagueSeasonResponse(response), error => console.log(console.error()));
+    this.leagueDataService.retrieveLeagueSeason(this.leagueId, this.seasonYear).subscribe(response =>
+       this.handleSuccessfullLeagueSeasonResponse(response), error => console.log(console.error()));
     this.leagueDataService.retrieveLeagueSeasonTeams(this.leagueId, this.seasonYear).subscribe(response => this.handleSuccessfullSeasonTeamsResponse(response),  error => console.log(console.error()));
     this.leagueDataService.retrieveLeagueSeasonMatches(this.leagueId, this.seasonYear).subscribe(response => this.handleSuccessfullSeasonMatchesResponse(response),  error => console.log(console.error()));
 

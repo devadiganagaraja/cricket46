@@ -30,11 +30,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="left-float event-overflow" [ngClass]="{ 'tbl-wdt-88': (season.postGameInfoList.length == 0 && season.preGameInfoList.length != 0), 'tbl-wdt-70': !(season.postGameInfoList.length == 0 && season.preGameInfoList.length != 0) }">
+                <div class="left-float event-overflow" [ngClass]="{ 'tbl-wdt-84': (season.postGameInfoList.length == 0 && season.scheduledGameInfoList.length != 0), 'tbl-wdt-66': !(season.postGameInfoList.length == 0 && season.scheduledGameInfoList.length != 0) }">
 
                     <div class="lead-container ht-200" *ngIf="season.liveGameInfoList.length > 0">
                         <div class="lead-header">
-                            Live
+
                         </div>
                         <div class="">
                             <div class="border-bottom scr-hd-br-lt scr-hd-br-rt tbl-wdt-50 left-float" *ngFor='let liveGameInfo of season.liveGameInfoList'>
@@ -113,9 +113,9 @@
                             <div class="scr-hd-br"></div>
                         </div>
                     </div>
-                    <div class="left-float lead-container ts-div width-21">
+                    <div class="left-float ts-div width-21">
                         <div class="lead-header">
-                            Top run Scorer
+                            Top Run Scorer
                         </div>
                         <div class="leader-div border-bottom">
                             <div *ngFor='let battingLeader of season.battingLeaders;' class="ht-90 border-bottom">
@@ -141,7 +141,7 @@
 
                     </div>
 
-                    <div class="left-float lead-container ts-div width-21">
+                    <div class="left-float ts-div width-21">
                         <div class="lead-header">
                             Top Wicket Taker
                         </div>
@@ -173,17 +173,24 @@
 
 
                 </div>
-                <div class="scr-hd-br-rt scr-hd-br-lt left-float tbl-wdt-12" *ngIf="season.preGameInfoList.length > 0">
+                <div class="scr-hd-br-rt scr-hd-br-lt left-float tbl-wdt-16" *ngIf="season.scheduledGameInfoList.length > 0">
                     <div class="text-center border-bottom league-live-events-heading">
                         Upcoming
                     </div>
                     <div class="event-overflow">
 
-                        <div class="border-bottom" *ngFor='let  preGameInfo of season.preGameInfoList'>
+                        <div class="border-bottom" *ngFor='let  preGameInfo of season.scheduledGameInfoList'>
                             <div (click)="viewMatch(preGameInfo.gameId)" class="pointr">
                                 <table class="seson-tbl">
                                     <tbody>
-
+                                        <tr class="emp-tr">
+                                            <td class="lc-np"></td>
+                                            <td></td>
+                                            <td class="imspo_mt__rg"></td>
+                                            <td class="imspo_mt__sc-sp"></td>
+                                            <td class="imspo_mt__sc"></td>
+                                            <td class="imspo_mt__rpo-c"></td>
+                                        </tr>
 
                                         <tr>
                                             <td class="mtch-note-td">
@@ -192,10 +199,6 @@
                                                 </div>
                                             </td>
 
-
-                                        </tr>
-
-                                        <tr>
                                             <td class="mtch-dt-td" colspan="9">
                                                 <div>
                                                     <div class="mtch-dt-div">
@@ -203,6 +206,12 @@
                                                     </div>
                                                 </div>
                                             </td>
+
+
+                                        </tr>
+
+                                        <tr>
+
                                         </tr>
 
                                         <tr class="sm_mt__tr">
@@ -238,9 +247,9 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="6" class="mtch-note-td">
-                                                <div class="ellipsisize" style="width: 150%;">
-                                                    <span>{{preGameInfo.venue}}</span>
+                                            <td colspan="9" class="mtch-note-td">
+                                                <div class="ellipsisize">
+                                                    <span [title]="preGameInfo.venue">{{preGameInfo.venue}}</span>
                                                 </div>
                                             </td>
                                         </tr>

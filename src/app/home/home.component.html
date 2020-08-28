@@ -1,0 +1,17 @@
+<div class="cric-home-container">
+
+    <div style="width: 90%;">
+
+
+        <div class="left-float tbl-wdt-25 scr-hd-br-rt" *ngFor='let gameInfo of allGames | slice:0:4;'>
+            <div (click)="viewMatch(gameInfo.gameId)" class="pointr">
+                <app-match-desc [matchInfo]="gameInfo">
+
+                </app-match-desc>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

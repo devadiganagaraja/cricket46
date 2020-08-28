@@ -199,6 +199,10 @@ body {
     font-weight: 500;
 }
 
+.fts-12 {
+    font-size: 12px !important;
+}
+
 .full-ht {
     height: 700px;
     ;

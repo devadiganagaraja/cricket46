@@ -59,7 +59,7 @@ export class Season{
             public endDate: Date,
             public postGameInfoList:  GameInfo [],
             public liveGameInfoList:  GameInfo [],
-            public preGameInfoList:  GameInfo[],
+            public scheduledGameInfoList:  GameInfo[],
             public seasons: number [],
             public teamGroups: TeamStandingGroup[],
             public battingLeaders: BattingLeader[],
@@ -135,7 +135,10 @@ export class GameInfo{
     public team2Won: boolean,
     public classType: string,
     public dateStr: string,
-    public note: string
+    public note: string,
+    public gameDate: string,
+    public gameId: number,
+
   ){
   }
 }
@@ -170,6 +173,7 @@ export class GameInfo{
   providedIn: 'root'
 })
 export class LeagueDataService {
+ 
 
   constructor(private http: HttpClient) { }
 

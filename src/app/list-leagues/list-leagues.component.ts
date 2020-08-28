@@ -30,7 +30,7 @@ export class ListLeaguesComponent implements OnInit {
   viewLeague(leagueid){
     // console.log("league id::"+league)
     this.router.navigate(["leagues", leagueid])
-  }
+  } 
 
   viewTournament(tournamentId){
     // console.log("league id::"+league)

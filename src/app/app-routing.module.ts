@@ -16,6 +16,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { PlayerComponent } from './player/player.component';
 import { ArticleComponent } from './article/article.component';
 import { NewArticleComponent } from './article/new-article/new-article.component';
+import {HomeComponent} from './home/home.component'
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path : 'matches/:matchId', component : MatchComponent},
   {path: 'article', component: ArticleComponent, canActivate: [RouteGaurdService]},
   {path:'newArticle', component:NewArticleComponent},
+  {path:'home', component: HomeComponent},
   { path : '', component : ListLeaguesComponent},
   { path : '**', component : ErrorComponent}
 ];

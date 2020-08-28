@@ -14,6 +14,7 @@ export class MatchDescComponent implements OnInit {
   @Input()
   matchInfo: GameInfo;
   ngOnInit(): void {
+
   }
 
 }
