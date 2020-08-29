@@ -48,17 +48,23 @@ export class HomeComponent implements OnInit {
   }
 
   getPrevGames() {
-    this.start-=4;
-    this.end-=4;
+    if(! this.prevDisable) {
+
+      this.start-=4;
+      this.end-=4;
+    }
     this.prevDisable = this.start == 0;
     this.nextDisable = false;
   }
 
   getNextGames() {
-    this.start+=4;
-    this.end+=4;
-    this.nextDisable = this.end === this.totalGames;
-    this.prevDisable = false;
+    if(!this.nextDisable) {
+
+      this.start+=4;
+      this.end+=4;
+      this.nextDisable = this.end >= this.totalGames;
+      this.prevDisable = false;
+    }
   }
 
   viewTournament(tournamentId){

@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'article', component: ArticleComponent, canActivate: [RouteGaurdService]},
   {path:'newArticle', component:NewArticleComponent},
   {path:'home', component: HomeComponent},
-  { path : '', component : ListLeaguesComponent},
+  { path : '', component : HomeComponent},
   { path : '**', component : ErrorComponent}
 ];
 

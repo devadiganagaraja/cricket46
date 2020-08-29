@@ -1,10 +1,14 @@
 <div class="cric-home-container" *ngIf="allGames.length >0">
 
 
-    <div class="ft-mt-div left-float">
-        <a class="arrow left left-float pointr" [ngClass]="{'arrow-disable':prevDisable}" (click)="getPrevGames()"></a>
+    <div class="left-float arw-div left-arv-div">
 
-        <div class="left-float tbl-wdt-25 scr-hd-br-rt mt-div" *ngFor='let gameInfo of allGames | slice:start:end;'>
+        <a class="arrow left pointr" [ngClass]="{'arrow-disable':prevDisable}" (click)="getPrevGames()"></a>
+    </div>
+    <div class="ft-mt-div left-float">
+
+
+        <div class="left-float tbl-wdt-24 scr-hd-br-rt mt-div border-bottom" *ngFor='let gameInfo of allGames | slice:start:end;'>
             <div (click)="viewMatch(gameInfo.gameId)" class="pointr">
                 <app-match-desc [matchInfo]="gameInfo">
 
@@ -12,23 +16,28 @@
             </div>
         </div>
 
-        <a class="arrow right left-float pointr" [ngClass]="{'arrow-disable':nextDisable}" (click)="getNextGames()"></a>
+    </div>
+    <div class="left-float arw-div">
+
+        <a class="arrow right pointr" [ngClass]="{'arrow-disable':nextDisable}" (click)="getNextGames()"></a>
     </div>
 
 
 
 </div>
 
-<div class="mt-hm-cont" *ngIf="homeModel.tournaments">
+<div class="mt-hm-cont" *ngIf="homeModel">
     <div class="left-float tour-div wdt-15">
         <app-tours-list [leagueList]="homeModel.tournaments" [headText]="'Tournament'"></app-tours-list>
     </div>
 
-    <div class="left-float tour-div wdt-68 feed-div">
-        Feeds
+
+
+    <div class="right-float tour-div wdt-15">
+        <app-tours-list [leagueList]="homeModel.tours" [headText]="'Tours'"></app-tours-list>
     </div>
 
-    <div class="left-float tour-div wdt-15">
-        <app-tours-list [leagueList]="homeModel.tours" [headText]="'Tours'"></app-tours-list>
+    <div class="left-float tour-div wdt-68 feed-div">
+        Feeds
     </div>
 </div>
