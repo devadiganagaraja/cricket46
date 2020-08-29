@@ -1,18 +1,11 @@
-import {GameInfo} from "../service/data/league-data.service";
+import {GameInfo, League} from "../service/data/league-data.service";
 
 export class HomeModel {
-    tournaments: Tournament[];
-    tours: Tournament[];
+    tournaments: League[];
+    tours: League[];
     postGameInfoList: GameInfo[];
     scheduledGameInfoList: GameInfo[];
     liveGameInfoList: GameInfo[];
   }
   
 
-  export class Tournament {
-    id: number;
-    abbreviation: string;
-    name: string;
-    tournament: boolean;
-    childLeagues: any[];
-  }

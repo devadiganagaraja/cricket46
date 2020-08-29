@@ -1,0 +1,52 @@
+<div class="">
+    <div class="padding-bottom1rem pad-top-10">
+        <div class="event-div">
+            <div>
+                <span class="season-head">{{headText}}</span>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div>
+        <div>
+            <div class="tab-container">
+                <div class="det-cont">
+                    <div>
+                        <div>
+                            <table class="cric-tbl">
+                                <!-- <thead>
+                                <tr class="scr-hd-br">
+                                    <th scope="col">Name</th>
+
+                                </tr>
+                            </thead> -->
+
+                                <tbody *ngFor='let league of leagueList'>
+                                    <tr></tr>
+                                    <tr>
+                                        <td class="stat-td" style="width:15rem">
+                                            <span class="pointr leage-text" (click)=viewTournament(league.id)>{{league.name}}  </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr></tr>
+
+                                </tbody>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

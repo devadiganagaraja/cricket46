@@ -1,17 +1,34 @@
-<div class="cric-home-container">
-
-    <div style="width: 90%;">
+<div class="cric-home-container" *ngIf="allGames.length >0">
 
 
-        <div class="left-float tbl-wdt-25 scr-hd-br-rt" *ngFor='let gameInfo of allGames | slice:0:4;'>
+    <div class="ft-mt-div left-float">
+        <a class="arrow left left-float pointr" [ngClass]="{'arrow-disable':prevDisable}" (click)="getPrevGames()"></a>
+
+        <div class="left-float tbl-wdt-25 scr-hd-br-rt mt-div" *ngFor='let gameInfo of allGames | slice:start:end;'>
             <div (click)="viewMatch(gameInfo.gameId)" class="pointr">
                 <app-match-desc [matchInfo]="gameInfo">
 
                 </app-match-desc>
             </div>
         </div>
+
+        <a class="arrow right left-float pointr" [ngClass]="{'arrow-disable':nextDisable}" (click)="getNextGames()"></a>
     </div>
 
 
 
+</div>
+
+<div class="mt-hm-cont" *ngIf="homeModel.tournaments">
+    <div class="left-float tour-div wdt-15">
+        <app-tours-list [leagueList]="homeModel.tournaments" [headText]="'Tournament'"></app-tours-list>
+    </div>
+
+    <div class="left-float tour-div wdt-68 feed-div">
+        Feeds
+    </div>
+
+    <div class="left-float tour-div wdt-15">
+        <app-tours-list [leagueList]="homeModel.tours" [headText]="'Tours'"></app-tours-list>
+    </div>
 </div>

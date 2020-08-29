@@ -13,7 +13,7 @@ export class HomeService {
   constructor(private http: HttpClient) { }
 
   getHomeRecords() {
-    return this.http.get<HomeModel>(`${this.hostName}/home`);
+    return this.http.get<any>(`${this.hostName}/cricket46`);
   }
 
 }

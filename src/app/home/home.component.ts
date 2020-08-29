@@ -14,6 +14,11 @@ export class HomeComponent implements OnInit {
 
   homeModel: HomeModel;
   allGames: GameInfo[] = [];
+  prevDisable = true;
+  nextDisable = false
+  start=0;
+  end=4;
+  totalGames= 0
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -26,18 +31,38 @@ export class HomeComponent implements OnInit {
   }
 
   getHomeDetails() {
-    this.homeService.getHomeRecords().subscribe(response => 
+    this.homeService.getHomeRecords().subscribe(response => {
+      this.homeModel = response,
       this.appendGames(response)
      // this.homeModel = res
      // this.appendGames(this.homeModel);
-    );
+    });
   }
   appendGames(homeModel: HomeModel) {
    this.allGames =[...homeModel.liveGameInfoList,...homeModel.postGameInfoList,...homeModel.scheduledGameInfoList ];
+   this.totalGames = this.allGames.length;
   }
 
   viewMatch(matchId){
     this.router.navigate(["matches", matchId])
+  }
+
+  getPrevGames() {
+    this.start-=4;
+    this.end-=4;
+    this.prevDisable = this.start == 0;
+    this.nextDisable = false;
+  }
+
+  getNextGames() {
+    this.start+=4;
+    this.end+=4;
+    this.nextDisable = this.end === this.totalGames;
+    this.prevDisable = false;
+  }
+
+  viewTournament(tournamentId){
+    this.router.navigate(["leagues", tournamentId, "seasons", 0])
   }
 
 }

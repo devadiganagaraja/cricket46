@@ -38,6 +38,7 @@ import { NewArticleComponent } from './article/new-article/new-article.component
 import { SquadComponent } from './match/scorecard/squad/squad.component';
 import { MatchDescComponent } from './season/match-desc/match-desc.component';
 import { HomeComponent } from './home/home.component';
+import { ToursListComponent } from './tours-list/tours-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,8 @@ import { HomeComponent } from './home/home.component';
     NewArticleComponent,
     SquadComponent,
     MatchDescComponent,
-    HomeComponent
+    HomeComponent,
+    ToursListComponent
   ],
   imports: [
     BrowserModule,
