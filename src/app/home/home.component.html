@@ -8,7 +8,8 @@
     <div class="ft-mt-div left-float">
 
 
-        <div class="left-float tbl-wdt-24 scr-hd-br-rt mt-div border-bottom" *ngFor='let gameInfo of allGames | slice:start:end;'>
+        <div class="left-float tbl-wdt-23 scr-hd-br-rt mt-div border-bottom" *ngFor='let gameInfo of allGames | slice:start:end;'>
+           
             <div (click)="viewMatch(gameInfo.gameId)" class="pointr">
                 <app-match-desc [matchInfo]="gameInfo">
 
