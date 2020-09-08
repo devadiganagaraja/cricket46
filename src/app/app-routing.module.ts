@@ -17,6 +17,8 @@ import { PlayerComponent } from './player/player.component';
 import { ArticleComponent } from './article/article.component';
 import { NewArticleComponent } from './article/new-article/new-article.component';
 import {HomeComponent} from './home/home.component'
+import { EditArticleComponent } from './article/edit-article/edit-article.component';
+import { ViewArticleComponent } from './article/view-article/view-article.component';
 
 
 const routes: Routes = [
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path : 'matches/:matchId', component : MatchComponent},
   {path: 'article', component: ArticleComponent, canActivate: [RouteGaurdService]},
   {path:'newArticle', component:NewArticleComponent},
+  {path:'editArticle/:articleId', component:EditArticleComponent},
+  {path:'viewArticle/:articleId', component:ViewArticleComponent},
   {path:'home', component: HomeComponent},
   { path : '', component : HomeComponent},
   { path : '**', component : ErrorComponent}

@@ -4,7 +4,7 @@
 
         <div class="cric-pad-top2rem padding-bottom2rem">
 
-            <form class="example-form" #articleForm="ngForm" (ngSubmit)="onClickSubmit(article)">
+            <form class="example-form" #articleForm="ngForm" (ngSubmit)="onClickUpdate(article)">
                 <mat-form-field class="example-full-width">
                     <mat-label>Title</mat-label>
                     <input name="id" hidden [(ngModel)]="article.id">
@@ -24,8 +24,6 @@
                 <button mat-flat-button color="primary" type="submit">Save</button>
 
             </form>
-
-
 
         </div>
 

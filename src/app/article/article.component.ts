@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleModel } from './article.model';
+import { ArticleDataService } from '../service/data/article-data.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,15 +11,40 @@ import { ArticleModel } from './article.model';
 })
 export class ArticleComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private articleDataService: ArticleDataService,
+    private router: Router
+
+  ) { }
  
-  modelList : ArticleModel[];
+  articles : ArticleModel[];
   
   ngOnInit(): void {
-    this.modelList = [
-      {id:1, content: "This is test", title:"Title1"},
-      {id:1, content: "This is test", title:"Title2"}
-    ];
+      this.articleDataService.retrieveAllArticle().subscribe(response => 
+      {
+        this.articles=response
+      }, 
+      error => {
+        console.log("error==>"+error)
+      })
+  }
+
+
+  onClickEdit(articleId) {
+    this.router.navigate(["editArticle", articleId])
+  }
+
+  onClickView(articleId) {
+    this.router.navigate(["viewArticle", articleId])
+  }
+
+
+  onClickDelete(formData) {
+
+    this.articleDataService.deleteArticle(formData.id).subscribe(response => {console.log("put tes"+response)})
+
+    this.router.navigate(["article"])
+    console.log(formData)
   }
 
 
