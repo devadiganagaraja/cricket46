@@ -5,7 +5,7 @@
         <div class="cric-pad-top2rem padding-bottom2rem">
             <div class="left-float">
                 <div>
-                    <span class="season-head">Your Article</span>
+                    <span class="season-head">Your Articles</span>
                 </div>
                 <div>
                     <span style="color: #80868b;">
@@ -17,27 +17,38 @@
             </div>
         </div>
 
-        <div class="cric-pad-top2rem border-bottom padding-bottom1rem" *ngFor="let art of modelList">
-            <div>
-                <div class="padding-bottom1rem">
-                    <span class="season-head">{{art.title}}</span>
-                </div>
-                <div>
-                    <span style="color: #80868b;">
-                        {{art.content}}
-                    </span>
-                </div>
-            </div>
-        </div>
 
+<br/>
 
-
-
-        <!-- <div *ngFor="let art of modelList">
-            <h3>{{art.title}}</h3>
-
-            <span>{{art.content}}</span>
-
-        </div> -->
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Last Modifed</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let article of articles;let i = index">
+                <td>{{i+1}}</td>
+                <td>{{article.title}}</td>
+                <td>{{article.lastModified | date : 'medium'}}</td>
+                <td>{{article.articleStatus}}</td>
+                <td>
+                    <button  (click)=onClickView(article.id)  type="button"  class="btn btn-default btn-sm">
+                      <span class="glyphicon glyphicon-eye-open"></span> View
+                    </button>&nbsp;
+                    <button  (click)=onClickEdit(article.id)  type="button"  class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-edit"></span> Edit
+                    </button>&nbsp;
+                    <button (click)=onClickDelete(article.id)  type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-remove"></span> Delete
+                        </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>  
     </div>
 </div>

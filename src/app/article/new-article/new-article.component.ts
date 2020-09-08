@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleModel } from '../article.model';
+import { Router } from '@angular/router';
+import { ArticleDataService } from 'src/app/service/data/article-data.service';
 
 @Component({
   selector: 'app-new-article',
@@ -8,14 +10,23 @@ import { ArticleModel } from '../article.model';
 })
 export class NewArticleComponent implements OnInit {
 
-  model: ArticleModel = new ArticleModel();
-  constructor() { }
+  constructor(
+    private router: Router,
+    private articleDataService: ArticleDataService
+  ) {}
+
+  article: ArticleModel = new ArticleModel(0, '','','','','');
+
 
   ngOnInit(): void {
   }
 
   
   onClickSubmit(formData) {
+
+    this.articleDataService.createArticle(formData).subscribe(response => {console.log("put tes"+response)})
+
+    this.router.navigate(["article"])
     console.log(formData)
   }
 
