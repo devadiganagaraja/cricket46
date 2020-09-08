@@ -23,6 +23,7 @@ export class NewArticleComponent implements OnInit {
 
   
   onClickSubmit(formData) {
+    formData.articleStatus = 'created';
 
     this.articleDataService.createArticle(formData).subscribe(response => {console.log("put tes"+response)})
 
