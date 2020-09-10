@@ -56,4 +56,7 @@ table {
     .cric-font-40 {
         font-size: 25px;
     }
+    tbody {
+        font-size: 12px;
+    }
 }

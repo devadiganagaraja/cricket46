@@ -17,6 +17,7 @@ import { PlayerComponent } from './player/player.component';
 import { ArticleComponent } from './article/article.component';
 import { NewArticleComponent } from './article/new-article/new-article.component';
 import {HomeComponent} from './home/home.component'
+import { MyTeamComponent } from './my-team/my-team.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'article', component: ArticleComponent, canActivate: [RouteGaurdService]},
   {path:'newArticle', component:NewArticleComponent},
   {path:'home', component: HomeComponent},
+  {path: 'myTeam', component: MyTeamComponent},
   { path : '', component : HomeComponent},
   { path : '**', component : ErrorComponent}
 ];

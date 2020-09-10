@@ -409,3 +409,7 @@ body {
     font-size: 14px;
     border-bottom: 1px solid
 }
+
+.sum-desc-div {
+    padding: 2px 16px 16px 16px;
+}
