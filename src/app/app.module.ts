@@ -40,6 +40,8 @@ import { MatchDescComponent } from './season/match-desc/match-desc.component';
 import { HomeComponent } from './home/home.component';
 import { ToursListComponent } from './tours-list/tours-list.component';
 import { MyTeamComponent } from './my-team/my-team.component';
+import { EditArticleComponent } from './article/edit-article/edit-article.component';
+import { ViewArticleComponent } from './article/view-article/view-article.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +71,8 @@ import { MyTeamComponent } from './my-team/my-team.component';
     HomeComponent,
     ToursListComponent,
     MyTeamComponent
+    EditArticleComponent,
+    ViewArticleComponent
   ],
   imports: [
     BrowserModule,
