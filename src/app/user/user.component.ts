@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
               private router : Router) { }
 
   userName: string
-  user: User = new User('', '', '', '', '', '')
+  user: User = new User('', '', '', '', '', '', '')
   
   ngOnInit(): void {
     this.userName = this.route.snapshot.params["userName"] 
@@ -31,6 +31,7 @@ export class UserComponent implements OnInit {
 
   saveUser(){
   
+    console.log("this.user::::"+this.user.image)
     this.userDataService.putUser(this.userName, this.user).subscribe(response => {console.log("put tes"+response)})
 
     this.router.navigate(["users"])

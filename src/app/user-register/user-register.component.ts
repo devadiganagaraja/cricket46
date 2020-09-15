@@ -11,7 +11,7 @@ export class UserRegisterComponent implements OnInit {
 
   constructor(private router: Router, private userDataService: UserDataService) { }
 
-  user: User = new User('', '', '', '', '', '')
+  user: User = new User('', '', '', '', '', '','')
 
   ngOnInit(): void {
   }

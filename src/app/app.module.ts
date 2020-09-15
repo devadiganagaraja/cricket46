@@ -41,6 +41,11 @@ import { HomeComponent } from './home/home.component';
 import { ToursListComponent } from './tours-list/tours-list.component';
 import { EditArticleComponent } from './article/edit-article/edit-article.component';
 import { ViewArticleComponent } from './article/view-article/view-article.component';
+
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatToolbarModule } from   '@angular/material/toolbar';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +89,9 @@ import { ViewArticleComponent } from './article/view-article/view-article.compon
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressBarModule,
+    MatToolbarModule
 
   ],
   providers: [],

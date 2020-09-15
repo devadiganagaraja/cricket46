@@ -6,6 +6,7 @@ export class User{
   constructor( public phone: string,
             public userName: string,
             public firstName: string,
+            public image: string,
             public lastName: string,
             public email: string,
             public password: string){

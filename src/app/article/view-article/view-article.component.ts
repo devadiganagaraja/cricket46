@@ -19,7 +19,7 @@ export class ViewArticleComponent implements OnInit {
   ) { }
 
   articleId: string = this.route.snapshot.params['articleId'];
-  article: ArticleModel = new ArticleModel(0, '', '','','','')
+  article: ArticleModel = new ArticleModel(0, '', '','','','', '')
 
 
   imageHostName : string = IMAGE_S3_BUCKET_URL

@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin() {
-    this.userDataService.authenticateUser(new User('', this.userName, '', '', '', this.password)).subscribe(
+    this.userDataService.authenticateUser(new User('', this.userName, '', '','', '', this.password)).subscribe(
       response => {
         if(response==true){
           this.invalidLogin = false

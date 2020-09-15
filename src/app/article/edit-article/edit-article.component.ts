@@ -17,7 +17,7 @@ export class EditArticleComponent implements OnInit {
   ) { }
 
   articleId: string = this.route.snapshot.params['articleId'];
-  article: ArticleModel = new ArticleModel(0,'','','','','');
+  article: ArticleModel = new ArticleModel(0,'','','','','', '');
 
  
 
@@ -33,6 +33,10 @@ export class EditArticleComponent implements OnInit {
     this.articleDataService.updateArticle(formData).subscribe(response => {console.log("put tes"+response)},  error => console.log(console.error()))
     this.router.navigate(["article"])
     console.log(formData)
+  }
+
+  onFileChanged(event) {
+    const file = event.target.files[0]
   }
 
 }

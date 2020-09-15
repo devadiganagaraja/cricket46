@@ -1,6 +1,7 @@
 .example-form {
     min-width: 150px;
     max-width: 500px;
+    align-items: center;
     width: 100%;
 }
 

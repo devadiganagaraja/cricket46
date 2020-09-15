@@ -5,5 +5,7 @@ export class ArticleModel {
         public lastModified: string,
         public prePara: string,
         public postPara: string,
-        public articleStatus: string){}
+        public articleStatus: string,
+        public articleImage : string ){}
+        
 }
