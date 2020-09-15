@@ -9,7 +9,7 @@
 
 
         <div class="left-float tbl-wdt-23 scr-hd-br-rt mt-div border-bottom" *ngFor='let gameInfo of allGames | slice:start:end;'>
-           
+
             <div (click)="viewMatch(gameInfo.gameId)" class="pointr">
                 <app-match-desc [matchInfo]="gameInfo">
 
@@ -39,6 +39,17 @@
     </div>
 
     <div class="left-float tour-div wdt-68 feed-div">
-        Feeds
+
+        <div class="fd-div scr-hd-br" *ngFor="let art of articles">
+
+
+            <div class="left-float" style="width: 18%;">
+                <img alt="Image for post" class="" width="150" height="150" src="{{imageHostName}}/articles/1599390652019.jpg">
+            </div>
+            <div class="left-float pad-top-10" style="width: 80%;">
+                <div><span><strong>{{art.title}}</strong></span> </div> {{art.prePara}}
+            </div>
+
+
+        </div>
     </div>
-</div>

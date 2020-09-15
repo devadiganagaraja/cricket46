@@ -63,7 +63,7 @@
 }
 
 .wdt-15 {
-    width: 15%;
+    width: 19%;
 }
 
 .feed-div {
@@ -73,7 +73,7 @@
 }
 
 .wdt-68 {
-    width: 68%;
+    width: 60%;
 }
 
 .left-arv-div {
@@ -81,8 +81,13 @@
     padding-left: 53px;
 }
 
+.fd-div {
+    margin: 1rem 1.5rem;
+    height: 150px;
+}
+
 @media (max-width:1100px) {
-    .tbl-wdt-24 {
+    .tbl-wdt-23 {
         width: 100%;
     }
     /* .arrow {

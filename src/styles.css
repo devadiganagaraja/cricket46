@@ -65,7 +65,7 @@ body {
 }
 
 .cric-container {
-    max-width: 50rem;
+    max-width: 60rem;
     margin: 0 auto;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .16);
     background-color: white;
@@ -412,4 +412,14 @@ body {
 
 .sum-desc-div {
     padding: 2px 16px 16px 16px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.article-container {
+    max-width: 60rem;
+    margin: 0 auto;
+    background-color: white;
 }

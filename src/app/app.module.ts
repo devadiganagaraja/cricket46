@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -42,6 +42,9 @@ import { ToursListComponent } from './tours-list/tours-list.component';
 import { MyTeamComponent } from './my-team/my-team.component';
 import { EditArticleComponent } from './article/edit-article/edit-article.component';
 import { ViewArticleComponent } from './article/view-article/view-article.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +73,7 @@ import { ViewArticleComponent } from './article/view-article/view-article.compon
     MatchDescComponent,
     HomeComponent,
     ToursListComponent,
-    MyTeamComponent
+    MyTeamComponent,
     EditArticleComponent,
     ViewArticleComponent
   ],
@@ -78,6 +81,7 @@ import { ViewArticleComponent } from './article/view-article/view-article.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
@@ -86,7 +90,10 @@ import { ViewArticleComponent } from './article/view-article/view-article.compon
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatAutocompleteModule
 
   ],
   providers: [],
