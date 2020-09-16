@@ -917,3 +917,81 @@ ul {
 .apprDiv {
     padding-top: 1rem;
 }
+
+
+.comment-section{
+    margin-top: 40px;
+    font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    color: rgba(117, 117, 117, 1);
+    margin-bottom: 50px;
+}
+.tag-list{
+    margin-top: 25px;
+    display:flex
+   
+}
+.tags{
+    background: rgba(242, 242, 242, 1);
+    color: rgba(117, 117, 117, 1);
+    line-height: 22px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    width: fit-content;
+    margin-right: 12px
+}
+.greeting{
+line-height: 20px
+}
+
+
+.responde-claps-main{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.responde-claps{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(41, 41, 41, 1);
+    font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+}
+.share-icons{
+    opacity: 0.6 ;
+    margin-right: 6px
+}
+.comments{
+    margin-top: 25px;
+}
+
+.artical-profile-div{
+    padding: 0
+}
+.profile-wrapper{
+    display: flex;
+   
+}
+.profile-wrapper >img{
+border-radius: 50%
+}
+.profile-details{
+    padding-left: 12px
+}
+
+.text-dark{
+    color: rgba(41, 41, 41, 1);
+    font-size: 14px;
+    font-weight: 400;
+  font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+}
+
+.discription{
+padding-top: 8px;
+font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+}
+.date{
+    font-size: 12px
+}
