@@ -12,8 +12,11 @@
 
 
         <fieldset class="form-group">
-            <label>Photo</label>
-            <input type="file" accept="image/*">
+            <label class="btn btn-default">
+                <input type="file" (change)="selectFile($event)">
+              </label>
+              
+              <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload(user.userName+'.png')">Upload</button>
         </fieldset>
        
 
