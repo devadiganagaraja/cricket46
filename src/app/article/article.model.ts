@@ -7,3 +7,11 @@ export class ArticleModel {
         public postPara: string,
         public articleStatus: string){}
 }
+
+export class ApproveArticle {
+    public playerId: number;
+    public seriesId: number;
+    public teamId: number;
+    public approveRemarks: string;
+
+}

@@ -4,6 +4,8 @@ import { IMAGE_S3_BUCKET_URL } from 'src/app/constants';
 import { HomeService } from '../service/data/home.service';
 import { HomeModel } from './home.model';
 import { GameInfo, LeagueDataService } from '../service/data/league-data.service';
+import { ArticleDataService } from '../service/data/article-data.service';
+import { ArticleModel } from '../article/article.model';
 
 @Component({
   selector: 'app-home',
@@ -23,11 +25,19 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private homeService: HomeService,
+    private articleDataService: ArticleDataService,
     private leagservice: LeagueDataService) { }
+
+    articles : ArticleModel[];
+    imageHostName : string = IMAGE_S3_BUCKET_URL
+  
 
   ngOnInit(): void {
 
     this.getHomeDetails();
+    this.articleDataService.retrieveAllArticle().subscribe(res=> {
+      this.articles=res;
+    });
   }
 
   getHomeDetails() {

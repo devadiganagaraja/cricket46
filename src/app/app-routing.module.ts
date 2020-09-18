@@ -17,8 +17,10 @@ import { PlayerComponent } from './player/player.component';
 import { ArticleComponent } from './article/article.component';
 import { NewArticleComponent } from './article/new-article/new-article.component';
 import {HomeComponent} from './home/home.component'
+import { MyTeamComponent } from './my-team/my-team.component';
 import { EditArticleComponent } from './article/edit-article/edit-article.component';
 import { ViewArticleComponent } from './article/view-article/view-article.component';
+
 
 
 const routes: Routes = [
@@ -39,6 +41,7 @@ const routes: Routes = [
   {path:'editArticle/:articleId', component:EditArticleComponent},
   {path:'viewArticle/:articleId', component:ViewArticleComponent},
   {path:'home', component: HomeComponent},
+  {path: 'myTeam', component: MyTeamComponent},
   { path : '', component : HomeComponent},
   { path : '**', component : ErrorComponent}
 ];
