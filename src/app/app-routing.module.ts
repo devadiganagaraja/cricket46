@@ -20,6 +20,8 @@ import {HomeComponent} from './home/home.component'
 import { MyTeamComponent } from './my-team/my-team.component';
 import { EditArticleComponent } from './article/edit-article/edit-article.component';
 import { ViewArticleComponent } from './article/view-article/view-article.component';
+import { Cric11Component } from './cric11/cric11.component';
+
 
 
 
@@ -42,6 +44,7 @@ const routes: Routes = [
   {path:'viewArticle/:articleId', component:ViewArticleComponent},
   {path:'home', component: HomeComponent},
   {path: 'myTeam', component: MyTeamComponent},
+  { path: 'cric11/:id', component: Cric11Component },
   { path : '', component : HomeComponent},
   { path : '**', component : ErrorComponent}
 ];

@@ -37,12 +37,12 @@ export class MatchComponent implements OnInit {
     console.log("this.matchId:::::"+this.matchId)
 
     this.refreshData();
-   // if(this.live){
+    if(this.live){
         this.interval = setInterval(() => { 
           this.refreshData(); 
       }, 15000);
     }
-  //  }
+    }
 
 
     refreshData(){

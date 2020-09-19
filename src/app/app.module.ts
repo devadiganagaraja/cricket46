@@ -45,6 +45,7 @@ import { ViewArticleComponent } from './article/view-article/view-article.compon
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { Cric11Component } from './cric11/cric11.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +76,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     ToursListComponent,
     MyTeamComponent,
     EditArticleComponent,
-    ViewArticleComponent
+    ViewArticleComponent,
+    Cric11Component
   ],
   imports: [
     BrowserModule,

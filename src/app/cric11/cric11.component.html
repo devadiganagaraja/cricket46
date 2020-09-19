@@ -1,0 +1,323 @@
+<!-- <div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Cricscore</h3>
+    </div> -->
+
+
+<div class="panel-body" *ngIf="playElevenModel">
+    <!-- <div class="col-sm-12 col-md-12"> -->
+    <div *ngIf="playElevenModel.squad1.players" class="col-sm-12 col-md-12 padding1rem">
+        <mat-card class="col-sm-4 col-md-4">
+            <mat-card-content>
+                <div class="score-det-text">
+                    <img src="{{imageHostName}}/teams/{{playElevenModel.gameInfo.team1Name.split(':')[1]}}.png" alt="" height="20" width="20" onError="this.src='../../assets/Image/noimage.png'"> {{playElevenModel.gameInfo.team1Name.split(':')[0]}} {{playElevenModel.gameInfo.team1Score}}
+                </div>
+                <div class="score-det-text">
+                    <img src="{{imageHostName}}/teams/{{playElevenModel.gameInfo.team2Name.split(':')[1]}}.png" alt="" height="20" width="20" onError="this.src='../../assets/Image/noimage.png'"> {{playElevenModel.gameInfo.team2Name.split(':')[0]}} {{playElevenModel.gameInfo.team2Score}}
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <span class="note"> {{playElevenModel.gameInfo.note}}</span>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+
+
+    <!-- <div class="match-title col-sm-12 col-md-12" *ngIf="playElevenModel.squad1.players">
+            <div class="col-md-4 col-lg-4"></div>
+            <div class="score-det-text col-sm-5 col-xs-5 col-md-2 col-lg-2">
+                <img [src]="playElevenModel.event.team1.imageURL" alt="" height="20" width="20" onError="this.src='../../assets/Image/noimage.png'"> {{playElevenModel.event.team1.teamName.split(':')[0]}} {{playElevenModel.event.team1.score}}
+            </div>
+            <div class="score-det-text col-sm-1 col-xs-1 col-md-1 col-lg-1">VS</div>
+            <div class="score-det-text col-sm-5 col-xs-5 col-md-2 col-lg-2">
+                <img [src]="playElevenModel.event.team2.imageURL" alt="" height="20" width="20" onError="this.src='../../assets/Image/noimage.png'"> {{playElevenModel.event.team2.teamName.split(':')[0]}} {{playElevenModel.event.team2.score}}
+            </div>
+            <div class="col-md-3 col-lg-3"></div>
+        </div> -->
+    <!-- </div> -->
+
+    <div *ngIf="playElevenModel.gameInfo.gameStatus == 'pre'" class="col-sm-12 col-md-12">
+
+
+        <br />
+        <!-- <h4>{{points}}</h4> -->
+        <div class="row" *ngIf="playElevenModel.squad1.players.length > 0">
+            <div class="col-sm-4 col-md-4">
+                <mat-card *ngIf="playElevenModel.squad1.players">
+                    <mat-card-header>
+                        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                        <mat-card-subtitle class="card-title">
+                            <img src="{{imageHostName}}/teams/{{playElevenModel.gameInfo.team1Name.split(':')[1]}}.png" alt="" height="30" width="30" onError="this.src='../../assets/Image/noimage.png'"> {{playElevenModel.squad1.teamName.split(':')[0]}}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+
+
+                        <div *ngFor="let players of playElevenModel.squad1.players">
+                            <div class="player-div row">
+                                <div class="col-sm-10 col-md-10 col-xs-10">
+                                    <img [src]='players.imageURL' alt="" height="40" width="40" onError="this.src='../../assets/Image/empty_profile.png'">
+                                    <span class="player-span">
+                                            <a
+                                                (click)='gotoPlayerInfo(players.playerName)'>{{players.playerName.split(':')[0]}}</a>
+                                        </span>
+
+                                    <img [src]='players.typeImage' alt="" height="20" width="20">
+
+                                </div>
+                                <div class="col-sm-1 col-md-1 col-xs-1">
+                                    <button class="glyphicon glyphicon-arrow-right arrow-right" (click)='addToMyTeam(players)'></button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+
+
+            <div class="col-sm-4 col-md-4" *ngIf="myTeam.players">
+
+                <!-- <div class="panel-primary"> -->
+                <!-- <div class="panel-heading-11">
+                            <h3 class="panel-title title">My Team</h3>
+                        </div> -->
+
+                <mat-card *ngIf="myTeam.players">
+                    <mat-card-header>
+                        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                        <mat-card-subtitle class="card-title">My Team</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+
+                        <div *ngFor="let players of myTeam.players">
+                            <div class="player-div row">
+                                <div class="col-sm-10 col-md-10 col-xs-10">
+                                    <img [src]='players.imageURL' alt="" height="40" width="40" onError="this.src='../../assets/Image/empty_profile.png'">
+
+                                    <span class="player-span">
+                                            <a (click)='gotoPlayerInfo(players.playerName)'>
+                                                {{players.playerName.split(':')[0]}}
+                                            </a>
+                                        </span>
+                                    <img [src]='players.typeImage' alt="" height="20" width="20">
+                                    <!-- <img [src]='players.typeImage' alt="" height="40" width="40" > -->
+
+                                </div>
+                                <div class="col-sm-1 col-md-1 col-xs-1">
+                                    <button class="glyphicon glyphicon-remove cross" (click)='removeFromMyTeam(players)'></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button mat-button (click)="saveMyTeam()" #save>Save</button>
+                        <br />
+                        <span [ngStyle]="{'color': messageColor}">{{message}}</span>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+
+            <div class="col-sm-4 col-md-4">
+                <mat-card *ngIf="playElevenModel.squad1.players">
+                    <mat-card-header>
+                        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                        <mat-card-subtitle class="card-title">
+                            <img src="{{imageHostName}}/teams/{{playElevenModel.gameInfo.team2Name.split(':')[1]}}.png" alt="" height="30" width="30" onError="this.src='../../assets/Image/noimage.png'"> {{playElevenModel.squad2.teamName.split(':')[0]}}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+
+                        <div *ngFor="let players of playElevenModel.squad2.players">
+                            <div class="player-div row">
+                                <div class="col-sm-1 col-md-1 col-xs-1">
+                                    <button class="glyphicon glyphicon-arrow-left arrow-left" (click)='addToMyTeam(players)'></button>
+                                </div>
+
+                                <div class="col-sm-10 col-md-10 col-xs-10">
+                                    <img [src]='players.imageURL ' alt="" height="40" width="40" onError="this.src='../../assets/Image/empty_profile.png'">
+                                    <span class="player-span">
+                                            <a (click)=' gotoPlayerInfo(players.playerName) '>
+                                                {{players.playerName.split(':')[0]}}
+                                            </a>
+                                        </span>
+                                    <img [src]='players.typeImage' alt="" height="20" width="20">
+                                </div>
+                            </div>
+
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <br />
+
+    <div *ngIf="playElevenModel.gameInfo.gameStatus != 'pre'">
+        <div class="row col-sm-12 col-md-12" *ngIf="playElevenModel.userSquad">
+
+            <div class="col-sm-4 col-md-4 bgWhite borderWhtesmoke">
+                <div class="panel-primary" *ngIf="leaderboardModel">
+                    <div class="panel-heading-11">
+                        <h3 class="panel-title title">Leaderboard</h3>
+                    </div>
+
+                    <div class="panel-body" *ngIf="myTeam.players">
+                        <div class="player-div row">
+                            <div class="col-sm-6 col-md-6">
+                                <!-- <img [src]='players.imageURL' alt="" height="40" width="40"> -->
+                                <span class="player-span">
+                                                Team
+                                            </span>
+
+                            </div>
+
+                            <div class="col-sm-3 col-md-3">
+                                <!-- <img [src]='players.imageURL' alt="" height="40" width="40"> -->
+                                <span class="player-span">
+                                                Points
+                                            </span>
+
+                            </div>
+
+
+                            <div class="col-sm-3 col-md-3">
+                                <!-- <img [src]='players.imageURL' alt="" height="40" width="40"> -->
+                                <span class="player-span">
+                                                Rank
+                                            </span>
+
+                            </div>
+
+
+                        </div>
+
+                        <div *ngFor="let users of leaderboardModel">
+                            <div class="player-div row">
+                                <div class="col-sm-6 col-md-6">
+                                    <!-- <img [src]='players.imageURL' alt="" height="40" width="40"> -->
+                                    <span class="player-span">
+                                                    <a (click)="gotoPlayer11(users.userName)">{{users.userName}}</a>
+                                                </span>
+
+                                </div>
+
+                                <div class="col-sm-3 col-md-3">
+                                    <!-- <img [src]='players.imageURL' alt="" height="40" width="40"> -->
+                                    <span class="player-span">
+                                                    {{users.points}}
+                                                </span>
+
+                                </div>
+
+
+                                <div class="col-sm-3 col-md-3">
+                                    <!-- <img [src]='players.imageURL' alt="" height="40" width="40"> -->
+                                    <span class="player-span">
+                                                    {{users.position}}
+                                                </span>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8 col-md-8 bgWhite">
+                <div class="panel-primary">
+                    <div class="panel-heading-11">
+                        <h3 class="panel-title title ">{{userName}} Squad11</h3>
+                    </div>
+
+                    <div class="panel-body ">
+
+                        <div class='col-sm-12 col-md-12'>
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="center-align" rowspan="2">Player Name</th>
+                                        <th class="center-align" colspan="2">Runs</th>
+                                        <th class="center-align" colspan="2">Wickets</th>
+                                        <th class="center-align" colspan="2">Six</th>
+                                        <th class="center-align" colspan="2">Fours</th>
+                                        <th class="center-align" colspan="2">Maiden</th>
+                                        <th class="center-align" colspan="2">Catch</th>
+                                        <th class="center-align" colspan="2">Stump</th>
+                                        <th class="center-align" rowspan="2">Total</th>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th class="center-align ">R</th>
+                                        <th class="center-align ">pts</th>
+                                        <th class="center-align ">W</th>
+                                        <th class="center-align ">pts</th>
+                                        <th class="center-align ">Six</th>
+                                        <th class="center-align ">Pts</th>
+                                        <th class="center-align ">Four</th>
+                                        <th class="center-align ">Pts</th>
+                                        <th class="center-align ">M</th>
+                                        <th class="center-align ">Pts</th>
+                                        <th class="center-align ">C</th>
+                                        <th class="center-align ">Pts</th>
+                                        <th class="center-align ">St</th>
+                                        <th class="center-align ">Pts</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr *ngFor="let player of playElevenModel.userSquad.userSquadPlayers">
+                                        <td class="center-align"> <a class="player-cursor">{{player.playerName.split(':')[0]}} </a></td>
+                                        <td class="center-align">{{player.points.runs}}</td>
+                                        <td class="center-align">{{player.points.runsPoints}}</td>
+                                        <td class="center-align">{{player.points.wickets}}</td>
+                                        <td class="center-align">{{player.points.wicketsPoints}}</td>
+                                        <td class="center-align">{{player.points.sixes}}</td>
+                                        <td class="center-align">{{player.points.sixesPoints}}</td>
+                                        <td class="center-align">{{player.points.fours}}</td>
+                                        <td class="center-align">{{player.points.foursPoints}}</td>
+                                        <td class="center-align">{{player.points.maidens}}</td>
+                                        <td class="center-align">{{player.points.maidensPoints}}</td>
+                                        <td class="center-align">{{player.points.catches}}</td>
+                                        <td class="center-align">{{player.points.catchesPoints}}</td>
+                                        <td class="center-align">{{player.points.stumped}}</td>
+                                        <td class="center-align">{{player.points.stumpedPoints}}</td>
+                                        <td class="center-align">{{player.points.points}}</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th colspan="15" style="text-align: right">Total Points</th>
+                                        <th class="center-align">{{playElevenModel.userSquad.totalPoint}}</th>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- </div> -->
