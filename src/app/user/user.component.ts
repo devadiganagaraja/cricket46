@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService, User } from '../service/data/user-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UploadService } from '../service/data/upload.service';
 
 @Component({
   selector: 'app-user',
@@ -11,9 +12,12 @@ export class UserComponent implements OnInit {
 
   constructor(private userDataService: UserDataService,
               private route: ActivatedRoute,
-              private router : Router) { }
+              private router : Router,
+              private uploadService: UploadService) { }
 
   userName: string
+  selectedFiles: FileList;
+
   user: User = new User('', '', '', '', '', '')
   
   ngOnInit(): void {
@@ -35,5 +39,16 @@ export class UserComponent implements OnInit {
 
     this.router.navigate(["users"])
   }
+
+
+  upload(fileName) {
+    console.log(fileName);
+    const file = this.selectedFiles.item(0);
+    this.uploadService.uploadFile(file, fileName);
+    }
+    
+    selectFile(event) {
+    this.selectedFiles = event.target.files;
+    }
 
 }
