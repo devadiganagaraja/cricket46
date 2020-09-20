@@ -36,16 +36,10 @@ export class UserComponent implements OnInit {
   saveUser(){
   
     this.userDataService.putUser(this.userName, this.user).subscribe(response => {console.log("put tes"+response)})
-
+    const file = this.selectedFiles.item(0);
+    this.uploadService.uploadFile(file,"users", this.user.userName+".png");
     this.router.navigate(["users"])
   }
-
-
-  upload(fileName) {
-    console.log(fileName);
-    const file = this.selectedFiles.item(0);
-    this.uploadService.uploadFile(file, fileName);
-    }
     
     selectFile(event) {
     this.selectedFiles = event.target.files;

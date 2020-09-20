@@ -41,7 +41,7 @@ export class ArticleComponent implements OnInit {
 
   onClickDelete(formData) {
 
-    this.articleDataService.deleteArticle(formData.id).subscribe(response => {console.log("put tes"+response)})
+    this.articleDataService.deleteArticle(formData).subscribe(response => {console.log("put tes"+response)})
 
     this.router.navigate(["article"])
     console.log(formData)

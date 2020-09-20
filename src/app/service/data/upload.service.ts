@@ -9,11 +9,12 @@ export class UploadService {
 
 
 
-  FOLDER : string = "users";
   constructor() { }
 
 
-  uploadFile(file, fileName) {
+  uploadFile(file,folder, fileName) {
+      console.log("folder::"+folder)
+      console.log("fileName::"+fileName)
     const contentType = file.type;
     const bucket = new S3(
           {
@@ -24,7 +25,7 @@ export class UploadService {
       );
       const params = {
           Bucket: 'cricket46',
-          Key: this.FOLDER + "/" +fileName,
+          Key: folder + "/" +fileName,
           Body: file,
           ACL: 'public-read',
           ContentType: contentType

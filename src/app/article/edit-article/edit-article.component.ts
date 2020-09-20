@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleModel } from '../article.model';
+import { ArticleModel, AuthorInfo } from '../article.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ArticleDataService } from 'src/app/service/data/article-data.service';
 
@@ -17,7 +17,7 @@ export class EditArticleComponent implements OnInit {
   ) { }
 
   articleId: string = this.route.snapshot.params['articleId'];
-  article: ArticleModel = new ArticleModel(0,'','','','','');
+  article: ArticleModel = new ArticleModel();
 
  
 

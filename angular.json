@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "cricket46"
+  "defaultProject": "cricket46",
+  "cli": {
+    "analytics": "66a16414-a5dc-4d87-81a9-349ef3ee072d"
+  }
 }
