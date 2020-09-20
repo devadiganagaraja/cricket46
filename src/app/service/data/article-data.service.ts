@@ -39,7 +39,7 @@ export class ArticleDataService {
 
 
   updateArticle(article){
-    return this.http.post(`${this.hostName}/articles`, article)
+    return this.http.post<ArticleModel>(`${this.hostName}/articles`, article)
   }
 
   clapArticle(articleId){

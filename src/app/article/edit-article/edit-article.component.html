@@ -12,14 +12,42 @@
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <mat-label></mat-label>
+                    <mat-label>Pre Text</mat-label>
                     <textarea matInput name="prePara" [(ngModel)]="article.prePara"></textarea>
                 </mat-form-field>
 
+                <label class="btn btn-default">
+                    <input type="file" (change)="selectFile($event)">
+                  </label>
+
                 <mat-form-field class="example-full-width">
-                    <mat-label></mat-label>
+                    <mat-label>Post Text</mat-label>
                     <textarea matInput name="postPara" [(ngModel)]="article.postPara"></textarea>
                 </mat-form-field>
+
+                    
+
+                    <div class="form-group">
+                        <label>Tags :[Ex: IPL:104624]</label>
+                       <table>
+                           <tr style="padding: 5px;">
+                            <td>
+                                <label for="articleLeague">League</label>
+                                <input type="text" class="form-control" name="leagueTag" [(ngModel)]="article.leagueTag" id="articleLeague" placeholder="League">
+                            </td>
+                            <td>
+                                <label for="articleTeam">Team</label>
+                                <input type="text" class="form-control" name="teamTag" [(ngModel)]="article.teamTag" id="articleLeague" id="articleTeam" placeholder="Team">
+                            </td>
+                            <td>
+                                <label for="articlePlayer">Player</label>
+                                <input type="text" class="form-control" name="playerTag" [(ngModel)]="article.playerTag" id="articleLeague" id="articlePlayer" placeholder="Player">
+                            </td>
+                        </tr>
+                    </table>
+                    </div>              
+
+               
 
                 <button mat-flat-button color="primary" type="submit">Save</button>
 

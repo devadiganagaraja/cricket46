@@ -41,24 +41,24 @@
     <div class="left-float tour-div wdt-68 feed-div">
 
 
-        <div class="fd-div scr-hd-br" *ngFor="let art of articles | slice:0:9;">
+        <div class="fd-div scr-hd-br" *ngFor="let art of homeModel.cricketArticles | slice:0:9;">
 
             <div>
                 <div class="left-float">
 
 
-                    <img alt="Sachin Tendulkar" class="mom-img" src="{{imageHostName}}/users/st.png" width="48" height="48">
+                    <img alt="Sachin Tendulkar" class="mom-img" src="{{imageHostName}}/users/{{art.authorInfo.userName}}.png" width="48" height="48">
                 </div>
                 <div class="left-float pad-left-1rem art-publish-fnt">
-                    <div class="pub-txt-div">Abhijith Kundar</div>
-                    <div class="fw-300"> <span>Dec 11, 2019</span></div>
+                    <div class="pub-txt-div">{{art.authorInfo.firstName}}&nbsp;{{art.authorInfo.lastName}}</div>
+                    <div class="fw-300"> <span>{{art.lastModified | date : 'medium'}}</span></div>
 
                 </div>
 
             </div>
 
             <div>
-                <img alt="Image for post" class="" width="700" height="350" src="{{imageHostName}}/articles/1599390652019.jpg">
+                <img alt="Image for post" class="" width="700" height="350" src="{{imageHostName}}/articles/{{art.id}}.jpg">
             </div>
             <div class="cric-pad-top1rem">
                 <div class="cric-font-20 "><span>{{art.title}}</span> </div>

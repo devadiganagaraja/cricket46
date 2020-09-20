@@ -35,9 +35,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.getHomeDetails();
-    this.articleDataService.retrieveAllArticle().subscribe(res=> {
-      this.articles=res;
-    });
+   
   }
 
   getHomeDetails() {

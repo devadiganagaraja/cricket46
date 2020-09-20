@@ -8,7 +8,11 @@ export class ArticleModel {
         public authorInfo : AuthorInfo;
         public tags: string[];
         public claps: string[];
-        public articleResponses: ArticleResponse[]
+        public articleResponses: ArticleResponse[];
+        public leagueTag: string;
+        public teamTag: string;
+        public playerTag: string;
+
        
 }
 
