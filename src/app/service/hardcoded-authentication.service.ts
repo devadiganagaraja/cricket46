@@ -9,11 +9,11 @@ export class HardcodedAuthenticationService {
   constructor(private userDataService: UserDataService) { }
 
   isUserLoggedIn(){
-    let user = sessionStorage.getItem("loggedInUser")
+    let user = localStorage.getItem("loggedInUser")
     return ! (user === null);
   }
 
   logout(){
-    sessionStorage.removeItem("loggedInUser");
+    localStorage.removeItem("loggedInUser");
   }
 }

@@ -352,11 +352,11 @@ body {
     user-select: none;
     color: white;
     border-bottom: 1px solid #ebebeb;
-    background: #17abcc;
-    padding: 12px 24px 10px;
+    background: #0b1d9b;
+    padding: 2px 10px 2px;
     font-family: arial, sans-serif-medium, sans-serif;
-    font-weight: normal;
-    font-size: initial;
+    font-weight: 700;
+    font-size: inherit;
 }
 
 .league-live-event-td-div-div-div-team-td-image {

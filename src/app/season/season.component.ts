@@ -50,7 +50,6 @@ export class SeasonComponent implements OnInit {
   }
 
   handleSuccessfullSeasonTeamsResponse(response){
-    console.log("teams:"+response)
     this.teams = response;
     console.log("handleSuccessfullSeasonTeamsResponse")
 
@@ -64,7 +63,6 @@ export class SeasonComponent implements OnInit {
   }
 
   refreshLeagueSeason(selectedSeason) {
-    console.log(selectedSeason);
     this.seasonYear = selectedSeason;
     this.leagueDataService.retrieveLeagueSeason(this.leagueId, this.seasonYear).subscribe(response => this.handleSuccessfullLeagueSeasonResponse(response), error => console.log(console.error()));
 

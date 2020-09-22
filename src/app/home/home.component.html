@@ -43,7 +43,7 @@
 
         <div class="fd-div scr-hd-br" *ngFor="let art of homeModel.cricketArticles | slice:0:9;">
 
-            <div>
+            <div style="min-height:60px;">
                 <div class="left-float">
 
 
@@ -58,7 +58,8 @@
             </div>
 
             <div>
-                <img alt="Image for post" class="" width="700" height="350" src="{{imageHostName}}/articles/{{art.id}}.jpg">
+
+                <img alt="Image for post" class="art-image" src="{{imageHostName}}/articles/{{art.id}}.jpg">
             </div>
             <div class="cric-pad-top1rem">
                 <div class="cric-font-20 "><span>{{art.title}}</span> </div>

@@ -37,11 +37,12 @@ export class MatchComponent implements OnInit {
     console.log("this.matchId:::::"+this.matchId)
 
     this.refreshData();
-    if(this.live){
+
+  //  if(this.live){
         this.interval = setInterval(() => { 
           this.refreshData(); 
-      }, 15000);
-    }
+      }, 30000);
+   // }
     }
 
 
@@ -52,7 +53,7 @@ export class MatchComponent implements OnInit {
         console.log("refreshing this.matchId status:::::"+response.gameStatus)
 
         this.live = response.gameStatus == 'live';
-        this.post = response.gameStatus == 'post';
+        this.post = response.gameStatus == 'post';  
         this.pre = response.gameStatus == 'pre';
         // if(response.gameStatus == 'live'){
         //   console.log("refreshing this.matchId:::::"+this.matchId)

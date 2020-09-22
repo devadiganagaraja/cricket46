@@ -103,6 +103,11 @@
     height: 150px;
 }
 
+.art-image {
+    width: 700px;
+    height: 350px;
+}
+
 @media (max-width:1100px) {
     .tbl-wdt-23 {
         width: 100%;
@@ -112,7 +117,7 @@
     } */
     .ft-mt-div {
         margin-left: 2px;
-        width: 89%;
+        width: 80%;
     }
     .cric-home-container {
         height: 570px;
@@ -121,7 +126,8 @@
         height: 570px;
     }
     .left-arv-div {
-        padding-left: 0px;
+        padding-left: 15px;
+        width: 9%;
     }
     .wdt-15 {
         width: 49%;
@@ -129,5 +135,9 @@
     .wdt-68 {
         width: 100%;
         margin: 10px 0 0 0;
+    }
+    .art-image {
+        width: 350px;
+        height: 300px;
     }
 }

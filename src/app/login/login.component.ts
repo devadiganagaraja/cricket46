@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       response => {
         if(response==true){
           this.invalidLogin = false
-          sessionStorage.setItem("loggedInUser", this.userName)
+          localStorage.setItem("loggedInUser", this.userName)
           this.router.navigate(["welcome", this.userName])
         }else{
           this.invalidLogin = true

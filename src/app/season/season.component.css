@@ -24,7 +24,7 @@
 
 .leader-div {
     border-right: solid 1px #eee;
-    border-top: solid 1px #17abcc;
+    border-top: solid 1px #0b1d9b;
 }
 
 .teamname-text-wdt {
@@ -64,14 +64,14 @@
 }
 
 .event-overflow {
-    height: 540px;
+    height: 551px;
     overflow-y: auto;
 }
 
 .lead-container {
     padding-left: 16px;
-    padding-top: 38px;
-    padding-bottom: 16px;
+    padding-top: 20px;
+    /* padding-bottom: 16px; */
     padding-right: 16px;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .event-overflow::-webkit-scrollbar-thumb {
-    border: 2px solid #17abcc;
+    border: 3px solid #0b1d9b;
 }
 
 .inline {
@@ -160,5 +160,11 @@
     }
     .width-21 {
         width: 100%;
+    }
+    .lead-container {
+        padding-left: 10px;
+        padding-top: 20px;
+        padding-bottom: 16px;
+        padding-right: 0px;
     }
 }

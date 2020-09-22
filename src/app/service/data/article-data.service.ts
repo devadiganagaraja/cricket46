@@ -17,7 +17,7 @@ export class ArticleDataService {
 
 
   createArticle(article){
-    article.author = sessionStorage.getItem("loggedInUser");
+    article.author = localStorage.getItem("loggedInUser");
 
     console.log("article::"+article)
     return this.http.put<ArticleModel>(`${this.hostName}/articles`, article)
@@ -45,7 +45,7 @@ export class ArticleDataService {
   clapArticle(articleId){
     let clapArticle = new ClapArticle();
     clapArticle.articleId = articleId;
-    clapArticle.userName = sessionStorage.getItem("loggedInUser");
+    clapArticle.userName = localStorage.getItem("loggedInUser");
 
     return this.http.post(`${this.hostName}/articles/clap`, clapArticle)
 
@@ -57,7 +57,7 @@ export class ArticleDataService {
     let clapArticle = new ClapArticle();
     clapArticle.articleId = articleId;
     clapArticle.commentId = commentId;
-    clapArticle.userName = sessionStorage.getItem("loggedInUser");
+    clapArticle.userName = localStorage.getItem("loggedInUser");
 
     return this.http.post(`${this.hostName}/articles/clap-comment`, clapArticle)
 
@@ -66,7 +66,7 @@ export class ArticleDataService {
   commentArticle(articleId, comment){
     let commentArticle = new ArticleResponse();
     commentArticle.articleId = articleId;
-    commentArticle.userName = sessionStorage.getItem("loggedInUser");
+    commentArticle.userName = localStorage.getItem("loggedInUser");
     commentArticle.comment = comment;
 
     return this.http.put<ArticleModel>(`${this.hostName}/articles/comment`, commentArticle)

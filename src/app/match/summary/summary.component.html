@@ -21,8 +21,7 @@
                             </div>
 
                             <div style="float: right;">
-                                <img src="{{imageHostName}}/players/{{matchModel.manOfTheMatch.playerName.split(':')[1]}}.png" style="width:64px;height:64px" alt="" aria-hidden="true" data-url=""
-                                    role="link" tabindex="0" class="mom-img">
+                                <img src="{{imageHostName}}/players/{{matchModel.manOfTheMatch.playerName.split(':')[1]}}.png" style="width:64px;height:64px" alt="" onError="this.src='../../assets/images/bat-default.jpg'" aria-hidden="true" data-url="" role="link" tabindex="0" class="mom-img">
 
                             </div>
                         </div>
@@ -54,12 +53,12 @@
                                 <div class="sum-desc-div">
                                     <table>
                                         <tbody>
-                                            <tr  *ngFor="let p of leader.battingLeaders;let i = index">
+                                            <tr *ngFor="let p of leader.battingLeaders;let i = index">
                                                 <td class="player-sum-td">
                                                     <div class="bat-sum-div">
-                                                        <img class="mom-img img-border" src="{{imageHostName}}/players/{{leader.battingLeaders[i].playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="" aria-hidden="true" role="link">
+                                                        <img class="mom-img img-border" src="{{imageHostName}}/players/{{leader.battingLeaders[i].playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="" onError="this.src='../../assets/images/bat-default.jpg'" aria-hidden="true" role="link">
                                                     </div>
-                                                    
+
                                                     <div class="player-name-div">
                                                         <span class="pointr" (click)="viewPlayer(leader.battingLeaders[i].playerName.split(':')[1])">  {{leader.battingLeaders[i].playerName.split(':')[0]}} </span>
                                                     </div>
@@ -68,7 +67,7 @@
 
                                                 <td class="player-sum-td">
                                                     <div class="bowl-sum-div">
-                                                        <img class="mom-img img-border" src="{{imageHostName}}/players/{{leader.bowlingLeaders[i].playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="" aria-hidden="true" role="link">
+                                                        <img class="mom-img img-border" src="{{imageHostName}}/players/{{leader.bowlingLeaders[i].playerName.split(':')[1]}}.png" style="width:42px;height:42px" alt="" onError="this.src='../../assets/images/bat-default.jpg'" aria-hidden="true" role="link">
                                                     </div>
                                                     <div class="player-name-div text-right">
                                                         <span class="pointr" (click)="viewPlayer(leader.bowlingLeaders[i].playerName.split(':')[1])">  {{leader.bowlingLeaders[i].playerName.split(':')[0]}} </span>

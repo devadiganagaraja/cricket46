@@ -15,7 +15,7 @@ export class Cric11Service {
 
   getPlayElevenList(eventid: string): Observable<PlayElevenModel> {
     return this.httpClient.get<PlayElevenModel>(this.hostName + '/bestEleven/userName/' +
-    sessionStorage.getItem("loggedInUser") + '/games/' + eventid);
+    localStorage.getItem("loggedInUser") + '/games/' + eventid);
   }
 
   

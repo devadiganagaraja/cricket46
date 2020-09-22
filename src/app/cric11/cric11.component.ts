@@ -29,7 +29,7 @@ export class Cric11Component implements OnInit {
     private router: Router,
   ) { }
 
-  userName = sessionStorage.getItem("loggedInUser");
+  userName = localStorage.getItem("loggedInUser");
 
   ngOnInit(): void {
     this.eventid = this.route.snapshot.params.id;
