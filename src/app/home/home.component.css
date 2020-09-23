@@ -9,6 +9,7 @@
 .tbl-wdt-23 {
     width: 23%;
     background-color: white;
+    margin-right: 20px;
 }
 
 .tbl-wdt-10 {
@@ -72,8 +73,8 @@
     min-height: 400px;
 }
 
-.wdt-68 {
-    width: 48%;
+.wdt-47 {
+    width: 47%;
 }
 
 .left-arv-div {
@@ -99,18 +100,19 @@
 
 .pub-txt-div {
     padding-top: 3px;
-    margin: 1rem 1.5rem;
-    height: 150px;
+    /* margin: 1rem 1.5rem;
+    height: 150px; */
 }
 
 .art-image {
-    width: 700px;
+    width: 99%;
     height: 350px;
 }
 
 @media (max-width:1100px) {
     .tbl-wdt-23 {
         width: 100%;
+        margin-bottom: 1rem;
     }
     /* .arrow {
         display: none;
@@ -120,10 +122,10 @@
         width: 80%;
     }
     .cric-home-container {
-        height: 570px;
+        height: 590px;
     }
     .arw-div {
-        height: 570px;
+        height: 590px;
     }
     .left-arv-div {
         padding-left: 15px;
@@ -132,12 +134,11 @@
     .wdt-15 {
         width: 49%;
     }
-    .wdt-68 {
+    .wdt-47 {
         width: 100%;
         margin: 10px 0 0 0;
     }
     .art-image {
-        width: 350px;
-        height: 300px;
+        height: 200px;
     }
 }

@@ -38,7 +38,7 @@
         <app-tours-list [leagueList]="homeModel.tours" [headText]="'Tours'"></app-tours-list>
     </div>
 
-    <div class="left-float tour-div wdt-68 feed-div">
+    <div class="left-float tour-div wdt-47 feed-div">
 
 
         <div class="fd-div scr-hd-br" *ngFor="let art of homeModel.cricketArticles | slice:0:9;">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="left-float pad-left-1rem art-publish-fnt">
                     <div class="pub-txt-div">{{art.authorInfo.firstName}}&nbsp;{{art.authorInfo.lastName}}</div>
-                    <div class="fw-300"> <span>{{art.lastModified | date : 'medium'}}</span></div>
+                    <div class="fw-300 fts-12"> <span>{{art.lastModified | date : 'medium'}}</span></div>
 
                 </div>
 
