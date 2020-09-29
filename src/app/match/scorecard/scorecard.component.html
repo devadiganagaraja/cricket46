@@ -61,7 +61,7 @@
 
                                         <tr class="scr-hd-br ex-tr">
                                             <td colspan="1" class="stat-td">DNB</td>
-                                            <td colspan="5">
+                                            <td colspan="5" class="padd1rem">
                                                 <span class="pointr" (click)="viewPlayer(yetToBatPlayer.playerName.split(':')[1])" *ngFor="let yetToBatPlayer of scorecard.battingScoreCard.yetToBat; let isLast=last">
 
                                                 {{yetToBatPlayer.playerName.split(':')[0]}}{{isLast ? '' : ', '}}

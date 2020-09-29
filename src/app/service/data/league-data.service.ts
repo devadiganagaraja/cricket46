@@ -138,6 +138,7 @@ export class GameInfo{
     public note: string,
     public gameDate: string,
     public gameId: number,
+    public gameStatus: string
 
   ){
   }

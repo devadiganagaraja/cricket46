@@ -270,3 +270,266 @@
 
 
         </div>
+
+        <div class="seson-mob-container">
+            <mat-tab-group animationDuration="0ms">
+
+
+                <mat-tab label="Home">
+                    <div class="left-float event-overflow" [ngClass]="{ 'tbl-wdt-84': (season.postGameInfoList.length == 0 && season.scheduledGameInfoList.length != 0), 'tbl-wdt-66': !(season.postGameInfoList.length == 0 && season.scheduledGameInfoList.length != 0) }">
+
+
+                        <div class="ht-200" *ngIf="season.liveGameInfoList.length > 0">
+                            <div class="lead-header">
+
+                            </div>
+                            <div class="">
+                                <div class="border-bottom scr-hd-br-lt scr-hd-br-rt tbl-wdt-50 left-float" *ngFor='let liveGameInfo of season.liveGameInfoList'>
+                                    <div (click)="viewMatch(liveGameInfo.gameId)" class="pointr">
+                                        <app-match-desc [matchInfo]="liveGameInfo">
+
+                                        </app-match-desc>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="lead-container width-55 left-float" *ngIf='season.teamGroups.length > 0'>
+
+                            <div>
+                                <div class="lead-header">
+                                    Standing
+                                </div>
+                                <div class="leader-div">
+                                    <table class="cric-tbl" *ngFor='let teamGroup of season.teamGroups'>
+                                        <thead>
+                                            <tr class="scr-hd-br">
+                                                <th class="head-desc" style="width:9px;" scope="col"></th>
+                                                <th class="head-desc" style="width: 15%;" scope="col">Team</th>
+                                                <th class="head-desc text-center" style="width: 9px;" scope="col">P</th>
+                                                <th scope="col" class="head-desc text-center" style="width:9px">W</th>
+                                                <th scope="col" class="head-desc text-center" style="width:9px">L</th>
+                                                <th scope="col" class="head-desc text-center" style="width:9px">NR</th>
+                                                <th scope="col" class="head-desc text-center" style="width:9px">Pts</th>
+                                                <th scope="col" class="head-desc text-center" style="width:11px">NRR</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr></tr>
+                                            <tr class="scr-hd-br" *ngFor='let teamsStanding of teamGroup.teamsStandings'>
+
+                                                <td class="stat-td">
+                                                    <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{teamsStanding.teamName.split(':')[1]}}.png">
+
+                                                </td>
+                                                <td class="stat-td">
+                                                    <span>{{teamsStanding.teamName.split(':')[0]}}</span>
+                                                </td>
+                                                <td class="stat-td text-center">
+                                                    <span>{{teamsStanding.matchesPlayed}}</span>
+                                                </td>
+                                                <td class="stat-td text-center">
+                                                    <span>{{teamsStanding.matchesWon}}</span>
+                                                </td>
+                                                <td class="stat-td text-center">
+                                                    <span>{{teamsStanding.matchesLost}}</span>
+                                                </td>
+                                                <td class="stat-td text-center">
+                                                    <span>{{teamsStanding.matchesTied}}</span>
+                                                </td>
+                                                <td class="stat-td text-center">
+                                                    <span>{{teamsStanding.matchPoints}}</span>
+                                                </td>
+                                                <td class="stat-td text-center">
+                                                    <span>{{teamsStanding.netrr | number:'1.1-2'}}</span>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr></tr>
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <div class="scr-hd-br"></div>
+                            </div>
+                        </div>
+                        <div class="left-float ts-div width-21">
+                            <div class="lead-header">
+                                Top Run Scorer
+                            </div>
+                            <div class="leader-div border-bottom">
+                                <div *ngFor='let battingLeader of season.battingLeaders;' class="ht-90 border-bottom">
+
+
+                                    <div class="left-float cric-pad-top1rem" style="width:30%">
+                                        <img class="mom-img" src="{{imageHostName}}/players/{{battingLeader.playerName.split(':')[1]}}.png" alt="Card image cap" alt="" width="60px" height="60px" onError="this.src='../../assets/images/bat-default.jpg'">
+
+                                    </div>
+                                    <div class="left-float cric-pad-top1rem" style="width:70%">
+                                        <div class="">
+                                            <span class="cric-font14 fw-500">{{battingLeader.playerName.split(":")[0]}}</span>
+                                        </div>
+                                        <div class="top-run-div">
+                                            <span class="cric-font-20"><strong>{{battingLeader.runs}} </strong></span> runs
+                                        </div>
+                                        <div>
+                                            Innings: <span> <strong>{{battingLeader.matches}} </strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="left-float ts-div width-21">
+                            <div class="lead-header">
+                                Top Wicket Taker
+                            </div>
+                            <div class="leader-div border-bottom">
+                                <div *ngFor='let bowlingLeader of season.bowlingLeaders;' class="ht-90 border-bottom">
+
+
+                                    <div class="left-float cric-pad-top1rem" style="width:30%">
+                                        <img class="mom-img" src="{{imageHostName}}/players/{{bowlingLeader.playerName.split(':')[1]}}.png" alt="Card image cap" alt="" width="60px" height="60px" onError="this.src='../../assets/images/bat-default.jpg'">
+
+                                    </div>
+                                    <div class="left-float cric-pad-top1rem" style="width:70%">
+                                        <div class="">
+                                            <span class="cric-font14 fw-500">{{bowlingLeader.playerName.split(":")[0]}}</span>
+                                        </div>
+                                        <div class="top-run-div">
+                                            <span class="cric-font-20"><strong>{{bowlingLeader.wickets}} </strong></span> Wickets
+                                        </div>
+                                        <div>
+                                            Innings: <span> <strong>{{bowlingLeader.matches}} </strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Results">
+                    <div class="scr-hd-br-rt scr-hd-br-lt left-float tbl-wdt-18" *ngIf="season.postGameInfoList.length > 0">
+                        <!-- <div class="border-bottom league-live-events-heading">
+                            Completed
+                        </div> -->
+                        <div class="event-overflow">
+
+                            <div class="border-bottom" *ngFor='let postGameInfo of season.postGameInfoList'>
+                                <div (click)="viewMatch(postGameInfo.gameId)" class="pointr">
+                                    <app-match-desc [matchInfo]="postGameInfo">
+
+                                    </app-match-desc>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </mat-tab>
+
+                <mat-tab label="Upcoming">
+                    <div class="scr-hd-br-rt scr-hd-br-lt left-float tbl-wdt-16" *ngIf="season.scheduledGameInfoList.length > 0">
+
+
+                        <div class="event-overflow">
+
+                            <div class="border-bottom" *ngFor='let  preGameInfo of season.scheduledGameInfoList'>
+                                <div (click)="viewMatch(preGameInfo.gameId)" class="pointr">
+                                    <table class="seson-tbl">
+                                        <tbody>
+                                            <tr class="emp-tr">
+                                                <td class="lc-np"></td>
+                                                <td></td>
+                                                <td class="imspo_mt__rg"></td>
+                                                <td class="imspo_mt__sc-sp"></td>
+                                                <td class="imspo_mt__sc"></td>
+                                                <td class="imspo_mt__rpo-c"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="mtch-note-td">
+                                                    <div class="mtch-note-div">
+                                                        <span>{{preGameInfo.classType}}</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="mtch-dt-td" colspan="9">
+                                                    <div>
+                                                        <div class="mtch-dt-div">
+                                                            <span>{{preGameInfo.gameDate | date: 'medium'}} IST</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+
+                                            </tr>
+
+                                            <tr>
+
+                                            </tr>
+
+                                            <tr class="sm_mt__tr">
+                                                <td class="sm_mt__lc-img-div lc-np">
+                                                    <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{preGameInfo.team1Name.split(':')[1]}}.png">
+                                                </td>
+                                                <td class="sm_mt__tm-td" colspan="8">
+                                                    <div class="sm_mt__tm_ttl-div" style="width: 100%;">
+                                                        <div>
+                                                            <div class="ellipsisize">
+                                                                <span>{{preGameInfo.team1Name.split(':')[0]}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </td>
+                                            </tr>
+                                            <tr class="sm_mt__tr">
+                                                <td class="sm_mt__lc-img-div lc-np">
+                                                    <img class="league-live-event-td-div-div-div-team-td-image" alt="" src="{{imageHostName}}/teams/{{preGameInfo.team2Name.split(':')[1]}}.png">
+                                                </td>
+                                                <td class="sm_mt__tm-td" colspan="8">
+                                                    <div class="sm_mt__tm_ttl-div" style="width: 100%;">
+                                                        <div>
+                                                            <div class="ellipsisize">
+                                                                <span>{{preGameInfo.team2Name.split(':')[0]}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="9" class="mtch-note-td">
+                                                    <div class="ellipsisize">
+                                                        <span [title]="preGameInfo.venue">{{preGameInfo.venue}}</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

@@ -49,6 +49,10 @@ body {
     margin-top: 1rem;
 }
 
+.margin-top2rem {
+    margin-top: 2rem;
+}
+
 .border-bottom {
     border-bottom: 1px solid #eae4e4;
 }
@@ -426,4 +430,8 @@ textarea {
     max-width: 60rem;
     margin: 0 auto;
     background-color: white;
+}
+
+.mat-tab-label-active {
+    background-color: #f3f3f3 !important;
 }
