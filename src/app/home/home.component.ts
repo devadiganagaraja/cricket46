@@ -79,4 +79,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["leagues", tournamentId, "seasons", 0])
   }
 
+  onClickView(articleId) {
+    this.router.navigate(["viewArticle", articleId])
+  }
+
 }

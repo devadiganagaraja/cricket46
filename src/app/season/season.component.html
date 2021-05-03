@@ -365,15 +365,16 @@
                                 Top Run Scorer
                             </div>
                             <div class="leader-div border-bottom">
-                                <div *ngFor='let battingLeader of season.battingLeaders;' class="ht-90 border-bottom">
+                                <div *ngFor='let battingLeader of season.battingLeaders; index as i;' class="ht-90 border-bottom" [ngClass]="{'bgc-gold': i==0, 'bgc-silver': i==1, 'bgc-rsb': i==2}">
 
 
-                                    <div class="left-float cric-pad-top1rem" style="width:30%">
-                                        <img class="mom-img" src="{{imageHostName}}/players/{{battingLeader.playerName.split(':')[1]}}.png" alt="Card image cap" alt="" width="60px" height="60px" onError="this.src='../../assets/images/bat-default.jpg'">
+                                    <div class="left-float cric-pad-top1rem pad-left-5px" style="width:30%;">
+                                        <img class="mom-img" src="{{imageHostName}}/players/{{battingLeader.playerName.split(':')[1]}}.png" alt="Card image cap" alt="" width="90px" height="85px" onError="this.src='../../assets/images/bat-default.jpg'">
 
                                     </div>
                                     <div class="left-float cric-pad-top1rem" style="width:70%">
                                         <div class="">
+
                                             <span class="cric-font14 fw-500">{{battingLeader.playerName.split(":")[0]}}</span>
                                         </div>
                                         <div class="top-run-div">
@@ -396,8 +397,8 @@
                                 <div *ngFor='let bowlingLeader of season.bowlingLeaders;' class="ht-90 border-bottom">
 
 
-                                    <div class="left-float cric-pad-top1rem" style="width:30%">
-                                        <img class="mom-img" src="{{imageHostName}}/players/{{bowlingLeader.playerName.split(':')[1]}}.png" alt="Card image cap" alt="" width="60px" height="60px" onError="this.src='../../assets/images/bat-default.jpg'">
+                                    <div class="left-float cric-pad-top1rem pad-left-5px" style="width:30%">
+                                        <img class="mom-img" src="{{imageHostName}}/players/{{bowlingLeader.playerName.split(':')[1]}}.png" alt="Card image cap" alt="" width="90px" height="85px" onError="this.src='../../assets/images/bat-default.jpg'">
 
                                     </div>
                                     <div class="left-float cric-pad-top1rem" style="width:70%">

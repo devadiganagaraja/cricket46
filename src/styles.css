@@ -288,12 +288,13 @@ body {
 .mtch-note-td {
     height: 6px;
     padding-left: 14px;
-    color: #757575;
+    color: #0b1d9b;
 }
 
 .mtch-note-div {
     font-size: 14px;
     padding-bottom: 6px;
+    color: #d29e34 !important;
 }
 
 .mtch-dt-td {
@@ -434,4 +435,20 @@ textarea {
 
 .mat-tab-label-active {
     background-color: #f3f3f3 !important;
+}
+
+.pad-left-5px {
+    padding-left: 5px;
+}
+
+.bgc-gold {
+    background-color: gold;
+}
+
+.bgc-silver {
+    background-color: silver;
+}
+
+.bgc-rsb {
+    background-color: rosybrown;
 }

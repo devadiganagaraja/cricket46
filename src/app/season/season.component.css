@@ -151,8 +151,7 @@
         margin: unset;
     }
     .event-overflow {
-        /* max-height: 280px; */
-        overflow-y: auto;
+        height: auto;
     }
     /* .seson-det-container {
         height: 1000px;
@@ -163,8 +162,11 @@
     .width-55 {
         width: 100%;
     }
+    .ht-90 {
+        height: 100px;
+    }
     .width-21 {
-        width: 75%;
+        width: 100%;
     }
     .lead-container {
         padding-left: 10px;
